@@ -213,57 +213,24 @@ class ClipsController extends Controller
         if (! Gate::allows('clip_create')) {
             return abort(401);
         }
-            //$request->input('videos[1][video]')
-
+ 
         $clip = Clip::create($request->all());
-        // $output = $this->saveFiles($request);
-
-        // dd($request->input('videos[0][video]'));
-
+   
         foreach ($request->input('videos', []) as $data) {
-     
+
+            $request = $this->saveFiles($request);
             $clip->videos()->create($data);
-
+            foreach ($request->input('video_id', []) as $index => $id) {
+                $model = config('medialibrary.media_model');
+                $file = $model::find($id);
+                $file->model_id = $video->id;
+                $file->save();
+            }
         }
-
-
-        // foreach ($request->photos as $photo) {
-        //     $filename = $photo->store('photos');
-        //     $product_photo = ProductPhoto::create([
-        //         'filename' => $filename
-        //     ]);
-
-        //     $photo_object = new \stdClass();
-        //     $photo_object->name = str_replace('photos/', '',$photo->getClientOriginalName());
-        //     $photo_object->size = round(Storage::size($filename) / 1024, 2);
-        //     $photo_object->fileID = $product_photo->id;
-        //     $photos[] = $photo_object;
-        // }
-
-        // return response()->json(array('files' => $photos), 200);
-
-        // if ($request->sync_server_id) {
-        //     try {
-        //         SsListChannel::create([
-        //             'channel_server_id' => $request->channelserver_id,
-        //             'channel_id' => $request->channel_id,
-        //             'sync_server_id' => $request->sync_server_id,
-        //         ]);
-        //     } catch (\Exception $e) {
-        //         Log::alert($e);
-        //     }
-        // }
-
-        // foreach ($request->input('videos', []) as $data) {
-
-        //     $clip->videos()->create($data);
-
-        // }
 
         foreach ($request->input('brands', []) as $data) {
             $clip->brands()->create($data);
         }
-
 
         return redirect()->route('admin.clips.index');
     }
