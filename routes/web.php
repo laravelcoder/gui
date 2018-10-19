@@ -1,0 +1,70 @@
+<?php
+Route::get('/', function () { return redirect('/admin/home'); });
+
+// Authentication Routes...
+$this->get('login', 'Auth\LoginController@showLoginForm')->name('login');
+$this->post('login', 'Auth\LoginController@login')->name('auth.login');
+$this->post('logout', 'Auth\LoginController@logout')->name('auth.logout');
+
+// Change Password Routes...
+$this->get('change_password', 'Auth\ChangePasswordController@showChangePasswordForm')->name('auth.change_password');
+$this->patch('change_password', 'Auth\ChangePasswordController@changePassword')->name('auth.change_password');
+
+// Password Reset Routes...
+$this->get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('auth.password.reset');
+$this->post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('auth.password.reset');
+$this->get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
+$this->post('password/reset', 'Auth\ResetPasswordController@reset')->name('auth.password.reset');
+
+Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], function () {
+    Route::get('/home', 'HomeController@index');
+    
+    Route::resource('clips', 'Admin\ClipsController');
+    Route::post('clips_mass_destroy', ['uses' => 'Admin\ClipsController@massDestroy', 'as' => 'clips.mass_destroy']);
+    Route::post('clips_restore/{id}', ['uses' => 'Admin\ClipsController@restore', 'as' => 'clips.restore']);
+    Route::delete('clips_perma_del/{id}', ['uses' => 'Admin\ClipsController@perma_del', 'as' => 'clips.perma_del']);
+    Route::resource('videos', 'Admin\VideosController');
+    Route::post('videos_mass_destroy', ['uses' => 'Admin\VideosController@massDestroy', 'as' => 'videos.mass_destroy']);
+    Route::post('videos_restore/{id}', ['uses' => 'Admin\VideosController@restore', 'as' => 'videos.restore']);
+    Route::delete('videos_perma_del/{id}', ['uses' => 'Admin\VideosController@perma_del', 'as' => 'videos.perma_del']);
+    Route::resource('industries', 'Admin\IndustriesController');
+    Route::post('industries_mass_destroy', ['uses' => 'Admin\IndustriesController@massDestroy', 'as' => 'industries.mass_destroy']);
+    Route::post('industries_restore/{id}', ['uses' => 'Admin\IndustriesController@restore', 'as' => 'industries.restore']);
+    Route::delete('industries_perma_del/{id}', ['uses' => 'Admin\IndustriesController@perma_del', 'as' => 'industries.perma_del']);
+    Route::resource('images', 'Admin\ImagesController');
+    Route::post('images_mass_destroy', ['uses' => 'Admin\ImagesController@massDestroy', 'as' => 'images.mass_destroy']);
+    Route::resource('single_channels', 'Admin\SingleChannelsController');
+    Route::resource('multi_channels', 'Admin\MultiChannelsController');
+    Route::resource('all_channels', 'Admin\AllChannelsController');
+    Route::resource('ftps', 'Admin\FtpsController');
+    Route::post('ftps_mass_destroy', ['uses' => 'Admin\FtpsController@massDestroy', 'as' => 'ftps.mass_destroy']);
+    Route::post('ftps_restore/{id}', ['uses' => 'Admin\FtpsController@restore', 'as' => 'ftps.restore']);
+    Route::delete('ftps_perma_del/{id}', ['uses' => 'Admin\FtpsController@perma_del', 'as' => 'ftps.perma_del']);
+    Route::resource('tasks', 'Admin\TasksController');
+    Route::post('tasks_mass_destroy', ['uses' => 'Admin\TasksController@massDestroy', 'as' => 'tasks.mass_destroy']);
+    Route::resource('task_statuses', 'Admin\TaskStatusesController');
+    Route::post('task_statuses_mass_destroy', ['uses' => 'Admin\TaskStatusesController@massDestroy', 'as' => 'task_statuses.mass_destroy']);
+    Route::resource('task_tags', 'Admin\TaskTagsController');
+    Route::post('task_tags_mass_destroy', ['uses' => 'Admin\TaskTagsController@massDestroy', 'as' => 'task_tags.mass_destroy']);
+    Route::resource('task_calendars', 'Admin\TaskCalendarsController');
+    Route::resource('permissions', 'Admin\PermissionsController');
+    Route::post('permissions_mass_destroy', ['uses' => 'Admin\PermissionsController@massDestroy', 'as' => 'permissions.mass_destroy']);
+    Route::resource('roles', 'Admin\RolesController');
+    Route::post('roles_mass_destroy', ['uses' => 'Admin\RolesController@massDestroy', 'as' => 'roles.mass_destroy']);
+    Route::resource('users', 'Admin\UsersController');
+    Route::post('users_mass_destroy', ['uses' => 'Admin\UsersController@massDestroy', 'as' => 'users.mass_destroy']);
+    Route::resource('brands', 'Admin\BrandsController');
+    Route::post('brands_mass_destroy', ['uses' => 'Admin\BrandsController@massDestroy', 'as' => 'brands.mass_destroy']);
+    Route::post('brands_restore/{id}', ['uses' => 'Admin\BrandsController@restore', 'as' => 'brands.restore']);
+    Route::delete('brands_perma_del/{id}', ['uses' => 'Admin\BrandsController@perma_del', 'as' => 'brands.perma_del']);
+
+
+
+    Route::get('search', 'MegaSearchController@search')->name('mega-search');
+    Route::get('language/{lang}', function ($lang) {
+        return redirect()->back()->withCookie(cookie()->forever('language', $lang));
+    })->name('language');});
+
+
+    Route::post('/spatie/media/upload', 'Admin\SpatieMediaController@create')->name('media.upload');
+    Route::post('/spatie/media/remove', 'Admin\SpatieMediaController@destroy')->name('media.remove');
