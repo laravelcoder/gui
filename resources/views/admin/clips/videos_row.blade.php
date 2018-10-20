@@ -1,5 +1,5 @@
 <tr data-index="{{ $index }}">
-    <td>{!! Form::hidden('videos['.$index.'][video]', old('videos['.$index.'][video]')) !!} 
+    <td>{!! Form::hidden('videos['.$index.'][video]', old('videos['.$index.'][video]')) !!}
         {!! Form::file('videos['.$index.'][video]', ['class' => 'form-control file-upload']) !!}
     </td>
     <td>{!! Form::text('videos['.$index.'][name]', old('videos['.$index.'][name]', isset($field) ? $field->name: ''), ['class' => 'form-control']) !!}</td>

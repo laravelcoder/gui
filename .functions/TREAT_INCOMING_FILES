@@ -1,0 +1,142 @@
+#!/bin/bash
+
+# sets a lock - rusn exclusively one time at the sam time
+# treats incoming ftpo files
+#
+#  runs every hour
+
+
+
+LOCK_FILE="/var/www/logs/xcode_lock" ;
+
+# set that MUTEX in case of calls coming to this SCRIPT WHEN NOT YET FINISHED
+if [ -f $LOCK_FILE ];
+then
+	echo "LOCK SET in /var/www/logs/ can't do anything"
+   exit ;
+else
+   touch $LOCK_FILE ; 
+   chmod 777 $LOCK_FILE ; 
+fi
+
+# start to transcode to CAI format all video files - in case cai does not exist
+clipdir="/home/christine/" ;
+
+
+
+# do this for every channel ;
+# for channel in "France_2" "France_3" "France_4" "France_5" "France_O"
+# do
+
+	# go to that chanel src
+#	pushd $clipdir"/"$channel ;
+        pushd /var/www/clips ;
+
+	# STEP 1 - DO WE HAVE NEW FILES ? == .cai doesn't exist yet.
+        # ==============================
+
+	# get the full list of all files
+	dd=(`echo "ls -1 *.mpg" | sudo sftp -i /home/ubuntu/.ssh/jn_dev2.pem dishads@d-gp2-sftp-1.imovetv.com | sort`) ; 
+	nr=${#dd[@]} ;
+	j=0 ;
+	txt=0 ;
+	# echo "Number files total" $nr ;
+	while [ "$j" -lt "$nr" ] ; 
+	do
+		# make that file accessible for reading via the web 
+		chmod 777 ${dd[$j]} ;
+
+echo "analyzing" ${dd[$j]} ;
+
+		# does the CAI-file exist ?
+        	if [ -f  ${dd[$j]}.cai ] ;
+        	then
+                	# do nothing - cai-file exists already
+echo " cai file exists already"
+			(( txt = txt + 1 )) ;
+        	else
+echo " generating cai "
+			# here a file is in the ftp-folder but its cai-file is not existing ... yet 
+#			wget -q http://tocai.caipy.com/TOCAINCLEAN.php?http://ftv.caipy.com/src/$channel/${dd[$j]} -O /home/christine/$channel/${dd[$j]}.cai > /dev/null ;
+                        wget -q http://b-gp2-sc-201.imovetv.com/dishads/${dd[$j]} -O ./${dd[$j]} > /dev/null ;
+			chmod 777 ${dd[$j]} ;
+			/home/ubuntu/bin/LOCAL_CLIP2CAI ${dd[$j]} > ./${dd[$j]}.cai
+		        echo "put ./${dd[$j]}.cai cai/${dd[$j]}.cai" | sudo sftp -i /home/ubuntu/.ssh/jn_dev2.pem dishads@d-gp2-sftp-1.imovetv.com	
+                	# echo "done" ${dd[$j]} ;
+						
+
+                	# make a mp4 file for that 
+    #            	cp ${dd[$j]} /var/www/mp4/${dd[$j]}.mp4 ;
+    #            	chmod 755 /var/www/mp4/${dd[$j]}.mp4 ;
+
+			# copy it to the download folder
+
+		fi
+
+        	# make that file NOT accessible for reading via the web 
+	       	rm ${dd[$j]} ; 
+		rm ${dd[$j]}.pcm ;
+		chmod 777 ${dd[$j]}.cai ;
+	        chmod 777 ${dd[$j]}.txt ;
+
+        	(( j = j + 1 )) ;
+	done ;
+
+if [ "0" -gt "1" ] ;
+then
+        # STEP 2 - DO WE HAVE DELETED FILES ? == .cai exists in src folder but not the .m4v
+        # ===================================
+
+	# get the full list of all files .cai - and remove the .cai-ending immediately.
+        dd=(`ls -1 *.cai | sort | sed -e 's/\.cai//g'`) ;
+        nr=${#dd[@]} ;
+        j=0 ;
+        # echo "Number files total" $nr ;
+        while [ "$j" -lt "$nr" ] ; 
+        do
+	        # does the file exist ?
+                if [ -f  ${dd[$j]} ] ;
+                then
+			# file exists - do nothing
+                        (( txt = txt + 1 )) ;
+		else 
+			# here is a cai-file without the original: delete from downloads and from source
+			# echo $channel/${dd[$j]} ; 
+
+			# remove from here
+			rm -rf ${dd[$j]} ${dd[$j]}.cai ${dd[$j]}.txt ;
+			# remove from downloads
+			rm -rf /var/www/ftp/downloads/${dd[$j]} /var/www/ftp/downloads/${dd[$j]}.cai /var/www/ftp/downloads/${dd[$j]}.txt ;
+			# keep in /var/www/ftp/old !
+                        # keep in /var/www/mp4 !
+		fi
+
+                (( j = j + 1 )) ;
+
+        done ;
+fi ;
+	popd ;
+
+
+# check on m4v files in the downloads folder that do not exist in the 
+
+
+# copy all files to the downloads folder
+#pushd /var/www/ftp/downloads ; 
+#rm -r *.m4v
+#rm -r *.m4v.cai ;
+#rm -r *.m4v.txt ;
+#cp $clipdir/*/*.cai . ;
+#cp $clipdir/*/*.txt . ;
+#chmod 777 *.cai ;
+#chmod 777 *.txt ;
+# make a m4v-file for each mv4.cai file:
+#ff=`ls -1 *.cai | cut -d'.' -f1,2` ;
+#for fff in $ff
+#do 
+#   touch ./$fff ;
+#done ;
+#popd ;
+
+# remove the lock:
+rm -f $LOCK_FILE ; 

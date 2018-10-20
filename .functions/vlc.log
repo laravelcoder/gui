@@ -1,0 +1,46 @@
+﻿-- logger module started --
+core error: no suitable interface module
+core error: interface "globalhotkeys,none" initialization failed
+dbus error: Failed to connect to the D-Bus session daemon: Unable to autolaunch a dbus-daemon without a $DISPLAY for X11
+core error: no suitable interface module
+core error: interface "dbus,none" initialization failed
+dummy: using the dummy interface module...
+mux_dummy: Open
+ts warning: first packet for pid=481 cc=0x1
+ts warning: first packet for pid=482 cc=0x1
+stream_out_transcode error: cannot find video encoder (module:any fourcc:none). Take a look few lines earlier to see possible reason.
+stream_out_transcode error: cannot create video chain
+core error: cannot create packetizer output (mpgv)
+core warning: no more input streams for this mux
+idummy: command `quit'
+-- logger module stopped --
+﻿-- logger module started --
+core error: no suitable interface module
+core error: interface "globalhotkeys,none" initialization failed
+dbus error: Failed to connect to the D-Bus session daemon: Unable to autolaunch a dbus-daemon without a $DISPLAY for X11
+core error: no suitable interface module
+core error: interface "dbus,none" initialization failed
+dummy: using the dummy interface module...
+mux_dummy: Open
+ts warning: first packet for pid=481 cc=0x1
+ts warning: first packet for pid=482 cc=0x1
+stream_out_transcode error: cannot find video encoder (module:any fourcc:none). Take a look few lines earlier to see possible reason.
+stream_out_transcode error: cannot create video chain
+core error: cannot create packetizer output (mpgv)
+-- logger module stopped --
+﻿-- logger module started --
+core error: no suitable interface module
+core error: interface "globalhotkeys,none" initialization failed
+dbus error: Failed to connect to the D-Bus session daemon: Unable to autolaunch a dbus-daemon without a $DISPLAY for X11
+core error: no suitable interface module
+core error: interface "dbus,none" initialization failed
+dummy: using the dummy interface module...
+mux_dummy: Open
+ts warning: first packet for pid=481 cc=0x1
+ts warning: first packet for pid=482 cc=0x1
+stream_out_transcode error: cannot find video encoder (module:any fourcc:none). Take a look few lines earlier to see possible reason.
+stream_out_transcode error: cannot create video chain
+core error: cannot create packetizer output (mpgv)
+core warning: no more input streams for this mux
+idummy: command `quit'
+-- logger module stopped --

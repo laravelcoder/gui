@@ -1,0 +1,100 @@
+#!/bin/bash
+
+# DO NOT RUN AS ROOT !
+
+# expects a VOD file in  /var/www/vod/<show>/<season>/episode
+#  !!! removes the file at the end of the process 
+
+BASEDIR="/var/www/vod" ;
+
+pushd ${BASEDIR} ; 
+shows=`ls -1 .` ;
+
+for show in ${shows} ;
+do
+	pushd ${show} ; # now in the directory of that specific shwo - like Game of Thrones 
+
+	seasons=`ls -1 .` ; # find all seasons
+	for season in ${seasons} ;
+	do 
+		pushd ${season} :
+
+	        episodes=`ls -1 source.*` ; # find all episodes
+	        for episode in ${episodes} ;
+        	do
+
+			TCAI_FILE=${episode}.tcai
+			if [ -f ${TCAI_FILE} ];
+			then 
+				echo "exists: ${TCAI_FILE}" ;
+			else
+				# see if at least the pcm exists already
+				PCM_FILE=${episode}.pcm ;
+				echo "checking: ${PCM_FILE}" ;
+				if [ -f ${PCM_FILE} ];
+                        	then
+					# pcm exists: make directly the tcai (after the if PCM below )
+                                	echo "exists:  ${BASEDIR}/${show}/${season}/${episode}.pcm" ;
+                       		else
+					# pcm does not exist (after the if PCM below )
+					echo "making:  ${BASEDIR}/${show}/${season}/${episode}.pcm" ;
+					# make the pcm
+					vlc -I dummy "${episode}" --verbose=1 --file-logging --logfile=vlc.log --sout "#transcode{vcodec=none,acodec=s16le,channels=1,samplerate=48000}:file{mux=raw,dst=${episode}.pcm}" vlc://quit ;
+					chmod 777 ${episode}.pcm ;
+				fi
+
+				echo "making:  ${BASEDIR}/${show}/${season}/${episode}.tcai" ;
+				# generate the tcai file
+				/home/ubuntu/bin/pcm2tcai ${episode}.pcm ${episode}.tcai 20000123000000000000 > /dev/null ;
+				chmod 777 ${episode}.tcai ; 
+			fi
+
+		# 	echo "${BASEDIR}/${show}/${season}/${episode}"
+
+
+			# generates the pcm then a cai file and then a tcai file
+
+			# generate the PCM for the file name i $1 parameter
+#			vlc -I dummy "/var/vod/${1}" --verbose=1 --file-logging --logfile=vlc.log --sout "#transcode{vcodec=none,acodec=s16le,channels=1,samplerate=48000}:file{mux=raw,dst=/var/vod/${1}.pcm}" vlc://quit ;
+#			chmod 777 /var/vod/${1} ;
+#			chmod 777 /var/vod/${1}.pcm ;
+
+			# generate the corresponding cai
+			# /home/ubuntu/bin/pcm2cai /var/vod/${1}.pcm /var/vod/${1}.cai > /dev/null ;
+			# chmod 777 /var/vod/${1}.cai ;
+
+			# generate the corresponding tcai
+#			/home/ubuntu/bin/pcm2tcai /var/vod/${1}.pcm /var/vod/${1}.tcai 20000123000000000000 > /dev/null ;
+#			chmod 777 /var/vod/${1}.tcai ;
+
+		done ; # all episodes done
+
+		popd ; # get out of this season
+	done ; # all seasons done
+
+	popd ; # get out of this show
+done ; # all shows done
+
+if [ "0" -gt "1" ]
+then
+
+# on the tcai that resulted from the concatenated file - find repeats
+pushd /home/ubuntu/bin ;
+# requires folder ctrl/ADS/ and generates cai files in there
+# requires folder ctrl/Matches.log amd puts in the found recognitions
+# also generates ctrl/ti_ms.findRepeats
+# /home/ubuntu/bin/ctrl/channellogs/20000123 needs to hold the file 123.tcai 
+# 123.tcai was produced by concatenation of the tcai files of each episode
+rm -f ctrl/ADS/* ;
+rm -f ctrl/ti_ms.findRepeats ;
+rm -f ./ctrl/Matches.log ; touch ./ctrl/Matches.log ; chmod 777 ./ctrl/Matches.log ;
+
+./findRepeats15 /home/ubuntu/bin/ctrl/channellogs/20000123/123.tcai
+
+popd
+
+fi
+
+# cleanup
+# rm -f ${1} ;
+# rm -f ${1}.pcm ;

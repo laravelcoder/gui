@@ -4,7 +4,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
-use Spatie\MediaLibrary\HasMedia\Interfaces\HasMedia;
+use Spatie\MediaLibrary\HasMedia\HasMedia;
 
 /**
  * Class Video
@@ -37,7 +37,7 @@ class Video extends Model implements HasMedia
     
     public function clip()
     {
-        return $this->belongsTo(Clip::class, 'clip_id')->withTrashed();
+        return $this->belongsTo(\App\Clip::class, 'clip_id')->withTrashed();
     }
     
 }

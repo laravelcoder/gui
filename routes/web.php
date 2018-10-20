@@ -63,8 +63,10 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
     Route::get('search', 'MegaSearchController@search')->name('mega-search');
     Route::get('language/{lang}', function ($lang) {
         return redirect()->back()->withCookie(cookie()->forever('language', $lang));
-    })->name('language');});
+    })->name('language');
 
 
     Route::post('/spatie/media/upload', 'Admin\SpatieMediaController@create')->name('media.upload');
     Route::post('/spatie/media/remove', 'Admin\SpatieMediaController@destroy')->name('media.remove');
+
+});

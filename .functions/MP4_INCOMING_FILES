@@ -1,0 +1,97 @@
+#!/bin/bash
+
+# sets a lock - rusn exclusively one time at the sam time
+# treats incoming ftpo files
+#
+#  runs every hour
+
+
+
+LOCK_FILE="/var/www/logs/mp4code_lock" ;
+
+# set that MUTEX in case of calls coming to this SCRIPT WHEN NOT YET FINISHED
+if [ -f $LOCK_FILE ];
+then
+	echo "LOCK SET in /var/www/logs/ can't do anything"
+   exit ;
+else
+   touch $LOCK_FILE ; 
+   chmod 777 $LOCK_FILE ; 
+fi
+
+# start to transcode to CAI format all video files - in case cai does not exist
+clipdir="/home/christine/" ;
+
+
+
+# do this for every channel ;
+# for channel in "France_2" "France_3" "France_4" "France_5" "France_O"
+# do
+
+	# go to that chanel src
+#	pushd $clipdir"/"$channel ;
+        pushd /var/www/mp4 ;
+
+	# STEP 1 - DO WE HAVE NEW FILES ? == .mp4 doesn't exist yet.
+        # ==============================
+
+	# get the full list of all files
+	dd=(`echo "ls -1 *.mpg" | sudo sftp -i /home/ubuntu/.ssh/jn_dev2.pem dishads@d-gp2-sftp-1.imovetv.com | sort`) ; 
+	nr=${#dd[@]} ;
+	j=0 ;
+	txt=0 ;
+	# echo "Number files total" $nr ;
+	while [ "$j" -lt "$nr" ] ; 
+	do
+
+# echo "analyzing" ${dd[$j]} ;
+
+		# does the MP4-file exist ?
+        	if [ -f  "./${dd[$j]}.mp4" ] ;
+        	then
+                	# do nothing - mp4-file exists already
+# echo " mp4 file exists already"
+			(( txt = txt + 1 )) ;
+        	else
+# echo " generating mp4 "
+			# here a file is in the ftp-folder but its mp4-file is not existing ... yet 
+                        wget -q http://b-gp2-sc-201.imovetv.com/dishads/${dd[$j]} -O ./${dd[$j]} > /dev/null ;
+			chmod 777 ${dd[$j]} ;
+
+                	# make a mp4 file for that 
+			ffmpeg -i "./${dd[$j]}" -b:v 5000000 -vf yadif -vcodec libx264 -acodec copy "./${dd[$j]}.mp4"
+                        echo "put ./${dd[$j]}.mp4 mp4/${dd[$j]}.mp4" | sudo sftp -i /home/ubuntu/.ssh/jn_dev2.pem dishads@d-gp2-sftp-1.imovetv.com
+			# just keep a little empty file with the name here
+			echo "" > "./${dd[$j]}.mp4" ;
+		fi
+
+        	# make that file NOT accessible for reading via the web 
+	       	rm ${dd[$j]} ; 
+		chmod 777 ${dd[$j]}.mp4 ;
+
+        	(( j = j + 1 )) ;
+	done ;
+	popd ;
+
+# check on m4v files in the downloads folder that do not exist in the 
+
+
+# copy all files to the downloads folder
+#pushd /var/www/ftp/downloads ; 
+#rm -r *.m4v
+#rm -r *.m4v.cai ;
+#rm -r *.m4v.txt ;
+#cp $clipdir/*/*.cai . ;
+#cp $clipdir/*/*.txt . ;
+#chmod 777 *.cai ;
+#chmod 777 *.txt ;
+# make a m4v-file for each mv4.cai file:
+#ff=`ls -1 *.cai | cut -d'.' -f1,2` ;
+#for fff in $ff
+#do 
+#   touch ./$fff ;
+#done ;
+#popd ;
+
+# remove the lock:
+rm -f $LOCK_FILE ; 

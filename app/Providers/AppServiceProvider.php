@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
@@ -28,8 +27,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
         
+        \Illuminate\Support\Collection::macro('lists', function ($a, $b = null) {
+            return collect($this->items)->pluck($a, $b);
+        });
+
         if ($this->app->environment('local', 'testing')) {
             $this->app->register(DuskServiceProvider::class);
         }

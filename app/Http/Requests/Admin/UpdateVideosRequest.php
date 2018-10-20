@@ -24,6 +24,8 @@ class UpdateVideosRequest extends FormRequest
     {
         return [
             
+            'name' => 'required',
+            'video' => 'mimes:mp4',
         ];
     }
 }

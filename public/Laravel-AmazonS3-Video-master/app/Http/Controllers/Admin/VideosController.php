@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Gate;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\StoreVideosRequest;
 use App\Http\Requests\Admin\UpdateVideosRequest;
+
 use App\Http\Controllers\Traits\FileUploadTrait;
 use Illuminate\Support\Facades\Storage;
 use Spatie\MediaLibrary\Media;
@@ -64,6 +65,7 @@ class VideosController extends Controller
         if (! Gate::allows('video_create')) {
             return abort(401);
         }
+        
         $request = $this->saveFiles($request);
         $video = Video::create($request->all());
         foreach ($request->input('video_id', []) as $index => $id) {

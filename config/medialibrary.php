@@ -3,6 +3,11 @@
 return [
 
     /*
+     * The filesystems on which to store added files and derived images by default. Choose
+     * one or more of the filesystems you've configured in config/filesystems.php.
+     */
+    'default_filesystem' => 'uploads',
+    /*
      * The disk on which to store added files and derived images by default. Choose
      * one or more of the disks you've configured in config/filesystems.php.
      */
@@ -14,7 +19,7 @@ return [
      */
     'max_file_size' => 1024 * 1024 * 10,
 
-    /*
+    /* 
      * This queue will be used to generate derived and responsive images.
      * Leave empty to use the default queue.
      */
@@ -24,6 +29,7 @@ return [
      * The fully qualified class name of the media model.
      */
     'media_model' => Spatie\MediaLibrary\Models\Media::class,
+    
 
     's3' => [
         /*
@@ -113,7 +119,7 @@ return [
      */
     'image_generators' => [
         Spatie\MediaLibrary\ImageGenerators\FileTypes\Image::class,
-        Spatie\MediaLibrary\ImageGenerators\FileTypes\Webp::class,
+        //Spatie\MediaLibrary\ImageGenerators\FileTypes\Webp::class,
         Spatie\MediaLibrary\ImageGenerators\FileTypes\Pdf::class,
         Spatie\MediaLibrary\ImageGenerators\FileTypes\Svg::class,
         Spatie\MediaLibrary\ImageGenerators\FileTypes\Video::class,

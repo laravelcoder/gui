@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use Illuminate\Support\Facades\App;
 use App\Video;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
@@ -9,12 +10,10 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\StoreVideosRequest;
 use App\Http\Requests\Admin\UpdateVideosRequest;
 use App\Http\Controllers\Traits\FileUploadTrait;
-use Yajra\DataTables\DataTables;
-use Illuminate\Support\Facades\App;
- 
 use Illuminate\Support\Facades\Storage;
 use Spatie\MediaLibrary\Media;
-
+use Yajra\DataTables\DataTables;
+use Illuminate\Support\Facades\Log;
 
 class VideosController extends Controller
 {
@@ -120,6 +119,7 @@ class VideosController extends Controller
    
         $request = $this->saveFiles($request);
         $video = Video::create($request->all());
+        
         foreach ($request->input('video_id', []) as $index => $id) {
             $model = config('medialibrary.media_model');
             $file = $model::find($id);

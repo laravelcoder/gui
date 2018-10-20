@@ -1,0 +1,146 @@
+#!/bin/bash
+
+# DO NOT RUN AS ROOT !
+
+# expects a VOD file in  /var/www/vod/<show>/<season>/source.<episode_num>.<original_filename>
+# invoke as
+#   $ XVOD_CONVERT [-review]
+# -review flag will cause review transcodes to be made if missing or out-of-date; this can take along time!
+
+#  !!! removes the file at the end of the process 
+
+BASEDIR="/var/www/vod" ;
+
+# clean the results
+rm -f /home/ubuntu/bin/ctrl/results ; touch /home/ubuntu/bin/ctrl/results ; chmod 777 /home/ubuntu/bin/ctrl/results ; 
+
+
+#
+# FYI: this is how you lookup the source file from ep#; if not there, ${src_file} is empty:
+#
+#    src_file=`ls /var/www/vod/${show}/${season}/source.${ep_num}.* 2>/dev/null`
+#
+
+pushd ${BASEDIR} >/dev/null ;
+shows=$(ls -1 -d $1* 2>/dev/null);
+if [ $? -ne 0 ]; then
+	echo "No show names matching ${1}* were found"
+	exit 1
+fi
+
+for show in ${shows} ; do
+	echo PROCESSING SHOW: $show
+	pushd ${show} >/dev/null; # now in the directory of that specific shwo - like Game of Thrones 
+
+	seasons=`ls -1 .` ; # find all seasons
+	for season in ${seasons} ;
+	do
+		echo '  PROCESSING SEASON' ${season}
+		pushd ${season} >/dev/null;
+		
+
+# to be uncommented                             		
+#		rm season_${season}.tcai ; 
+# to be uncommented                             
+#		rm season_${season}.pcm ; touch season_${season}.pcm ; chmod 777 season_${season}.pcm ; 
+# to be uncommented
+		# start with 6 secs nullbytes                             
+#		head -c 576000 < /dev/zero > season_${season}.pcm ;
+
+	        sources=`ls -1 source.*` ; # find all episode sources
+	        for source in ${sources} ;
+        	do
+				episode=`echo ${source} | cut -d \. -f 2`
+				echo '    PROCESSING Episode:'  ${episode}, "("${source}")"
+
+				PCM_FILE="${episode}.pcm"
+				# see if PCM file is out-of-date or non-existent
+
+# to be uncommented                             				
+#				cat ${episode}.pcm >> season_${season}.pcm ;
+				len=`ls -o ${episode}.pcm |cut -d' ' -f4` ; 
+				(( len_ms = len / 96 )) ;
+#				echo "added [ms]: $len_ms " ; 
+# to be uncommented				
+		 		echo "    processed episode ${episode}"
+
+			done ; # all episodes done
+
+# to be uncommented
+                # end with 6 secs nullbytes                             
+#                head -c 576000 < /dev/zero >> season_${season}.pcm ;
+
+
+		# make TCAI-file 
+		TCAI_FILE="season_${season}.tcai"
+	        # -- only if it doesn't exoist already - generate the tcai file
+		if [ ! -f "/var/www/vod/${show}/${season}/season_${season}.tcai" ] ;
+		then
+			echo "CREATING NEWLY /var/www/vod/${show}/${season}/season_${season}.tcai"
+        		/home/ubuntu/bin/pcm2tcai season_${season}.pcm season_${season}.tcai 20000123000000000000 > /dev/null ;
+        		chmod 777 ${TCAI_FILE} ; 
+		else
+			echo "/var/www/vod/${show}/${season}/season_${season}.tcai exists !"
+		fi ;
+
+		# find the repeating sequences
+		cp ./season_${season}.tcai /home/ubuntu/bin/ctrl/channellogs/20000123/123.tcai ;
+		pushd  /home/ubuntu/bin  >/dev/null;
+		rm ctrl/Matches.log ; rm ctrl/ti_ms.findRepeats ; rm ctrl/ADS/* ; rm aaa ; 
+		./findMusic ./ctrl/channellogs/20000123/123.tcai  > aaa ; cat ctrl/ti_ms.findRepeats | grep -v SharpStart ;
+
+		# Dedup the found clips, keep the first column only (unique ones), rename them to SEQ_....cai
+		./DedupClips ./ctrl/ADS ;
+		unique_sequences=`./DedupClips ./ctrl/ADS | cut -d',' -f1 ` ;
+		mkdir ./ctrl/tmp_caidir > /dev/null ; # rm -rf  ./ctrl/tmp_caidir/* ; 
+		#  rename them to SEQ_....cai
+		#	for i in $unique_sequences ; do b=`echo $i | cut -c4-` ; mv ctrl/ADS/$i.cai  ctrl/ADS/SEQ_$b.cai ; done 
+		# remove the redundnt ones 
+		# rm -f ctrl/ADS/AD_*.cai ;
+
+		# move the unique sequences to tmp_caidir
+		for i in $unique_sequences ; do b=`echo $i | cut -c4-` ; mv ctrl/ADS/$i.cai  ctrl/tmp_caidir/SEQ_${show}_${season}_${b}.cai ; done 
+		# ls -al ctrl/tmp_caidir/ ;
+
+		# mow compare all found clips (in ./ctrl/tmp_caidir) with each episode file -- print is Caipy Resultformat
+#		rm -f ctrl/results ; touch ./ctrl/results ; chmod 777 ./ctrl/results ; 
+		rm -f /home/ubuntu/bin/ctrl/channellogs/20000123/* ;
+                for source in ${sources} ;
+                do
+			episode=`echo ${source} | cut -d \. -f 2` ;
+			ln -s ${BASEDIR}/${show}/${season}/${episode}.tcai /home/ubuntu/bin/ctrl/channellogs/20000123/${source}.tcai ;
+			/home/ubuntu/bin/cmpLogsClips /home/ubuntu/bin/ctrl/channellogs /home/ubuntu/bin/ctrl/tmp_caidir ${source} >> ./ctrl/results ;
+			rm ./ctrl/channellogs/20000123/${source}.tcai ;
+		done
+
+		# get out of /home/ubuntu/bin
+		popd  >/dev/null;
+
+	 	echo "  processed season: ${season}"
+
+		popd >/dev/null ; # get out of this season
+	done ; # all seasons done
+ 	echo "processed show: ${show}"
+
+	popd >/dev/null; # get out of this show
+done ; # all shows done
+
+
+# print the results:
+
+#cat /home/ubuntu/bin/ctrl/results ;
+
+# get each file
+today=`date +%Y%m%d` ;
+rm /home/ubuntu/bin/SyncServer/ctrl/results/${today}/ti_ms ;mkdir /home/ubuntu/bin/SyncServer/ctrl/results/${today} ;
+a=`cat /home/ubuntu/bin/ctrl/results | cut -d',' -f2 | sort | uniq ` ; 
+for i in $a ; 
+do 
+	pushd /home/ubuntu/bin/SyncServer/ctrl/ > /dev/null ; 
+	cut -d',' -f1- ../../ctrl/results | sed -s s#00000000#${today}#g | grep ${i} | ./filter.php -fbest-ad-match | ./filter.php -fmin-intro-length | cut -d',' -f1- >> /home/ubuntu/bin/SyncServer/ctrl/results/${today}/ti_ms ; 
+	popd > /dev/null ; 
+done
+
+# cleanup
+# rm -f ${1} ;
+# rm -f ${1}.pcm ;

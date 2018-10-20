@@ -1,0 +1,1690 @@
+Channel=123
+LEN_P1_WEEK_BUF=2592000
+Analyzing Logs for 123:
+ USED_CAI_SAMPLERATE is: 40
+20000123 - ./ctrl/channellogs/20000123/123.tcai
+Opening file ./ctrl/channellogs/20000123/123.tcai
+Reading logfile and getting P1s for day ./ctrl/channellogs/20000123/123.tcai : ---  0.052 seconds.
+Found total of: 16826 peaks in 725662 lines (18141 seconds). New lines: 725662 
+processing for searching repeats from 0 ... 16827
+processing for searching 10000 repeats, i=0
+ ---  0.000 seconds.
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=627 ... i=631  and j-(k+1)=249 ... j=253 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=631 ... i-(k-1)-1=629  and j=253 ... j-(k-1)=251 (inclusive)
+getTcailog dayidx 14, offset: 927450, peak i time: 20000123000743750000
+No specials, load day 14: 20000123 - from byte: 327450 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 441500, peak i time: 20000123000340775000
+! there is some problem - buffers are not full or -1 was sent back
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=951 ... i=955  and j-(k+1)=894 ... j=898 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=955 ... i-(k-1)-1=953  and j=898 ... j-(k-1)=896 (inclusive)
+getTcailog dayidx 14, offset: 1393050, peak i time: 20000123001136550000
+No specials, load day 14: 20000123 - from byte: 793050 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 1325600, peak i time: 20000123001102825000
+No specials, load day 14: 20000123 - from byte: 725600 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 69 lines = 1 secs, start=line 11977, stop=line 12045
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=1036 ... i=1040  and j-(k+1)=580 ... j=584 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=1040 ... i-(k-1)-1=1038  and j=584 ... j-(k-1)=582 (inclusive)
+getTcailog dayidx 14, offset: 1588550, peak i time: 20000123001314300000
+No specials, load day 14: 20000123 - from byte: 988550 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 875100, peak i time: 20000123000717575000
+No specials, load day 14: 20000123 - from byte: 275100 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 296 lines = 7 secs, start=line 11919, stop=line 12214
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=1045 ... i=1049  and j-(k+1)=218 ... j=222 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=1049 ... i-(k-1)-1=1047  and j=222 ... j-(k-1)=220 (inclusive)
+getTcailog dayidx 14, offset: 1597950, peak i time: 20000123001319000000
+No specials, load day 14: 20000123 - from byte: 997950 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 417250, peak i time: 20000123000328650000
+! there is some problem - buffers are not full or -1 was sent back
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=1076 ... i=1080  and j-(k+1)=195 ... j=199 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=1080 ... i-(k-1)-1=1078  and j=199 ... j-(k-1)=197 (inclusive)
+getTcailog dayidx 14, offset: 1629650, peak i time: 20000123001334850000
+No specials, load day 14: 20000123 - from byte: 1029650 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 392750, peak i time: 20000123000316400000
+! there is some problem - buffers are not full or -1 was sent back
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=1080 ... i=1084  and j-(k+1)=214 ... j=218 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=1084 ... i-(k-1)-1=1082  and j=218 ... j-(k-1)=216 (inclusive)
+getTcailog dayidx 14, offset: 1632200, peak i time: 20000123001336125000
+No specials, load day 14: 20000123 - from byte: 1032200 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 411850, peak i time: 20000123000325950000
+! there is some problem - buffers are not full or -1 was sent back
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=1125 ... i=1129  and j-(k+1)=1072 ... j=1076 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=1129 ... i-(k-1)-1=1127  and j=1076 ... j-(k-1)=1074 (inclusive)
+getTcailog dayidx 14, offset: 1725700, peak i time: 20000123001422875000
+No specials, load day 14: 20000123 - from byte: 1125700 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 1625950, peak i time: 20000123001333000000
+No specials, load day 14: 20000123 - from byte: 1025950 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 50 lines = 1 secs, start=line 11992, stop=line 12041
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=1393 ... i=1397  and j-(k+1)=626 ... j=630 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=1397 ... i-(k-1)-1=1395  and j=630 ... j-(k-1)=628 (inclusive)
+getTcailog dayidx 14, offset: 2477750, peak i time: 20000123002038900000
+No specials, load day 14: 20000123 - from byte: 1877750 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 926100, peak i time: 20000123000743075000
+No specials, load day 14: 20000123 - from byte: 326100 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 186 lines = 4 secs, start=line 11958, stop=line 12143
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=1407 ... i=1411  and j-(k+1)=269 ... j=273 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=1411 ... i-(k-1)-1=1409  and j=273 ... j-(k-1)=271 (inclusive)
+getTcailog dayidx 14, offset: 2491300, peak i time: 20000123002045675000
+No specials, load day 14: 20000123 - from byte: 1891300 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 457350, peak i time: 20000123000348700000
+! there is some problem - buffers are not full or -1 was sent back
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=1416 ... i=1420  and j-(k+1)=1406 ... j=1410 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=1420 ... i-(k-1)-1=1418  and j=1410 ... j-(k-1)=1408 (inclusive)
+getTcailog dayidx 14, offset: 2498600, peak i time: 20000123002049325000
+No specials, load day 14: 20000123 - from byte: 1898600 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 2490900, peak i time: 20000123002045475000
+No specials, load day 14: 20000123 - from byte: 1890900 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 869 lines = 21 secs, start=line 11793, stop=line 12661
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=1418 ... i=1422  and j-(k+1)=522 ... j=526 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=1422 ... i-(k-1)-1=1420  and j=526 ... j-(k-1)=524 (inclusive)
+getTcailog dayidx 14, offset: 2499150, peak i time: 20000123002049600000
+No specials, load day 14: 20000123 - from byte: 1899150 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 795850, peak i time: 20000123000637950000
+No specials, load day 14: 20000123 - from byte: 195850 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 41 lines = 1 secs, start=line 11977, stop=line 12017
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=1425 ... i=1429  and j-(k+1)=1066 ... j=1070 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=1429 ... i-(k-1)-1=1427  and j=1070 ... j-(k-1)=1068 (inclusive)
+getTcailog dayidx 14, offset: 2502700, peak i time: 20000123002051375000
+No specials, load day 14: 20000123 - from byte: 1902700 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 1620250, peak i time: 20000123001330150000
+No specials, load day 14: 20000123 - from byte: 1020250 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 1122 lines = 28 secs, start=line 11352, stop=line 12473
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=1474 ... i=1478  and j-(k+1)=557 ... j=561 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=1478 ... i-(k-1)-1=1476  and j=561 ... j-(k-1)=559 (inclusive)
+getTcailog dayidx 14, offset: 2560100, peak i time: 20000123002120075000
+No specials, load day 14: 20000123 - from byte: 1960100 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 847750, peak i time: 20000123000703900000
+No specials, load day 14: 20000123 - from byte: 247750 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 1 lines = 0 secs, start=line 12001, stop=line 12001
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=1505 ... i=1509  and j-(k+1)=627 ... j=631 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=1509 ... i-(k-1)-1=1507  and j=631 ... j-(k-1)=629 (inclusive)
+getTcailog dayidx 14, offset: 2596350, peak i time: 20000123002138200000
+No specials, load day 14: 20000123 - from byte: 1996350 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 927450, peak i time: 20000123000743750000
+No specials, load day 14: 20000123 - from byte: 327450 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 44 lines = 1 secs, start=line 11975, stop=line 12018
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=1786 ... i=1790  and j-(k+1)=1074 ... j=1078 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=1790 ... i-(k-1)-1=1788  and j=1078 ... j-(k-1)=1076 (inclusive)
+getTcailog dayidx 14, offset: 3212550, peak i time: 20000123002646300000
+No specials, load day 14: 20000123 - from byte: 2612550 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 1628750, peak i time: 20000123001334400000
+No specials, load day 14: 20000123 - from byte: 1028750 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 114 lines = 2 secs, start=line 11961, stop=line 12074
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=2075 ... i=2079  and j-(k+1)=27 ... j=31 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=2079 ... i-(k-1)-1=2077  and j=31 ... j-(k-1)=29 (inclusive)
+getTcailog dayidx 14, offset: 3748550, peak i time: 20000123003114300000
+No specials, load day 14: 20000123 - from byte: 3148550 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 74200, peak i time: 20000123000037125000
+! there is some problem - buffers are not full or -1 was sent back
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=2131 ... i=2135  and j-(k+1)=1184 ... j=1188 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=2135 ... i-(k-1)-1=2133  and j=1188 ... j-(k-1)=1186 (inclusive)
+getTcailog dayidx 14, offset: 3807700, peak i time: 20000123003143875000
+No specials, load day 14: 20000123 - from byte: 3207700 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 1868400, peak i time: 20000123001534225000
+No specials, load day 14: 20000123 - from byte: 1268400 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 119 lines = 2 secs, start=line 11903, stop=line 12021
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=2334 ... i=2338  and j-(k+1)=2128 ... j=2132 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=2338 ... i-(k-1)-1=2336  and j=2132 ... j-(k-1)=2130 (inclusive)
+getTcailog dayidx 14, offset: 4072850, peak i time: 20000123003356450000
+No specials, load day 14: 20000123 - from byte: 3472850 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 3806450, peak i time: 20000123003143250000
+No specials, load day 14: 20000123 - from byte: 3206450 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 444 lines = 11 secs, start=line 11604, stop=line 12047
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=2359 ... i=2363  and j-(k+1)=2131 ... j=2135 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=2363 ... i-(k-1)-1=2361  and j=2135 ... j-(k-1)=2133 (inclusive)
+getTcailog dayidx 14, offset: 4097400, peak i time: 20000123003408725000
+No specials, load day 14: 20000123 - from byte: 3497400 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 3807700, peak i time: 20000123003143875000
+No specials, load day 14: 20000123 - from byte: 3207700 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 903 lines = 22 secs, start=line 11119, stop=line 12021
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=2582 ... i=2586  and j-(k+1)=520 ... j=524 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=2586 ... i-(k-1)-1=2584  and j=524 ... j-(k-1)=522 (inclusive)
+getTcailog dayidx 14, offset: 4625800, peak i time: 20000123003832925000
+No specials, load day 14: 20000123 - from byte: 4025800 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 795350, peak i time: 20000123000637700000
+No specials, load day 14: 20000123 - from byte: 195350 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 26 lines = 0 secs, start=line 11996, stop=line 12021
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=2610 ... i=2614  and j-(k+1)=1448 ... j=1452 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=2614 ... i-(k-1)-1=2612  and j=1452 ... j-(k-1)=1450 (inclusive)
+getTcailog dayidx 14, offset: 4687200, peak i time: 20000123003903625000
+No specials, load day 14: 20000123 - from byte: 4087200 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 2525850, peak i time: 20000123002102950000
+No specials, load day 14: 20000123 - from byte: 1925850 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 244 lines = 6 secs, start=line 11874, stop=line 12117
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=2806 ... i=2810  and j-(k+1)=2486 ... j=2490 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=2810 ... i-(k-1)-1=2808  and j=2490 ... j-(k-1)=2488 (inclusive)
+getTcailog dayidx 14, offset: 5150650, peak i time: 20000123004255350000
+No specials, load day 14: 20000123 - from byte: 4550650 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 4336750, peak i time: 20000123003608400000
+No specials, load day 14: 20000123 - from byte: 3736750 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 174 lines = 4 secs, start=line 12000, stop=line 12173
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=2817 ... i=2821  and j-(k+1)=2501 ... j=2505 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=2821 ... i-(k-1)-1=2819  and j=2505 ... j-(k-1)=2503 (inclusive)
+getTcailog dayidx 14, offset: 5189400, peak i time: 20000123004314725000
+No specials, load day 14: 20000123 - from byte: 4589400 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 4375500, peak i time: 20000123003627775000
+No specials, load day 14: 20000123 - from byte: 3775500 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 50 lines = 1 secs, start=line 11978, stop=line 12027
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=3011 ... i=3015  and j-(k+1)=908 ... j=912 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=3015 ... i-(k-1)-1=3013  and j=912 ... j-(k-1)=910 (inclusive)
+getTcailog dayidx 14, offset: 5698800, peak i time: 20000123004729425000
+No specials, load day 14: 20000123 - from byte: 5098800 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 1349800, peak i time: 20000123001114925000
+No specials, load day 14: 20000123 - from byte: 749800 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 118 lines = 2 secs, start=line 11995, stop=line 12112
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=3595 ... i=3599  and j-(k+1)=598 ... j=602 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=3599 ... i-(k-1)-1=3597  and j=602 ... j-(k-1)=600 (inclusive)
+getTcailog dayidx 14, offset: 7059700, peak i time: 20000123005849875000
+No specials, load day 14: 20000123 - from byte: 6459700 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 896250, peak i time: 20000123000728150000
+No specials, load day 14: 20000123 - from byte: 296250 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 1 lines = 0 secs, start=line 12001, stop=line 12001
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=3647 ... i=3651  and j-(k+1)=112 ... j=116 (inclusive)
+MAXED P1 MATCH:	k=4 is the length of it. The match goes from i-1=3652 ... i-(k-1)-1=3649  and j=117 ... j-(k-1)=114 (inclusive)
+getTcailog dayidx 14, offset: 7136250, peak i time: 20000123005928150000
+No specials, load day 14: 20000123 - from byte: 6536250 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 196250, peak i time: 20000123000138150000
+! there is some problem - buffers are not full or -1 was sent back
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=4068 ... i=4072  and j-(k+1)=2617 ... j=2621 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=4072 ... i-(k-1)-1=4070  and j=2621 ... j-(k-1)=2619 (inclusive)
+getTcailog dayidx 14, offset: 8003650, peak i time: 20000123010641850000
+No specials, load day 14: 20000123 - from byte: 7403650 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 4704550, peak i time: 20000123003912300000
+No specials, load day 14: 20000123 - from byte: 4104550 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 61 lines = 1 secs, start=line 11999, stop=line 12059
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=4071 ... i=4075  and j-(k+1)=3717 ... j=3721 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=4075 ... i-(k-1)-1=4073  and j=3721 ... j-(k-1)=3719 (inclusive)
+getTcailog dayidx 14, offset: 8005400, peak i time: 20000123010642725000
+No specials, load day 14: 20000123 - from byte: 7405400 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 7366850, peak i time: 20000123010123450000
+No specials, load day 14: 20000123 - from byte: 6766850 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 67 lines = 1 secs, start=line 11992, stop=line 12058
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=4075 ... i=4079  and j-(k+1)=1780 ... j=1784 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=4079 ... i-(k-1)-1=4077  and j=1784 ... j-(k-1)=1782 (inclusive)
+getTcailog dayidx 14, offset: 8011450, peak i time: 20000123010645750000
+No specials, load day 14: 20000123 - from byte: 7411450 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 3200250, peak i time: 20000123002640150000
+No specials, load day 14: 20000123 - from byte: 2600250 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 24 lines = 0 secs, start=line 11990, stop=line 12013
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=4079 ... i=4083  and j-(k+1)=4071 ... j=4075 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=4083 ... i-(k-1)-1=4081  and j=4075 ... j-(k-1)=4073 (inclusive)
+getTcailog dayidx 14, offset: 8012800, peak i time: 20000123010646425000
+No specials, load day 14: 20000123 - from byte: 7412800 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 8005400, peak i time: 20000123010642725000
+No specials, load day 14: 20000123 - from byte: 7405400 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 1210 lines = 30 secs, start=line 11889, stop=line 13098
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=4081 ... i=4085  and j-(k+1)=2515 ... j=2519 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=4085 ... i-(k-1)-1=4083  and j=2519 ... j-(k-1)=2517 (inclusive)
+getTcailog dayidx 14, offset: 8013250, peak i time: 20000123010646650000
+No specials, load day 14: 20000123 - from byte: 7413250 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 4409100, peak i time: 20000123003644575000
+No specials, load day 14: 20000123 - from byte: 3809100 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 330 lines = 8 secs, start=line 11813, stop=line 12142
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=4089 ... i=4093  and j-(k+1)=1079 ... j=1083 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=4093 ... i-(k-1)-1=4091  and j=1083 ... j-(k-1)=1081 (inclusive)
+getTcailog dayidx 14, offset: 8017750, peak i time: 20000123010648900000
+No specials, load day 14: 20000123 - from byte: 7417750 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 1631900, peak i time: 20000123001335975000
+No specials, load day 14: 20000123 - from byte: 1031900 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 591 lines = 14 secs, start=line 11650, stop=line 12240
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=4094 ... i=4098  and j-(k+1)=1450 ... j=1454 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=4098 ... i-(k-1)-1=4096  and j=1454 ... j-(k-1)=1452 (inclusive)
+getTcailog dayidx 14, offset: 8021400, peak i time: 20000123010650725000
+No specials, load day 14: 20000123 - from byte: 7421400 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 2526800, peak i time: 20000123002103425000
+No specials, load day 14: 20000123 - from byte: 1926800 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 520 lines = 13 secs, start=line 11576, stop=line 12095
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=4102 ... i=4106  and j-(k+1)=1039 ... j=1043 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=4106 ... i-(k-1)-1=4104  and j=1043 ... j-(k-1)=1041 (inclusive)
+getTcailog dayidx 14, offset: 8027250, peak i time: 20000123010653650000
+No specials, load day 14: 20000123 - from byte: 7427250 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 1590750, peak i time: 20000123001315400000
+No specials, load day 14: 20000123 - from byte: 990750 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 1089 lines = 27 secs, start=line 11713, stop=line 12801
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=4117 ... i=4121  and j-(k+1)=264 ... j=268 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=4121 ... i-(k-1)-1=4119  and j=268 ... j-(k-1)=266 (inclusive)
+getTcailog dayidx 14, offset: 8040700, peak i time: 20000123010700375000
+No specials, load day 14: 20000123 - from byte: 7440700 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 455800, peak i time: 20000123000347925000
+! there is some problem - buffers are not full or -1 was sent back
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=4127 ... i=4131  and j-(k+1)=2905 ... j=2909 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=4131 ... i-(k-1)-1=4129  and j=2909 ... j-(k-1)=2907 (inclusive)
+getTcailog dayidx 14, offset: 8048600, peak i time: 20000123010704325000
+No specials, load day 14: 20000123 - from byte: 7448600 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 5372200, peak i time: 20000123004446125000
+No specials, load day 14: 20000123 - from byte: 4772200 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 62 lines = 1 secs, start=line 11994, stop=line 12055
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=4133 ... i=4137  and j-(k+1)=1068 ... j=1072 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=4137 ... i-(k-1)-1=4135  and j=1072 ... j-(k-1)=1070 (inclusive)
+getTcailog dayidx 14, offset: 8053900, peak i time: 20000123010706975000
+No specials, load day 14: 20000123 - from byte: 7453900 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 1623250, peak i time: 20000123001331650000
+No specials, load day 14: 20000123 - from byte: 1023250 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 1208 lines = 30 secs, start=line 11058, stop=line 12265
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=4321 ... i=4325  and j-(k+1)=2353 ... j=2357 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=4325 ... i-(k-1)-1=4323  and j=2357 ... j-(k-1)=2355 (inclusive)
+getTcailog dayidx 14, offset: 8528650, peak i time: 20000123011104350000
+No specials, load day 14: 20000123 - from byte: 7928650 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 4094100, peak i time: 20000123003407075000
+No specials, load day 14: 20000123 - from byte: 3494100 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 1 lines = 0 secs, start=line 12001, stop=line 12001
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=4454 ... i=4458  and j-(k+1)=4086 ... j=4090 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=4458 ... i-(k-1)-1=4456  and j=4090 ... j-(k-1)=4088 (inclusive)
+getTcailog dayidx 14, offset: 8763200, peak i time: 20000123011301625000
+No specials, load day 14: 20000123 - from byte: 8163200 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 8016500, peak i time: 20000123010648275000
+No specials, load day 14: 20000123 - from byte: 7416500 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 377 lines = 9 secs, start=line 11903, stop=line 12279
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=4458 ... i=4462  and j-(k+1)=4102 ... j=4106 (inclusive)
+MAXED P1 MATCH:	k=5 is the length of it. The match goes from i-1=4464 ... i-(k-1)-1=4460  and j=4108 ... j-(k-1)=4104 (inclusive)
+getTcailog dayidx 14, offset: 8766250, peak i time: 20000123011303150000
+No specials, load day 14: 20000123 - from byte: 8166250 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 8027250, peak i time: 20000123010653650000
+No specials, load day 14: 20000123 - from byte: 7427250 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 369 lines = 9 secs, start=line 11845, stop=line 12213
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=4479 ... i=4483  and j-(k+1)=4070 ... j=4074 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=4483 ... i-(k-1)-1=4481  and j=4074 ... j-(k-1)=4072 (inclusive)
+getTcailog dayidx 14, offset: 8794800, peak i time: 20000123011317425000
+No specials, load day 14: 20000123 - from byte: 8194800 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 8004650, peak i time: 20000123010642350000
+No specials, load day 14: 20000123 - from byte: 7404650 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 498 lines = 12 secs, start=line 11933, stop=line 12430
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=4484 ... i=4488  and j-(k+1)=1415 ... j=1419 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=4488 ... i-(k-1)-1=4486  and j=1419 ... j-(k-1)=1417 (inclusive)
+getTcailog dayidx 14, offset: 8798600, peak i time: 20000123011319325000
+No specials, load day 14: 20000123 - from byte: 8198600 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 2497950, peak i time: 20000123002049000000
+No specials, load day 14: 20000123 - from byte: 1897950 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 370 lines = 9 secs, start=line 11855, stop=line 12224
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=4493 ... i=4497  and j-(k+1)=1082 ... j=1086 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=4497 ... i-(k-1)-1=4495  and j=1086 ... j-(k-1)=1084 (inclusive)
+getTcailog dayidx 14, offset: 8808300, peak i time: 20000123011324175000
+No specials, load day 14: 20000123 - from byte: 8208300 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 1634600, peak i time: 20000123001337325000
+No specials, load day 14: 20000123 - from byte: 1034600 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 400 lines = 10 secs, start=line 11659, stop=line 12058
+expand_ret > -1
+FOUND P1 MATCH:	k=4 is the length of it. The match goes from i-(k+1)=4494 ... i=4499  and j-(k+1)=4138 ... j=4143 (inclusive)
+MAXED P1 MATCH:	k=4 is the length of it. The match goes from i-1=4499 ... i-(k-1)-1=4496  and j=4143 ... j-(k-1)=4140 (inclusive)
+getTcailog dayidx 14, offset: 8808750, peak i time: 20000123011324400000
+No specials, load day 14: 20000123 - from byte: 8208750 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 8062050, peak i time: 20000123010711050000
+No specials, load day 14: 20000123 - from byte: 7462050 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 470 lines = 11 secs, start=line 11638, stop=line 12107
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=4498 ... i=4502  and j-(k+1)=4459 ... j=4463 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=4502 ... i-(k-1)-1=4500  and j=4463 ... j-(k-1)=4461 (inclusive)
+getTcailog dayidx 14, offset: 8811700, peak i time: 20000123011325875000
+No specials, load day 14: 20000123 - from byte: 8211700 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 8766750, peak i time: 20000123011303400000
+No specials, load day 14: 20000123 - from byte: 8166750 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 262 lines = 6 secs, start=line 11844, stop=line 12105
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=4512 ... i=4516  and j-(k+1)=2366 ... j=2370 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=4516 ... i-(k-1)-1=4514  and j=2370 ... j-(k-1)=2368 (inclusive)
+getTcailog dayidx 14, offset: 8844250, peak i time: 20000123011342150000
+No specials, load day 14: 20000123 - from byte: 8244250 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 4103700, peak i time: 20000123003411875000
+No specials, load day 14: 20000123 - from byte: 3503700 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 95 lines = 2 secs, start=line 11948, stop=line 12042
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=4693 ... i=4697  and j-(k+1)=4117 ... j=4121 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=4697 ... i-(k-1)-1=4695  and j=4121 ... j-(k-1)=4119 (inclusive)
+getTcailog dayidx 14, offset: 9245550, peak i time: 20000123011702800000
+No specials, load day 14: 20000123 - from byte: 8645550 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 8040700, peak i time: 20000123010700375000
+No specials, load day 14: 20000123 - from byte: 7440700 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 233 lines = 5 secs, start=line 11980, stop=line 12212
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=4695 ... i=4699  and j-(k+1)=518 ... j=522 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=4699 ... i-(k-1)-1=4697  and j=522 ... j-(k-1)=520 (inclusive)
+getTcailog dayidx 14, offset: 9246000, peak i time: 20000123011703025000
+No specials, load day 14: 20000123 - from byte: 8646000 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 793350, peak i time: 20000123000636700000
+No specials, load day 14: 20000123 - from byte: 193350 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 93 lines = 2 secs, start=line 11968, stop=line 12060
+expand_ret > -1
+FOUND P1 MATCH:	k=4 is the length of it. The match goes from i-(k+1)=4696 ... i=4701  and j-(k+1)=4492 ... j=4497 (inclusive)
+MAXED P1 MATCH:	k=10 is the length of it. The match goes from i-1=4707 ... i-(k-1)-1=4698  and j=4503 ... j-(k-1)=4494 (inclusive)
+getTcailog dayidx 14, offset: 9246200, peak i time: 20000123011703125000
+No specials, load day 14: 20000123 - from byte: 8646200 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 8806500, peak i time: 20000123011323275000
+No specials, load day 14: 20000123 - from byte: 8206500 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 226 lines = 5 secs, start=line 11969, stop=line 12194
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=4708 ... i=4712  and j-(k+1)=4074 ... j=4078 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=4712 ... i-(k-1)-1=4710  and j=4078 ... j-(k-1)=4076 (inclusive)
+getTcailog dayidx 14, offset: 9254200, peak i time: 20000123011707125000
+No specials, load day 14: 20000123 - from byte: 8654200 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 8009400, peak i time: 20000123010644725000
+No specials, load day 14: 20000123 - from byte: 7409400 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 399 lines = 9 secs, start=line 11820, stop=line 12218
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=4729 ... i=4733  and j-(k+1)=4094 ... j=4098 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=4733 ... i-(k-1)-1=4731  and j=4098 ... j-(k-1)=4096 (inclusive)
+getTcailog dayidx 14, offset: 9285750, peak i time: 20000123011722900000
+No specials, load day 14: 20000123 - from byte: 8685750 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 8021400, peak i time: 20000123010650725000
+No specials, load day 14: 20000123 - from byte: 7421400 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 195 lines = 4 secs, start=line 11888, stop=line 12082
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=4733 ... i=4737  and j-(k+1)=4092 ... j=4096 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=4737 ... i-(k-1)-1=4735  and j=4096 ... j-(k-1)=4094 (inclusive)
+getTcailog dayidx 14, offset: 9289200, peak i time: 20000123011724625000
+No specials, load day 14: 20000123 - from byte: 8689200 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 8019350, peak i time: 20000123010649700000
+No specials, load day 14: 20000123 - from byte: 7419350 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 225 lines = 5 secs, start=line 11817, stop=line 12041
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=4745 ... i=4749  and j-(k+1)=1043 ... j=1047 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=4749 ... i-(k-1)-1=4747  and j=1047 ... j-(k-1)=1045 (inclusive)
+getTcailog dayidx 14, offset: 9305600, peak i time: 20000123011732825000
+No specials, load day 14: 20000123 - from byte: 8705600 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 1595350, peak i time: 20000123001317700000
+No specials, load day 14: 20000123 - from byte: 995350 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 531 lines = 13 secs, start=line 11831, stop=line 12361
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=4748 ... i=4752  and j-(k+1)=1470 ... j=1474 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=4752 ... i-(k-1)-1=4750  and j=1474 ... j-(k-1)=1472 (inclusive)
+getTcailog dayidx 14, offset: 9309100, peak i time: 20000123011734575000
+No specials, load day 14: 20000123 - from byte: 8709100 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 2553900, peak i time: 20000123002116975000
+No specials, load day 14: 20000123 - from byte: 1953900 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 56 lines = 1 secs, start=line 11968, stop=line 12023
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=4750 ... i=4754  and j-(k+1)=4112 ... j=4116 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=4754 ... i-(k-1)-1=4752  and j=4116 ... j-(k-1)=4114 (inclusive)
+getTcailog dayidx 14, offset: 9310250, peak i time: 20000123011735150000
+No specials, load day 14: 20000123 - from byte: 8710250 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 8038350, peak i time: 20000123010659200000
+No specials, load day 14: 20000123 - from byte: 7438350 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 523 lines = 13 secs, start=line 11737, stop=line 12259
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=4754 ... i=4758  and j-(k+1)=2667 ... j=2671 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=4758 ... i-(k-1)-1=4756  and j=2671 ... j-(k-1)=2669 (inclusive)
+getTcailog dayidx 14, offset: 9314050, peak i time: 20000123011737050000
+No specials, load day 14: 20000123 - from byte: 8714050 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 4827300, peak i time: 20000123004013675000
+No specials, load day 14: 20000123 - from byte: 4227300 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 111 lines = 2 secs, start=line 11939, stop=line 12049
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=4759 ... i=4763  and j-(k+1)=248 ... j=252 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=4763 ... i-(k-1)-1=4761  and j=252 ... j-(k-1)=250 (inclusive)
+getTcailog dayidx 14, offset: 9319650, peak i time: 20000123011739850000
+No specials, load day 14: 20000123 - from byte: 8719650 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 439650, peak i time: 20000123000339850000
+! there is some problem - buffers are not full or -1 was sent back
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=5066 ... i=5070  and j-(k+1)=521 ... j=525 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=5070 ... i-(k-1)-1=5068  and j=525 ... j-(k-1)=523 (inclusive)
+getTcailog dayidx 14, offset: 9881700, peak i time: 20000123012220875000
+No specials, load day 14: 20000123 - from byte: 9281700 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 795500, peak i time: 20000123000637775000
+No specials, load day 14: 20000123 - from byte: 195500 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 106 lines = 2 secs, start=line 11926, stop=line 12031
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=5431 ... i=5435  and j-(k+1)=26 ... j=30 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=5435 ... i-(k-1)-1=5433  and j=30 ... j-(k-1)=28 (inclusive)
+getTcailog dayidx 14, offset: 10553350, peak i time: 20000123012756700000
+No specials, load day 14: 20000123 - from byte: 9953350 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 73950, peak i time: 20000123000037000000
+! there is some problem - buffers are not full or -1 was sent back
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=5457 ... i=5461  and j-(k+1)=4457 ... j=4461 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=5461 ... i-(k-1)-1=5459  and j=4461 ... j-(k-1)=4459 (inclusive)
+getTcailog dayidx 14, offset: 10592200, peak i time: 20000123012816125000
+No specials, load day 14: 20000123 - from byte: 9992200 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 8766050, peak i time: 20000123011303050000
+No specials, load day 14: 20000123 - from byte: 8166050 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 210 lines = 5 secs, start=line 11979, stop=line 12188
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=5459 ... i=5463  and j-(k+1)=4081 ... j=4085 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=5463 ... i-(k-1)-1=5461  and j=4085 ... j-(k-1)=4083 (inclusive)
+getTcailog dayidx 14, offset: 10592900, peak i time: 20000123012816475000
+No specials, load day 14: 20000123 - from byte: 9992900 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 8013250, peak i time: 20000123010646650000
+No specials, load day 14: 20000123 - from byte: 7413250 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 225 lines = 5 secs, start=line 11944, stop=line 12168
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=5465 ... i=5469  and j-(k+1)=4755 ... j=4759 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=5469 ... i-(k-1)-1=5467  and j=4759 ... j-(k-1)=4757 (inclusive)
+getTcailog dayidx 14, offset: 10600500, peak i time: 20000123012820275000
+No specials, load day 14: 20000123 - from byte: 10000500 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 9315800, peak i time: 20000123011737925000
+No specials, load day 14: 20000123 - from byte: 8715800 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 230 lines = 5 secs, start=line 11788, stop=line 12017
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=6155 ... i=6159  and j-(k+1)=4482 ... j=4486 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=6159 ... i-(k-1)-1=6157  and j=4486 ... j-(k-1)=4484 (inclusive)
+getTcailog dayidx 14, offset: 12213950, peak i time: 20000123014147000000
+No specials, load day 14: 20000123 - from byte: 11613950 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 8796900, peak i time: 20000123011318475000
+No specials, load day 14: 20000123 - from byte: 8196900 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 420 lines = 10 secs, start=line 11896, stop=line 12315
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=6167 ... i=6171  and j-(k+1)=4111 ... j=4115 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=6171 ... i-(k-1)-1=6169  and j=4115 ... j-(k-1)=4113 (inclusive)
+getTcailog dayidx 14, offset: 12227700, peak i time: 20000123014153875000
+No specials, load day 14: 20000123 - from byte: 11627700 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 8038100, peak i time: 20000123010659075000
+No specials, load day 14: 20000123 - from byte: 7438100 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 586 lines = 14 secs, start=line 11610, stop=line 12195
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=6216 ... i=6220  and j-(k+1)=6211 ... j=6215 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=6220 ... i-(k-1)-1=6218  and j=6215 ... j-(k-1)=6213 (inclusive)
+getTcailog dayidx 14, offset: 12339350, peak i time: 20000123014249700000
+No specials, load day 14: 20000123 - from byte: 11739350 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 12334300, peak i time: 20000123014247175000
+No specials, load day 14: 20000123 - from byte: 11734300 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 594 lines = 14 secs, start=line 11858, stop=line 12451
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=6298 ... i=6302  and j-(k+1)=6205 ... j=6209 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=6302 ... i-(k-1)-1=6300  and j=6209 ... j-(k-1)=6207 (inclusive)
+getTcailog dayidx 14, offset: 12524600, peak i time: 20000123014422325000
+No specials, load day 14: 20000123 - from byte: 11924600 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 12321850, peak i time: 20000123014240950000
+No specials, load day 14: 20000123 - from byte: 11721850 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 113 lines = 2 secs, start=line 11969, stop=line 12081
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=6303 ... i=6307  and j-(k+1)=6212 ... j=6216 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=6307 ... i-(k-1)-1=6305  and j=6216 ... j-(k-1)=6214 (inclusive)
+getTcailog dayidx 14, offset: 12537650, peak i time: 20000123014428850000
+No specials, load day 14: 20000123 - from byte: 11937650 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 12334900, peak i time: 20000123014247475000
+No specials, load day 14: 20000123 - from byte: 11734900 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 512 lines = 12 secs, start=line 11846, stop=line 12357
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=6307 ... i=6311  and j-(k+1)=6217 ... j=6221 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=6311 ... i-(k-1)-1=6309  and j=6221 ... j-(k-1)=6219 (inclusive)
+getTcailog dayidx 14, offset: 12542700, peak i time: 20000123014431375000
+No specials, load day 14: 20000123 - from byte: 11942700 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 12339950, peak i time: 20000123014250000000
+No specials, load day 14: 20000123 - from byte: 11739950 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 512 lines = 12 secs, start=line 11745, stop=line 12256
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=6697 ... i=6701  and j-(k+1)=3376 ... j=3380 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=6701 ... i-(k-1)-1=6699  and j=3380 ... j-(k-1)=3378 (inclusive)
+getTcailog dayidx 14, offset: 13668100, peak i time: 20000123015354075000
+No specials, load day 14: 20000123 - from byte: 13068100 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 6492650, peak i time: 20000123005406350000
+No specials, load day 14: 20000123 - from byte: 5892650 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 47 lines = 1 secs, start=line 11988, stop=line 12034
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=6749 ... i=6753  and j-(k+1)=4513 ... j=4517 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=6753 ... i-(k-1)-1=6751  and j=4517 ... j-(k-1)=4515 (inclusive)
+getTcailog dayidx 14, offset: 13745950, peak i time: 20000123015433000000
+No specials, load day 14: 20000123 - from byte: 13145950 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 8844500, peak i time: 20000123011342275000
+No specials, load day 14: 20000123 - from byte: 8244500 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 98 lines = 2 secs, start=line 11946, stop=line 12043
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=7049 ... i=7053  and j-(k+1)=3676 ... j=3680 (inclusive)
+MAXED P1 MATCH:	k=4 is the length of it. The match goes from i-1=7054 ... i-(k-1)-1=7051  and j=3681 ... j-(k-1)=3678 (inclusive)
+getTcailog dayidx 14, offset: 14349900, peak i time: 20000123015934975000
+No specials, load day 14: 20000123 - from byte: 13749900 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 7213200, peak i time: 20000123010006625000
+No specials, load day 14: 20000123 - from byte: 6613200 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 3138 lines = 78 secs, start=line 10491, stop=line 13628
+expand_ret > -1
+MID   SERT  i:l=0		 78.45		 0123-015857.225 - 0123-020015.650          NEXT:    0.00		 -. - -.       
+MID   SERT  j:l=1		 78.45		 0123-005928.875 - 0123-010047.300          NEXT:    0.00		 -. - -.       
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=7057 ... i=7061  and j-(k+1)=3683 ... j=3687 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=7061 ... i-(k-1)-1=7059  and j=3687 ... j-(k-1)=3685 (inclusive)
+getTcailog dayidx 14, offset: 14362150, peak i time: 20000123015941100000
+No specials, load day 14: 20000123 - from byte: 13762150 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 7225450, peak i time: 20000123010012750000
+No specials, load day 14: 20000123 - from byte: 6625450 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 3138 lines = 78 secs, start=line 10246, stop=line 13383
+expand_ret > -1
+MID   SERT  i:l=0		 78.45		 0123-015857.225 - 0123-020015.650          NEXT:   78.45		 0123-015857.225 - 0123-020015.650       ...1 (q) == 0 (l)...     SUPPRESSED ! 
+MID   SERT  j:l=2		 78.45		 0123-005928.875 - 0123-010047.300          NEXT:   78.45		 0123-005928.875 - 0123-010047.300       ...3 (q) == 2 (l)...     SUPPRESSED ! 
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=7072 ... i=7076  and j-(k+1)=3693 ... j=3697 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=7076 ... i-(k-1)-1=7074  and j=3697 ... j-(k-1)=3695 (inclusive)
+getTcailog dayidx 14, offset: 14402900, peak i time: 20000123020001475000
+No specials, load day 14: 20000123 - from byte: 13802900 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 7266200, peak i time: 20000123010033125000
+No specials, load day 14: 20000123 - from byte: 6666200 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 3138 lines = 78 secs, start=line 9431, stop=line 12568
+expand_ret > -1
+MID   SERT  i:l=0		 78.45		 0123-015857.225 - 0123-020015.650          NEXT:   78.45		 0123-015857.225 - 0123-020015.650       ...1 (q) == 0 (l)...     SUPPRESSED ! 
+MID   SERT  j:l=3		 78.45		 0123-005928.875 - 0123-010047.300          NEXT:   78.45		 0123-005928.875 - 0123-010047.300       ...4 (q) == 3 (l)...     SUPPRESSED ! 
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=7367 ... i=7371  and j-(k+1)=271 ... j=275 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=7371 ... i-(k-1)-1=7369  and j=275 ... j-(k-1)=273 (inclusive)
+getTcailog dayidx 14, offset: 15040700, peak i time: 20000123020520375000
+No specials, load day 14: 20000123 - from byte: 14440700 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 458300, peak i time: 20000123000349175000
+! there is some problem - buffers are not full or -1 was sent back
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=7431 ... i=7435  and j-(k+1)=7413 ... j=7417 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=7435 ... i-(k-1)-1=7433  and j=7417 ... j-(k-1)=7415 (inclusive)
+getTcailog dayidx 14, offset: 15096550, peak i time: 20000123020548300000
+No specials, load day 14: 20000123 - from byte: 14496550 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 15076650, peak i time: 20000123020538350000
+No specials, load day 14: 20000123 - from byte: 14476650 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 133 lines = 3 secs, start=line 11927, stop=line 12059
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=7455 ... i=7459  and j-(k+1)=7447 ... j=7451 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=7459 ... i-(k-1)-1=7457  and j=7451 ... j-(k-1)=7449 (inclusive)
+getTcailog dayidx 14, offset: 15121950, peak i time: 20000123020601000000
+No specials, load day 14: 20000123 - from byte: 14521950 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 15112600, peak i time: 20000123020556325000
+No specials, load day 14: 20000123 - from byte: 14512600 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 85 lines = 2 secs, start=line 11950, stop=line 12034
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=7521 ... i=7525  and j-(k+1)=7466 ... j=7470 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=7525 ... i-(k-1)-1=7523  and j=7470 ... j-(k-1)=7468 (inclusive)
+getTcailog dayidx 14, offset: 15193700, peak i time: 20000123020636875000
+No specials, load day 14: 20000123 - from byte: 14593700 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 15130350, peak i time: 20000123020605200000
+No specials, load day 14: 20000123 - from byte: 14530350 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 173 lines = 4 secs, start=line 11961, stop=line 12133
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=7547 ... i=7551  and j-(k+1)=7456 ... j=7460 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=7551 ... i-(k-1)-1=7549  and j=7460 ... j-(k-1)=7458 (inclusive)
+getTcailog dayidx 14, offset: 15218750, peak i time: 20000123020649400000
+No specials, load day 14: 20000123 - from byte: 14618750 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 15122350, peak i time: 20000123020601200000
+No specials, load day 14: 20000123 - from byte: 14522350 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 54 lines = 1 secs, start=line 11963, stop=line 12016
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=7555 ... i=7559  and j-(k+1)=7455 ... j=7459 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=7559 ... i-(k-1)-1=7557  and j=7459 ... j-(k-1)=7457 (inclusive)
+getTcailog dayidx 14, offset: 15227750, peak i time: 20000123020653900000
+No specials, load day 14: 20000123 - from byte: 14627750 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 15121950, peak i time: 20000123020601000000
+No specials, load day 14: 20000123 - from byte: 14521950 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 97 lines = 2 secs, start=line 11972, stop=line 12068
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=7610 ... i=7614  and j-(k+1)=7522 ... j=7526 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=7614 ... i-(k-1)-1=7612  and j=7526 ... j-(k-1)=7524 (inclusive)
+getTcailog dayidx 14, offset: 15295450, peak i time: 20000123020727750000
+No specials, load day 14: 20000123 - from byte: 14695450 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 15193900, peak i time: 20000123020636975000
+No specials, load day 14: 20000123 - from byte: 14593900 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 63 lines = 1 secs, start=line 11972, stop=line 12034
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=7618 ... i=7622  and j-(k+1)=7432 ... j=7436 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=7622 ... i-(k-1)-1=7620  and j=7436 ... j-(k-1)=7434 (inclusive)
+getTcailog dayidx 14, offset: 15304050, peak i time: 20000123020732050000
+No specials, load day 14: 20000123 - from byte: 14704050 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 15097950, peak i time: 20000123020549000000
+No specials, load day 14: 20000123 - from byte: 14497950 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 22 lines = 0 secs, start=line 11997, stop=line 12018
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=7640 ... i=7644  and j-(k+1)=7363 ... j=7367 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=7644 ... i-(k-1)-1=7642  and j=7367 ... j-(k-1)=7365 (inclusive)
+getTcailog dayidx 14, offset: 15325150, peak i time: 20000123020742600000
+No specials, load day 14: 20000123 - from byte: 14725150 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 15035650, peak i time: 20000123020517850000
+No specials, load day 14: 20000123 - from byte: 14435650 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 1 lines = 0 secs, start=line 12001, stop=line 12001
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=7647 ... i=7651  and j-(k+1)=7544 ... j=7548 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=7651 ... i-(k-1)-1=7649  and j=7548 ... j-(k-1)=7546 (inclusive)
+getTcailog dayidx 14, offset: 15332150, peak i time: 20000123020746100000
+No specials, load day 14: 20000123 - from byte: 14732150 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 15216850, peak i time: 20000123020648450000
+No specials, load day 14: 20000123 - from byte: 14616850 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 1 lines = 0 secs, start=line 12001, stop=line 12001
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=7651 ... i=7655  and j-(k+1)=7490 ... j=7494 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=7655 ... i-(k-1)-1=7653  and j=7494 ... j-(k-1)=7492 (inclusive)
+getTcailog dayidx 14, offset: 15335100, peak i time: 20000123020747575000
+No specials, load day 14: 20000123 - from byte: 14735100 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 15153100, peak i time: 20000123020616575000
+No specials, load day 14: 20000123 - from byte: 14553100 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 74 lines = 1 secs, start=line 11970, stop=line 12043
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=7653 ... i=7657  and j-(k+1)=7446 ... j=7450 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=7657 ... i-(k-1)-1=7655  and j=7450 ... j-(k-1)=7448 (inclusive)
+getTcailog dayidx 14, offset: 15335800, peak i time: 20000123020747925000
+No specials, load day 14: 20000123 - from byte: 14735800 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 15111800, peak i time: 20000123020555925000
+No specials, load day 14: 20000123 - from byte: 14511800 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 247 lines = 6 secs, start=line 11962, stop=line 12208
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=7684 ... i=7688  and j-(k+1)=3257 ... j=3261 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=7688 ... i-(k-1)-1=7686  and j=3261 ... j-(k-1)=3259 (inclusive)
+getTcailog dayidx 14, offset: 15370250, peak i time: 20000123020805150000
+No specials, load day 14: 20000123 - from byte: 14770250 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 6148300, peak i time: 20000123005114175000
+No specials, load day 14: 20000123 - from byte: 5548300 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 1 lines = 0 secs, start=line 12001, stop=line 12001
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=7769 ... i=7773  and j-(k+1)=329 ... j=333 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=7773 ... i-(k-1)-1=7771  and j=333 ... j-(k-1)=331 (inclusive)
+getTcailog dayidx 14, offset: 15514650, peak i time: 20000123020917350000
+No specials, load day 14: 20000123 - from byte: 14914650 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 532650, peak i time: 20000123000426350000
+! there is some problem - buffers are not full or -1 was sent back
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=7779 ... i=7783  and j-(k+1)=7744 ... j=7748 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=7783 ... i-(k-1)-1=7781  and j=7748 ... j-(k-1)=7746 (inclusive)
+getTcailog dayidx 14, offset: 15529650, peak i time: 20000123020924850000
+No specials, load day 14: 20000123 - from byte: 14929650 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 15450900, peak i time: 20000123020845475000
+No specials, load day 14: 20000123 - from byte: 14850900 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 49 lines = 1 secs, start=line 11993, stop=line 12041
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=7814 ... i=7818  and j-(k+1)=383 ... j=387 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=7818 ... i-(k-1)-1=7816  and j=387 ... j-(k-1)=385 (inclusive)
+getTcailog dayidx 14, offset: 15609050, peak i time: 20000123021004550000
+No specials, load day 14: 20000123 - from byte: 15009050 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 596900, peak i time: 20000123000458475000
+! there is some problem - buffers are not full or -1 was sent back
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=8007 ... i=8011  and j-(k+1)=4484 ... j=4488 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=8011 ... i-(k-1)-1=8009  and j=4488 ... j-(k-1)=4486 (inclusive)
+getTcailog dayidx 14, offset: 15980900, peak i time: 20000123021310475000
+No specials, load day 14: 20000123 - from byte: 15380900 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 8798600, peak i time: 20000123011319325000
+No specials, load day 14: 20000123 - from byte: 8198600 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 1 lines = 0 secs, start=line 12001, stop=line 12001
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=8102 ... i=8106  and j-(k+1)=2176 ... j=2180 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=8106 ... i-(k-1)-1=8104  and j=2180 ... j-(k-1)=2178 (inclusive)
+getTcailog dayidx 14, offset: 16115100, peak i time: 20000123021417575000
+No specials, load day 14: 20000123 - from byte: 15515100 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 3870050, peak i time: 20000123003215050000
+No specials, load day 14: 20000123 - from byte: 3270050 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 82 lines = 2 secs, start=line 11995, stop=line 12076
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=8589 ... i=8593  and j-(k+1)=1907 ... j=1911 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=8593 ... i-(k-1)-1=8591  and j=1911 ... j-(k-1)=1909 (inclusive)
+getTcailog dayidx 14, offset: 17175650, peak i time: 20000123022307850000
+No specials, load day 14: 20000123 - from byte: 16575650 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 3469950, peak i time: 20000123002855000000
+No specials, load day 14: 20000123 - from byte: 2869950 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 1 lines = 0 secs, start=line 12001, stop=line 12001
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=8675 ... i=8679  and j-(k+1)=4709 ... j=4713 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=8679 ... i-(k-1)-1=8677  and j=4713 ... j-(k-1)=4711 (inclusive)
+getTcailog dayidx 14, offset: 17337400, peak i time: 20000123022428725000
+No specials, load day 14: 20000123 - from byte: 16737400 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 9256250, peak i time: 20000123011708150000
+No specials, load day 14: 20000123 - from byte: 8656250 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 75 lines = 1 secs, start=line 11992, stop=line 12066
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=8677 ... i=8681  and j-(k+1)=2582 ... j=2586 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=8681 ... i-(k-1)-1=8679  and j=2586 ... j-(k-1)=2584 (inclusive)
+getTcailog dayidx 14, offset: 17337800, peak i time: 20000123022428925000
+No specials, load day 14: 20000123 - from byte: 16737800 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 4625800, peak i time: 20000123003832925000
+No specials, load day 14: 20000123 - from byte: 4025800 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 46 lines = 1 secs, start=line 11994, stop=line 12039
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=8905 ... i=8909  and j-(k+1)=6298 ... j=6302 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=8909 ... i-(k-1)-1=8907  and j=6302 ... j-(k-1)=6300 (inclusive)
+getTcailog dayidx 14, offset: 17845400, peak i time: 20000123022842725000
+No specials, load day 14: 20000123 - from byte: 17245400 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 12524600, peak i time: 20000123014422325000
+No specials, load day 14: 20000123 - from byte: 11924600 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 560 lines = 14 secs, start=line 11801, stop=line 12360
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=9236 ... i=9240  and j-(k+1)=4706 ... j=4710 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=9240 ... i-(k-1)-1=9238  and j=4710 ... j-(k-1)=4708 (inclusive)
+getTcailog dayidx 14, offset: 18616300, peak i time: 20000123023508175000
+No specials, load day 14: 20000123 - from byte: 18016300 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 9253100, peak i time: 20000123011706575000
+No specials, load day 14: 20000123 - from byte: 8653100 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 1 lines = 0 secs, start=line 12001, stop=line 12001
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=9254 ... i=9258  and j-(k+1)=1504 ... j=1508 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=9258 ... i-(k-1)-1=9256  and j=1508 ... j-(k-1)=1506 (inclusive)
+getTcailog dayidx 14, offset: 18632300, peak i time: 20000123023516175000
+No specials, load day 14: 20000123 - from byte: 18032300 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 2595650, peak i time: 20000123002137850000
+No specials, load day 14: 20000123 - from byte: 1995650 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 1 lines = 0 secs, start=line 12001, stop=line 12001
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=9272 ... i=9276  and j-(k+1)=4123 ... j=4127 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=9276 ... i-(k-1)-1=9274  and j=4127 ... j-(k-1)=4125 (inclusive)
+getTcailog dayidx 14, offset: 18654300, peak i time: 20000123023527175000
+No specials, load day 14: 20000123 - from byte: 18054300 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 8045150, peak i time: 20000123010702600000
+No specials, load day 14: 20000123 - from byte: 7445150 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 66 lines = 1 secs, start=line 11977, stop=line 12042
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=9404 ... i=9408  and j-(k+1)=7776 ... j=7780 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=9408 ... i-(k-1)-1=9406  and j=7780 ... j-(k-1)=7778 (inclusive)
+getTcailog dayidx 14, offset: 19011500, peak i time: 20000123023825775000
+No specials, load day 14: 20000123 - from byte: 18411500 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 15528350, peak i time: 20000123020924200000
+No specials, load day 14: 20000123 - from byte: 14928350 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 1 lines = 0 secs, start=line 12001, stop=line 12001
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=9541 ... i=9545  and j-(k+1)=8790 ... j=8794 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=9545 ... i-(k-1)-1=9543  and j=8794 ... j-(k-1)=8792 (inclusive)
+getTcailog dayidx 14, offset: 19466300, peak i time: 20000123024213175000
+No specials, load day 14: 20000123 - from byte: 18866300 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 17560150, peak i time: 20000123022620100000
+No specials, load day 14: 20000123 - from byte: 16960150 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 409 lines = 10 secs, start=line 11886, stop=line 12294
+expand_ret > -1
+MID   SERT  i:l=0		 10.23		 0123-024210.300 - 0123-024220.500          NEXT:   78.45		 0123-015857.225 - 0123-020015.650       
+MID   SERT  j:l=1		 10.23		 0123-022617.225 - 0123-022627.425          NEXT:   78.45		 0123-015857.225 - 0123-020015.650       
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=9543 ... i=9547  and j-(k+1)=6208 ... j=6212 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=9547 ... i-(k-1)-1=9545  and j=6212 ... j-(k-1)=6210 (inclusive)
+getTcailog dayidx 14, offset: 19467200, peak i time: 20000123024213625000
+No specials, load day 14: 20000123 - from byte: 18867200 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 12329150, peak i time: 20000123014244600000
+No specials, load day 14: 20000123 - from byte: 11729150 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 429 lines = 10 secs, start=line 11956, stop=line 12384
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=9699 ... i=9703  and j-(k+1)=1531 ... j=1535 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=9703 ... i-(k-1)-1=9701  and j=1535 ... j-(k-1)=1533 (inclusive)
+getTcailog dayidx 14, offset: 20149150, peak i time: 20000123024754600000
+No specials, load day 14: 20000123 - from byte: 19549150 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 2648200, peak i time: 20000123002204125000
+No specials, load day 14: 20000123 - from byte: 2048200 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 62 lines = 1 secs, start=line 11979, stop=line 12040
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=9817 ... i=9821  and j-(k+1)=9220 ... j=9224 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=9821 ... i-(k-1)-1=9819  and j=9224 ... j-(k-1)=9222 (inclusive)
+getTcailog dayidx 14, offset: 20415700, peak i time: 20000123025007875000
+No specials, load day 14: 20000123 - from byte: 19815700 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 18600200, peak i time: 20000123023500125000
+No specials, load day 14: 20000123 - from byte: 18000200 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 1 lines = 0 secs, start=line 12001, stop=line 12001
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=9833 ... i=9837  and j-(k+1)=1411 ... j=1415 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=9837 ... i-(k-1)-1=9835  and j=1415 ... j-(k-1)=1413 (inclusive)
+getTcailog dayidx 14, offset: 20432900, peak i time: 20000123025016475000
+No specials, load day 14: 20000123 - from byte: 19832900 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 2493500, peak i time: 20000123002046775000
+No specials, load day 14: 20000123 - from byte: 1893500 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 37 lines = 0 secs, start=line 11992, stop=line 12028
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=9841 ... i=9845  and j-(k+1)=1407 ... j=1411 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=9845 ... i-(k-1)-1=9843  and j=1411 ... j-(k-1)=1409 (inclusive)
+getTcailog dayidx 14, offset: 20448000, peak i time: 20000123025024025000
+No specials, load day 14: 20000123 - from byte: 19848000 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 2491300, peak i time: 20000123002045675000
+No specials, load day 14: 20000123 - from byte: 1891300 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 73 lines = 1 secs, start=line 11992, stop=line 12064
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=9887 ... i=9891  and j-(k+1)=4076 ... j=4080 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=9891 ... i-(k-1)-1=9889  and j=4080 ... j-(k-1)=4078 (inclusive)
+getTcailog dayidx 14, offset: 20504500, peak i time: 20000123025052275000
+No specials, load day 14: 20000123 - from byte: 19904500 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 8011650, peak i time: 20000123010645850000
+No specials, load day 14: 20000123 - from byte: 7411650 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 52 lines = 1 secs, start=line 11989, stop=line 12040
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=9890 ... i=9894  and j-(k+1)=1505 ... j=1509 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=9894 ... i-(k-1)-1=9892  and j=1509 ... j-(k-1)=1507 (inclusive)
+getTcailog dayidx 14, offset: 20505800, peak i time: 20000123025052925000
+No specials, load day 14: 20000123 - from byte: 19905800 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 2596350, peak i time: 20000123002138200000
+No specials, load day 14: 20000123 - from byte: 1996350 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 41 lines = 1 secs, start=line 11975, stop=line 12015
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=9901 ... i=9905  and j-(k+1)=9817 ... j=9821 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=9905 ... i-(k-1)-1=9903  and j=9821 ... j-(k-1)=9819 (inclusive)
+getTcailog dayidx 14, offset: 20513800, peak i time: 20000123025056925000
+No specials, load day 14: 20000123 - from byte: 19913800 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 20415700, peak i time: 20000123025007875000
+No specials, load day 14: 20000123 - from byte: 19815700 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 1 lines = 0 secs, start=line 12001, stop=line 12001
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=9906 ... i=9910  and j-(k+1)=4128 ... j=4132 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=9910 ... i-(k-1)-1=9908  and j=4132 ... j-(k-1)=4130 (inclusive)
+getTcailog dayidx 14, offset: 20517250, peak i time: 20000123025058650000
+No specials, load day 14: 20000123 - from byte: 19917250 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 8050200, peak i time: 20000123010705125000
+No specials, load day 14: 20000123 - from byte: 7450200 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 1 lines = 0 secs, start=line 12001, stop=line 12001
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=9908 ... i=9912  and j-(k+1)=205 ... j=209 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=9912 ... i-(k-1)-1=9910  and j=209 ... j-(k-1)=207 (inclusive)
+getTcailog dayidx 14, offset: 20518950, peak i time: 20000123025059500000
+No specials, load day 14: 20000123 - from byte: 19918950 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 402650, peak i time: 20000123000321350000
+! there is some problem - buffers are not full or -1 was sent back
+processing for searching 10000 repeats, i=10000
+ ---  0.422 seconds.
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=10010 ... i=10014  and j-(k+1)=7526 ... j=7530 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=10014 ... i-(k-1)-1=10012  and j=7530 ... j-(k-1)=7528 (inclusive)
+getTcailog dayidx 14, offset: 20753500, peak i time: 20000123025256775000
+No specials, load day 14: 20000123 - from byte: 20153500 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 15196500, peak i time: 20000123020638275000
+No specials, load day 14: 20000123 - from byte: 14596500 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 119 lines = 2 secs, start=line 11911, stop=line 12029
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=10045 ... i=10049  and j-(k+1)=7519 ... j=7523 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=10049 ... i-(k-1)-1=10047  and j=7523 ... j-(k-1)=7521 (inclusive)
+getTcailog dayidx 14, offset: 20820950, peak i time: 20000123025330500000
+No specials, load day 14: 20000123 - from byte: 20220950 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 15191850, peak i time: 20000123020635950000
+No specials, load day 14: 20000123 - from byte: 14591850 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 1 lines = 0 secs, start=line 12001, stop=line 12001
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=10272 ... i=10276  and j-(k+1)=6710 ... j=6714 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=10276 ... i-(k-1)-1=10274  and j=6714 ... j-(k-1)=6712 (inclusive)
+getTcailog dayidx 14, offset: 21627000, peak i time: 20000123030013525000
+No specials, load day 14: 20000123 - from byte: 21027000 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 13688150, peak i time: 20000123015404100000
+No specials, load day 14: 20000123 - from byte: 13088150 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 223 lines = 5 secs, start=line 11890, stop=line 12112
+expand_ret > -1
+MID   SERT  i:l=0		  5.57		 0123-030010.750 - 0123-030016.300          NEXT:   10.23		 0123-024210.300 - 0123-024220.500       
+MID   SERT  j:l=6		  5.57		 0123-015401.325 - 0123-015406.875          NEXT:   78.45		 0123-005928.875 - 0123-010047.300       
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=10346 ... i=10350  and j-(k+1)=124 ... j=128 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=10350 ... i-(k-1)-1=10348  and j=128 ... j-(k-1)=126 (inclusive)
+getTcailog dayidx 14, offset: 21765150, peak i time: 20000123030122600000
+No specials, load day 14: 20000123 - from byte: 21165150 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 222450, peak i time: 20000123000151250000
+! there is some problem - buffers are not full or -1 was sent back
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=10373 ... i=10377  and j-(k+1)=148 ... j=152 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=10377 ... i-(k-1)-1=10375  and j=152 ... j-(k-1)=150 (inclusive)
+getTcailog dayidx 14, offset: 21857750, peak i time: 20000123030208900000
+No specials, load day 14: 20000123 - from byte: 21257750 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 315050, peak i time: 20000123000237550000
+! there is some problem - buffers are not full or -1 was sent back
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=10730 ... i=10734  and j-(k+1)=9818 ... j=9822 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=10734 ... i-(k-1)-1=10732  and j=9822 ... j-(k-1)=9820 (inclusive)
+getTcailog dayidx 14, offset: 22643650, peak i time: 20000123030841850000
+No specials, load day 14: 20000123 - from byte: 22043650 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 20416400, peak i time: 20000123025008225000
+No specials, load day 14: 20000123 - from byte: 19816400 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 64 lines = 1 secs, start=line 11987, stop=line 12050
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=10732 ... i=10736  and j-(k+1)=650 ... j=654 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=10736 ... i-(k-1)-1=10734  and j=654 ... j-(k-1)=652 (inclusive)
+getTcailog dayidx 14, offset: 22644400, peak i time: 20000123030842225000
+No specials, load day 14: 20000123 - from byte: 22044400 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 947150, peak i time: 20000123000753600000
+No specials, load day 14: 20000123 - from byte: 347150 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 1 lines = 0 secs, start=line 12001, stop=line 12001
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=11187 ... i=11191  and j-(k+1)=4847 ... j=4851 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=11191 ... i-(k-1)-1=11189  and j=4851 ... j-(k-1)=4849 (inclusive)
+getTcailog dayidx 14, offset: 23556800, peak i time: 20000123031618425000
+No specials, load day 14: 20000123 - from byte: 22956800 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 9493200, peak i time: 20000123011906625000
+No specials, load day 14: 20000123 - from byte: 8893200 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 100 lines = 2 secs, start=line 11982, stop=line 12081
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=11193 ... i=11197  and j-(k+1)=11189 ... j=11193 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=11197 ... i-(k-1)-1=11195  and j=11193 ... j-(k-1)=11191 (inclusive)
+getTcailog dayidx 14, offset: 23559550, peak i time: 20000123031619800000
+No specials, load day 14: 20000123 - from byte: 22959550 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 23557300, peak i time: 20000123031618675000
+No specials, load day 14: 20000123 - from byte: 22957300 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 991 lines = 24 secs, start=line 11976, stop=line 12966
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=11286 ... i=11290  and j-(k+1)=10685 ... j=10689 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=11290 ... i-(k-1)-1=11288  and j=10689 ... j-(k-1)=10687 (inclusive)
+getTcailog dayidx 14, offset: 23825650, peak i time: 20000123031832850000
+No specials, load day 14: 20000123 - from byte: 23225650 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 22566850, peak i time: 20000123030803450000
+No specials, load day 14: 20000123 - from byte: 21966850 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 34 lines = 0 secs, start=line 11998, stop=line 12031
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=11679 ... i=11683  and j-(k+1)=7837 ... j=7841 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=11683 ... i-(k-1)-1=11681  and j=7841 ... j-(k-1)=7839 (inclusive)
+getTcailog dayidx 14, offset: 25023550, peak i time: 20000123032831800000
+No specials, load day 14: 20000123 - from byte: 24423550 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 15647550, peak i time: 20000123021023800000
+No specials, load day 14: 20000123 - from byte: 15047550 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 96 lines = 2 secs, start=line 11997, stop=line 12092
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=11682 ... i=11686  and j-(k+1)=11678 ... j=11682 (inclusive)
+MAXED P1 MATCH:	k=4 is the length of it. The match goes from i-1=11687 ... i-(k-1)-1=11684  and j=11683 ... j-(k-1)=11680 (inclusive)
+getTcailog dayidx 14, offset: 25024550, peak i time: 20000123032832300000
+No specials, load day 14: 20000123 - from byte: 24424550 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 25023200, peak i time: 20000123032831625000
+No specials, load day 14: 20000123 - from byte: 24423200 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 242 lines = 6 secs, start=line 11866, stop=line 12107
+expand_ret > -1
+FOUND P1 MATCH:	k=4 is the length of it. The match goes from i-(k+1)=11684 ... i=11689  and j-(k+1)=11678 ... j=11683 (inclusive)
+MAXED P1 MATCH:	k=4 is the length of it. The match goes from i-1=11689 ... i-(k-1)-1=11686  and j=11683 ... j-(k-1)=11680 (inclusive)
+getTcailog dayidx 14, offset: 25025050, peak i time: 20000123032832550000
+No specials, load day 14: 20000123 - from byte: 24425050 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 25023200, peak i time: 20000123032831625000
+No specials, load day 14: 20000123 - from byte: 24423200 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 530 lines = 13 secs, start=line 11856, stop=line 12385
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=11687 ... i=11691  and j-(k+1)=11682 ... j=11686 (inclusive)
+MAXED P1 MATCH:	k=4 is the length of it. The match goes from i-1=11692 ... i-(k-1)-1=11689  and j=11687 ... j-(k-1)=11684 (inclusive)
+getTcailog dayidx 14, offset: 25025900, peak i time: 20000123032832975000
+No specials, load day 14: 20000123 - from byte: 24425900 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 25024550, peak i time: 20000123032832300000
+No specials, load day 14: 20000123 - from byte: 24424550 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 242 lines = 6 secs, start=line 11839, stop=line 12080
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=11690 ... i=11694  and j-(k+1)=11684 ... j=11688 (inclusive)
+MAXED P1 MATCH:	k=4 is the length of it. The match goes from i-1=11695 ... i-(k-1)-1=11692  and j=11689 ... j-(k-1)=11686 (inclusive)
+getTcailog dayidx 14, offset: 25026750, peak i time: 20000123032833400000
+No specials, load day 14: 20000123 - from byte: 24426750 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 25025050, peak i time: 20000123032832550000
+No specials, load day 14: 20000123 - from byte: 24425050 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 318 lines = 7 secs, start=line 11819, stop=line 12136
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=11775 ... i=11779  and j-(k+1)=11286 ... j=11290 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=11779 ... i-(k-1)-1=11777  and j=11290 ... j-(k-1)=11288 (inclusive)
+getTcailog dayidx 14, offset: 25363650, peak i time: 20000123033121850000
+No specials, load day 14: 20000123 - from byte: 24763650 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 23825650, peak i time: 20000123031832850000
+No specials, load day 14: 20000123 - from byte: 23225650 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 54 lines = 1 secs, start=line 11991, stop=line 12044
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=11777 ... i=11781  and j-(k+1)=11286 ... j=11290 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=11781 ... i-(k-1)-1=11779  and j=11290 ... j-(k-1)=11288 (inclusive)
+getTcailog dayidx 14, offset: 25363950, peak i time: 20000123033122000000
+No specials, load day 14: 20000123 - from byte: 24763950 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 23825650, peak i time: 20000123031832850000
+No specials, load day 14: 20000123 - from byte: 23225650 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 54 lines = 1 secs, start=line 11991, stop=line 12044
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=11830 ... i=11834  and j-(k+1)=11161 ... j=11165 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=11834 ... i-(k-1)-1=11832  and j=11165 ... j-(k-1)=11163 (inclusive)
+getTcailog dayidx 14, offset: 25548500, peak i time: 20000123033254275000
+No specials, load day 14: 20000123 - from byte: 24948500 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 23522300, peak i time: 20000123031601175000
+No specials, load day 14: 20000123 - from byte: 22922300 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 120 lines = 3 secs, start=line 11965, stop=line 12084
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=12039 ... i=12043  and j-(k+1)=8677 ... j=8681 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=12043 ... i-(k-1)-1=12041  and j=8681 ... j-(k-1)=8679 (inclusive)
+getTcailog dayidx 14, offset: 25915950, peak i time: 20000123033558000000
+No specials, load day 14: 20000123 - from byte: 25315950 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 17337800, peak i time: 20000123022428925000
+No specials, load day 14: 20000123 - from byte: 16737800 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 1 lines = 0 secs, start=line 12001, stop=line 12001
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=12055 ... i=12059  and j-(k+1)=2639 ... j=2643 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=12059 ... i-(k-1)-1=12057  and j=2643 ... j-(k-1)=2641 (inclusive)
+getTcailog dayidx 14, offset: 25930850, peak i time: 20000123033605450000
+No specials, load day 14: 20000123 - from byte: 25330850 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 4753150, peak i time: 20000123003936600000
+No specials, load day 14: 20000123 - from byte: 4153150 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 61 lines = 1 secs, start=line 11988, stop=line 12048
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=12098 ... i=12102  and j-(k+1)=4132 ... j=4136 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=12102 ... i-(k-1)-1=12100  and j=4136 ... j-(k-1)=4134 (inclusive)
+getTcailog dayidx 14, offset: 25994150, peak i time: 20000123033637100000
+No specials, load day 14: 20000123 - from byte: 25394150 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 8052950, peak i time: 20000123010706500000
+No specials, load day 14: 20000123 - from byte: 7452950 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 40 lines = 1 secs, start=line 11997, stop=line 12036
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=12180 ... i=12184  and j-(k+1)=556 ... j=560 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=12184 ... i-(k-1)-1=12182  and j=560 ... j-(k-1)=558 (inclusive)
+getTcailog dayidx 14, offset: 26122200, peak i time: 20000123033741125000
+No specials, load day 14: 20000123 - from byte: 25522200 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 845950, peak i time: 20000123000703000000
+No specials, load day 14: 20000123 - from byte: 245950 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 41 lines = 1 secs, start=line 12001, stop=line 12041
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=12195 ... i=12199  and j-(k+1)=4079 ... j=4083 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=12199 ... i-(k-1)-1=12197  and j=4083 ... j-(k-1)=4081 (inclusive)
+getTcailog dayidx 14, offset: 26150900, peak i time: 20000123033755475000
+No specials, load day 14: 20000123 - from byte: 25550900 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 8012800, peak i time: 20000123010646425000
+No specials, load day 14: 20000123 - from byte: 7412800 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 111 lines = 2 secs, start=line 11950, stop=line 12060
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=12243 ... i=12247  and j-(k+1)=9255 ... j=9259 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=12247 ... i-(k-1)-1=12245  and j=9259 ... j-(k-1)=9257 (inclusive)
+getTcailog dayidx 14, offset: 26225350, peak i time: 20000123033832700000
+No specials, load day 14: 20000123 - from byte: 25625350 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 18633000, peak i time: 20000123023516525000
+No specials, load day 14: 20000123 - from byte: 18033000 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 41 lines = 1 secs, start=line 12001, stop=line 12041
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=12246 ... i=12250  and j-(k+1)=10734 ... j=10738 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=12250 ... i-(k-1)-1=12248  and j=10738 ... j-(k-1)=10736 (inclusive)
+getTcailog dayidx 14, offset: 26228450, peak i time: 20000123033834250000
+No specials, load day 14: 20000123 - from byte: 25628450 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 22645000, peak i time: 20000123030842525000
+No specials, load day 14: 20000123 - from byte: 22045000 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 45 lines = 1 secs, start=line 11979, stop=line 12023
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=12331 ... i=12335  and j-(k+1)=11778 ... j=11782 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=12335 ... i-(k-1)-1=12333  and j=11782 ... j-(k-1)=11780 (inclusive)
+getTcailog dayidx 14, offset: 26471200, peak i time: 20000123034035625000
+No specials, load day 14: 20000123 - from byte: 25871200 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 25364100, peak i time: 20000123033122075000
+No specials, load day 14: 20000123 - from byte: 24764100 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 124 lines = 3 secs, start=line 11978, stop=line 12101
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=12333 ... i=12337  and j-(k+1)=11777 ... j=11781 (inclusive)
+MAXED P1 MATCH:	k=4 is the length of it. The match goes from i-1=12338 ... i-(k-1)-1=12335  and j=11782 ... j-(k-1)=11779 (inclusive)
+getTcailog dayidx 14, offset: 26471750, peak i time: 20000123034035900000
+No specials, load day 14: 20000123 - from byte: 25871750 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 25363950, peak i time: 20000123033122000000
+No specials, load day 14: 20000123 - from byte: 24763950 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 113 lines = 2 secs, start=line 11971, stop=line 12083
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=12337 ... i=12341  and j-(k+1)=12331 ... j=12335 (inclusive)
+MAXED P1 MATCH:	k=4 is the length of it. The match goes from i-1=12342 ... i-(k-1)-1=12339  and j=12336 ... j-(k-1)=12333 (inclusive)
+getTcailog dayidx 14, offset: 26473150, peak i time: 20000123034036600000
+No specials, load day 14: 20000123 - from byte: 25873150 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 26471200, peak i time: 20000123034035625000
+No specials, load day 14: 20000123 - from byte: 25871200 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 438 lines = 10 secs, start=line 11714, stop=line 12151
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=12341 ... i=12345  and j-(k+1)=12333 ... j=12337 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=12345 ... i-(k-1)-1=12343  and j=12337 ... j-(k-1)=12335 (inclusive)
+getTcailog dayidx 14, offset: 26474100, peak i time: 20000123034037075000
+No specials, load day 14: 20000123 - from byte: 25874100 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 26471750, peak i time: 20000123034035900000
+No specials, load day 14: 20000123 - from byte: 25871750 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 218 lines = 5 secs, start=line 11914, stop=line 12131
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=12343 ... i=12347  and j-(k+1)=12339 ... j=12343 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=12347 ... i-(k-1)-1=12345  and j=12343 ... j-(k-1)=12341 (inclusive)
+getTcailog dayidx 14, offset: 26474400, peak i time: 20000123034037225000
+No specials, load day 14: 20000123 - from byte: 25874400 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 26473700, peak i time: 20000123034036875000
+No specials, load day 14: 20000123 - from byte: 25873700 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 769 lines = 19 secs, start=line 11646, stop=line 12414
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=13348 ... i=13352  and j-(k+1)=6968 ... j=6972 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=13352 ... i-(k-1)-1=13350  and j=6972 ... j-(k-1)=6970 (inclusive)
+getTcailog dayidx 14, offset: 28813150, peak i time: 20000123040006600000
+No specials, load day 14: 20000123 - from byte: 28213150 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 14158050, peak i time: 20000123015759050000
+No specials, load day 14: 20000123 - from byte: 13558050 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 208 lines = 5 secs, start=line 11952, stop=line 12159
+expand_ret > -1
+MID   SERT  i:l=0		  5.20		 0123-040005.375 - 0123-040010.550          NEXT:    5.57		 0123-030010.750 - 0123-030016.300       
+MID   SERT  j:l=7		  5.20		 0123-015757.825 - 0123-015803.000          NEXT:    5.57		 0123-015401.325 - 0123-015406.875       
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=13593 ... i=13597  and j-(k+1)=118 ... j=122 (inclusive)
+MAXED P1 MATCH:	k=8 is the length of it. The match goes from i-1=13602 ... i-(k-1)-1=13595  and j=127 ... j-(k-1)=120 (inclusive)
+getTcailog dayidx 14, offset: 29376150, peak i time: 20000123040448100000
+No specials, load day 14: 20000123 - from byte: 28776150 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 204450, peak i time: 20000123000142250000
+! there is some problem - buffers are not full or -1 was sent back
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=13608 ... i=13612  and j-(k+1)=131 ... j=135 (inclusive)
+MAXED P1 MATCH:	k=7 is the length of it. The match goes from i-1=13616 ... i-(k-1)-1=13610  and j=139 ... j-(k-1)=133 (inclusive)
+getTcailog dayidx 14, offset: 29432300, peak i time: 20000123040516175000
+No specials, load day 14: 20000123 - from byte: 28832300 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 260600, peak i time: 20000123000210325000
+! there is some problem - buffers are not full or -1 was sent back
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=13616 ... i=13620  and j-(k+1)=139 ... j=143 (inclusive)
+MAXED P1 MATCH:	k=5 is the length of it. The match goes from i-1=13622 ... i-(k-1)-1=13618  and j=145 ... j-(k-1)=141 (inclusive)
+getTcailog dayidx 14, offset: 29452400, peak i time: 20000123040526225000
+No specials, load day 14: 20000123 - from byte: 28852400 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 280700, peak i time: 20000123000220375000
+! there is some problem - buffers are not full or -1 was sent back
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=13623 ... i=13627  and j-(k+1)=10371 ... j=10375 (inclusive)
+MAXED P1 MATCH:	k=5 is the length of it. The match goes from i-1=13629 ... i-(k-1)-1=13625  and j=10377 ... j-(k-1)=10373 (inclusive)
+getTcailog dayidx 14, offset: 29478050, peak i time: 20000123040539050000
+No specials, load day 14: 20000123 - from byte: 28878050 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 21849050, peak i time: 20000123030204550000
+No specials, load day 14: 20000123 - from byte: 21249050 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 3104 lines = 77 secs, start=line 9827, stop=line 12930
+expand_ret > -1
+MID   SERT  i:l=0		 77.60		 0123-040444.700 - 0123-040602.275          NEXT:    5.20		 0123-040005.375 - 0123-040010.550       
+MID   SERT  j:l=2		 77.60		 0123-030110.200 - 0123-030227.775          NEXT:    5.57		 0123-030010.750 - 0123-030016.300       
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=13974 ... i=13978  and j-(k+1)=895 ... j=899 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=13978 ... i-(k-1)-1=13976  and j=899 ... j-(k-1)=897 (inclusive)
+getTcailog dayidx 14, offset: 30240150, peak i time: 20000123041200100000
+No specials, load day 14: 20000123 - from byte: 29640150 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 1326700, peak i time: 20000123001103375000
+No specials, load day 14: 20000123 - from byte: 726700 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 287 lines = 7 secs, start=line 11799, stop=line 12085
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=14024 ... i=14028  and j-(k+1)=3011 ... j=3015 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=14028 ... i-(k-1)-1=14026  and j=3015 ... j-(k-1)=3013 (inclusive)
+getTcailog dayidx 14, offset: 30304600, peak i time: 20000123041232325000
+No specials, load day 14: 20000123 - from byte: 29704600 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 5698800, peak i time: 20000123004729425000
+No specials, load day 14: 20000123 - from byte: 5098800 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 84 lines = 2 secs, start=line 11992, stop=line 12075
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=14093 ... i=14097  and j-(k+1)=14034 ... j=14038 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=14097 ... i-(k-1)-1=14095  and j=14038 ... j-(k-1)=14036 (inclusive)
+getTcailog dayidx 14, offset: 30384300, peak i time: 20000123041312175000
+No specials, load day 14: 20000123 - from byte: 29784300 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 30317800, peak i time: 20000123041238925000
+No specials, load day 14: 20000123 - from byte: 29717800 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 129 lines = 3 secs, start=line 11937, stop=line 12065
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=14336 ... i=14340  and j-(k+1)=7394 ... j=7398 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=14340 ... i-(k-1)-1=14338  and j=7398 ... j-(k-1)=7396 (inclusive)
+getTcailog dayidx 14, offset: 30893100, peak i time: 20000123041726575000
+No specials, load day 14: 20000123 - from byte: 30293100 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 15061550, peak i time: 20000123020530800000
+No specials, load day 14: 20000123 - from byte: 14461550 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 105 lines = 2 secs, start=line 11952, stop=line 12056
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=14434 ... i=14438  and j-(k+1)=5049 ... j=5053 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=14438 ... i-(k-1)-1=14436  and j=5053 ... j-(k-1)=5051 (inclusive)
+getTcailog dayidx 14, offset: 31086950, peak i time: 20000123041903500000
+No specials, load day 14: 20000123 - from byte: 30486950 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 9836850, peak i time: 20000123012158450000
+No specials, load day 14: 20000123 - from byte: 9236850 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 55 lines = 1 secs, start=line 11979, stop=line 12033
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=14561 ... i=14565  and j-(k+1)=7521 ... j=7525 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=14565 ... i-(k-1)-1=14563  and j=7525 ... j-(k-1)=7523 (inclusive)
+getTcailog dayidx 14, offset: 31385100, peak i time: 20000123042132575000
+No specials, load day 14: 20000123 - from byte: 30785100 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 15193700, peak i time: 20000123020636875000
+No specials, load day 14: 20000123 - from byte: 14593700 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 46 lines = 1 secs, start=line 11965, stop=line 12010
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=14575 ... i=14579  and j-(k+1)=7626 ... j=7630 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=14579 ... i-(k-1)-1=14577  and j=7630 ... j-(k-1)=7628 (inclusive)
+getTcailog dayidx 14, offset: 31406050, peak i time: 20000123042143050000
+No specials, load day 14: 20000123 - from byte: 30806050 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 15314850, peak i time: 20000123020737450000
+No specials, load day 14: 20000123 - from byte: 14714850 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 27 lines = 0 secs, start=line 11990, stop=line 12016
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=14724 ... i=14728  and j-(k+1)=885 ... j=889 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=14728 ... i-(k-1)-1=14726  and j=889 ... j-(k-1)=887 (inclusive)
+getTcailog dayidx 14, offset: 31717100, peak i time: 20000123042418575000
+No specials, load day 14: 20000123 - from byte: 31117100 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 1313350, peak i time: 20000123001056700000
+No specials, load day 14: 20000123 - from byte: 713350 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 34 lines = 0 secs, start=line 11984, stop=line 12017
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=14730 ... i=14734  and j-(k+1)=12343 ... j=12347 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=14734 ... i-(k-1)-1=14732  and j=12347 ... j-(k-1)=12345 (inclusive)
+getTcailog dayidx 14, offset: 31725300, peak i time: 20000123042422675000
+No specials, load day 14: 20000123 - from byte: 31125300 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 26474400, peak i time: 20000123034037225000
+No specials, load day 14: 20000123 - from byte: 25874400 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 87 lines = 2 secs, start=line 11955, stop=line 12041
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=14732 ... i=14736  and j-(k+1)=12343 ... j=12347 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=14736 ... i-(k-1)-1=14734  and j=12347 ... j-(k-1)=12345 (inclusive)
+getTcailog dayidx 14, offset: 31725700, peak i time: 20000123042422875000
+No specials, load day 14: 20000123 - from byte: 31125700 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 26474400, peak i time: 20000123034037225000
+No specials, load day 14: 20000123 - from byte: 25874400 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 84 lines = 2 secs, start=line 11952, stop=line 12035
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=14734 ... i=14738  and j-(k+1)=14730 ... j=14734 (inclusive)
+MAXED P1 MATCH:	k=4 is the length of it. The match goes from i-1=14739 ... i-(k-1)-1=14736  and j=14735 ... j-(k-1)=14732 (inclusive)
+getTcailog dayidx 14, offset: 31726100, peak i time: 20000123042423075000
+No specials, load day 14: 20000123 - from byte: 31126100 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 31725300, peak i time: 20000123042422675000
+No specials, load day 14: 20000123 - from byte: 31125300 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 80 lines = 2 secs, start=line 11956, stop=line 12035
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=14739 ... i=14743  and j-(k+1)=14734 ... j=14738 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=14743 ... i-(k-1)-1=14741  and j=14738 ... j-(k-1)=14736 (inclusive)
+getTcailog dayidx 14, offset: 31733000, peak i time: 20000123042426525000
+No specials, load day 14: 20000123 - from byte: 31133000 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 31726100, peak i time: 20000123042423075000
+No specials, load day 14: 20000123 - from byte: 31126100 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 36 lines = 0 secs, start=line 11980, stop=line 12015
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=14784 ... i=14788  and j-(k+1)=1888 ... j=1892 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=14788 ... i-(k-1)-1=14786  and j=1892 ... j-(k-1)=1890 (inclusive)
+getTcailog dayidx 14, offset: 31798800, peak i time: 20000123042459425000
+No specials, load day 14: 20000123 - from byte: 31198800 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 3449050, peak i time: 20000123002844550000
+No specials, load day 14: 20000123 - from byte: 2849050 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 208 lines = 5 secs, start=line 11909, stop=line 12116
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=14787 ... i=14791  and j-(k+1)=14723 ... j=14727 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=14791 ... i-(k-1)-1=14789  and j=14727 ... j-(k-1)=14725 (inclusive)
+getTcailog dayidx 14, offset: 31803200, peak i time: 20000123042501625000
+No specials, load day 14: 20000123 - from byte: 31203200 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 31716650, peak i time: 20000123042418350000
+No specials, load day 14: 20000123 - from byte: 31116650 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 39 lines = 0 secs, start=line 11992, stop=line 12030
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=14803 ... i=14807  and j-(k+1)=1882 ... j=1886 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=14807 ... i-(k-1)-1=14805  and j=1886 ... j-(k-1)=1884 (inclusive)
+getTcailog dayidx 14, offset: 31822300, peak i time: 20000123042511175000
+No specials, load day 14: 20000123 - from byte: 31222300 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 3442750, peak i time: 20000123002841400000
+No specials, load day 14: 20000123 - from byte: 2842750 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 154 lines = 3 secs, start=line 11890, stop=line 12043
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=14845 ... i=14849  and j-(k+1)=2171 ... j=2175 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=14849 ... i-(k-1)-1=14847  and j=2175 ... j-(k-1)=2173 (inclusive)
+getTcailog dayidx 14, offset: 31863850, peak i time: 20000123042531950000
+No specials, load day 14: 20000123 - from byte: 31263850 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 3866600, peak i time: 20000123003213325000
+No specials, load day 14: 20000123 - from byte: 3266600 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 73 lines = 1 secs, start=line 11946, stop=line 12018
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=14918 ... i=14922  and j-(k+1)=2371 ... j=2375 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=14922 ... i-(k-1)-1=14920  and j=2375 ... j-(k-1)=2373 (inclusive)
+getTcailog dayidx 14, offset: 31973950, peak i time: 20000123042627000000
+No specials, load day 14: 20000123 - from byte: 31373950 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 4107250, peak i time: 20000123003413650000
+No specials, load day 14: 20000123 - from byte: 3507250 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 89 lines = 2 secs, start=line 11987, stop=line 12075
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=14921 ... i=14925  and j-(k+1)=11612 ... j=11616 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=14925 ... i-(k-1)-1=14923  and j=11616 ... j-(k-1)=11614 (inclusive)
+getTcailog dayidx 14, offset: 31977150, peak i time: 20000123042628600000
+No specials, load day 14: 20000123 - from byte: 31377150 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 24634550, peak i time: 20000123032517300000
+No specials, load day 14: 20000123 - from byte: 24034550 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 119 lines = 2 secs, start=line 11923, stop=line 12041
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=15628 ... i=15632  and j-(k+1)=7479 ... j=7483 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=15632 ... i-(k-1)-1=15630  and j=7483 ... j-(k-1)=7481 (inclusive)
+getTcailog dayidx 14, offset: 33434450, peak i time: 20000123043837250000
+No specials, load day 14: 20000123 - from byte: 32834450 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 15143150, peak i time: 20000123020611600000
+No specials, load day 14: 20000123 - from byte: 14543150 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 36 lines = 0 secs, start=line 11999, stop=line 12034
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=15900 ... i=15904  and j-(k+1)=14343 ... j=14347 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=15904 ... i-(k-1)-1=15902  and j=14347 ... j-(k-1)=14345 (inclusive)
+getTcailog dayidx 14, offset: 33908800, peak i time: 20000123044234425000
+No specials, load day 14: 20000123 - from byte: 33308800 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 30905550, peak i time: 20000123041732800000
+No specials, load day 14: 20000123 - from byte: 30305550 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 142 lines = 3 secs, start=line 11886, stop=line 12027
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=16259 ... i=16263  and j-(k+1)=2348 ... j=2352 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=16263 ... i-(k-1)-1=16261  and j=2352 ... j-(k-1)=2350 (inclusive)
+getTcailog dayidx 14, offset: 34701550, peak i time: 20000123044910800000
+No specials, load day 14: 20000123 - from byte: 34101550 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+getTcailog dayidx 14, offset: 4087950, peak i time: 20000123003404000000
+No specials, load day 14: 20000123 - from byte: 3487950 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+Match length is: 1 lines = 0 secs, start=line 12001, stop=line 12001
+expand_ret > -1
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=16633 ... i=16637  and j-(k+1)=32 ... j=36 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=16637 ... i-(k-1)-1=16635  and j=36 ... j-(k-1)=34 (inclusive)
+getTcailog dayidx 14, offset: 35860600, peak i time: 20000123045850325000
+20000123: loglines: 725662, o/50: 717212, bytes needed after/50: 12000
+getTcailog dayidx 14, offset: 81500, peak i time: 20000123000040775000
+! there is some problem - buffers are not full or -1 was sent back
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=16657 ... i=16661  and j-(k+1)=4308 ... j=4312 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=16661 ... i-(k-1)-1=16659  and j=4312 ... j-(k-1)=4310 (inclusive)
+getTcailog dayidx 14, offset: 35925750, peak i time: 20000123045922900000
+20000123: loglines: 725662, o/50: 718515, bytes needed after/50: 12000
+getTcailog dayidx 14, offset: 8517750, peak i time: 20000123011058900000
+No specials, load day 14: 20000123 - from byte: 7917750 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+! there is some problem - buffers are not full or -1 was sent back
+FOUND P1 MATCH:	k=3 is the length of it. The match goes from i-(k+1)=16787 ... i=16791  and j-(k+1)=4321 ... j=4325 (inclusive)
+MAXED P1 MATCH:	k=3 is the length of it. The match goes from i-1=16791 ... i-(k-1)-1=16789  and j=4325 ... j-(k-1)=4323 (inclusive)
+getTcailog dayidx 14, offset: 36200950, peak i time: 20000123050140500000
+20000123: loglines: 725662, o/50: 724019, bytes needed after/50: 12000
+getTcailog dayidx 14, offset: 8528650, peak i time: 20000123011104350000
+No specials, load day 14: 20000123 - from byte: 7928650 for 24001 lines (960040 bytes)
+CLOSING FILE, loaded day 14 - returning 24001
+! there is some problem - buffers are not full or -1 was sent back
+printTimeline(): lenTimeline=1296000
+ ====================== END ===============================
+
+GAP:	588177.250 secs
+
+		AD: 	77.600	 0123-040444.700 - 0123-040602.275 (89%)      	d =588177265 msecs
+	MISS  :		274.125 secs
+		AD: 	 5.200	 0123-040005.375 - 0123-040010.550 (91%)      	d =274150 msecs
+
+GAP:	3457.600 secs
+
+		AD: 	77.600	 0123-030110.200 - 0123-030227.775 (89%)      	d =3457600 msecs
+	MISS  :		53.875 secs
+		AD: 	 5.575	 0123-030010.750 - 0123-030016.300 (92%)      	d =53900 msecs
+
+GAP:	1070.250 secs
+
+		AD: 	10.225	 0123-024210.300 - 0123-024220.500 (81%)      	d =1070250 msecs
+
+GAP:	942.875 secs
+
+		AD: 	10.225	 0123-022617.225 - 0123-022627.425 (81%)      	d =942875 msecs
+
+GAP:	1561.575 secs
+
+		AD: 	78.450	 0123-015857.225 - 0123-020015.650 (81%)      	d =1561575 msecs
+	MISS  :		54.200 secs
+		AD: 	 5.200	 0123-015757.825 - 0123-015803.000 (91%)      	d =54225 msecs
+	MISS  :		230.925 secs
+		AD: 	 5.575	 0123-015401.325 - 0123-015406.875 (92%)      	d =230950 msecs
+
+GAP:	3194.025 secs
+
+		AD: 	78.450	 0123-005928.875 - 0123-010047.300 (81%)      	d =3194025 msecs
+Redundant SAME stops: 0 out of 15, longers: 0 shorters: 0 equal: 0 out of SAME stops
+avg. diff:   -nan
+ ====================== END ===============================
+ ====================== END ===============================

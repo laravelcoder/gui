@@ -23,6 +23,8 @@ class StoreVideosRequest extends FormRequest
     public function rules()
     {
         return [
+             'name' => 'required',
+             'video' => 'mimes:mp4',
         ];
     }
 }
