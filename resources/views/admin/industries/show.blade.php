@@ -102,8 +102,7 @@
 <table class="table table-bordered table-striped {{ count($clips) > 0 ? 'datatable' : '' }}">
     <thead>
         <tr>
-            <th>@lang('global.clips.fields.ad-enabled')</th>
-                        <th>@lang('global.clips.fields.industry')</th>
+            <th>@lang('global.clips.fields.industry')</th>
                         <th>@lang('global.clips.fields.advertiser')</th>
                         <th>@lang('global.clips.fields.product')</th>
                         <th>@lang('global.clips.fields.title')</th>
@@ -119,8 +118,7 @@
         @if (count($clips) > 0)
             @foreach ($clips as $clip)
                 <tr data-entry-id="{{ $clip->id }}">
-                    <td field-key='ad_enabled'>{{ Form::checkbox("ad_enabled", 1, $clip->ad_enabled == 1 ? true : false, ["disabled"]) }}</td>
-                                <td field-key='industry'>{{ $clip->industry->name ?? '' }}</td>
+                    <td field-key='industry'>{{ $clip->industry->name ?? '' }}</td>
                                 <td field-key='advertiser'>{{ $clip->advertiser }}</td>
                                 <td field-key='product'>{{ $clip->product }}</td>
                                 <td field-key='title'>{{ $clip->title }}</td>
@@ -164,7 +162,7 @@
             @endforeach
         @else
             <tr>
-                <td colspan="35">@lang('global.app_no_entries_in_table')</td>
+                <td colspan="34">@lang('global.app_no_entries_in_table')</td>
             </tr>
         @endif
     </tbody>

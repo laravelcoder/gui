@@ -90,6 +90,7 @@ class PermissionSeed extends Seeder
             ['id' => 84, 'title' => 'brand_edit',],
             ['id' => 85, 'title' => 'brand_view',],
             ['id' => 86, 'title' => 'brand_delete',],
+            ['id' => 87, 'title' => 'gallery_access',],
 
         ];
 

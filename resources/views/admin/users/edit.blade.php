@@ -65,6 +65,19 @@
                     @endif
                 </div>
             </div>
+            <div class="row">
+                <div class="col-xs-12 form-group">
+                    {!! Form::label('approved', trans('global.users.fields.approved').'', ['class' => 'control-label']) !!}
+                    {!! Form::hidden('approved', 0) !!}
+                    {!! Form::checkbox('approved', 1, old('approved', old('approved')), []) !!}
+                    <p class="help-block"></p>
+                    @if($errors->has('approved'))
+                        <p class="help-block">
+                            {{ $errors->first('approved') }}
+                        </p>
+                    @endif
+                </div>
+            </div>
             
         </div>
     </div>

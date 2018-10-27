@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Admin;
 
-use Illuminate\Support\Facades\App;
 use App\Video;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
@@ -10,10 +9,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\StoreVideosRequest;
 use App\Http\Requests\Admin\UpdateVideosRequest;
 use App\Http\Controllers\Traits\FileUploadTrait;
-use Illuminate\Support\Facades\Storage;
-use Spatie\MediaLibrary\Media;
 use Yajra\DataTables\DataTables;
-use Illuminate\Support\Facades\Log;
 
 class VideosController extends Controller
 {
@@ -46,10 +42,10 @@ class VideosController extends Controller
             }
             $query->select([
                 'videos.id',
-                'videos.video',
-                'videos.name',
-                'videos.extention',
                 'videos.clip_id',
+                'videos.name',
+                'videos.video',
+                'videos.extention',
                 'videos.ad_duration',
             ]);
             $table = Datatables::of($query);
@@ -65,17 +61,17 @@ class VideosController extends Controller
 
                 return view($template, compact('row', 'gateKey', 'routeKey'));
             });
-            $table->editColumn('video', function ($row) {
-                if($row->video) { return '<a href="'.asset(env('UPLOAD_PATH').'/'.$row->video) .'" target="_blank">Download file</a>'; };
+            $table->editColumn('clip.title', function ($row) {
+                return $row->clip ? $row->clip->title : '';
             });
             $table->editColumn('name', function ($row) {
                 return $row->name ? $row->name : '';
             });
+            $table->editColumn('video', function ($row) {
+                if($row->video) { return '<a href="'.asset(env('UPLOAD_PATH').'/'.$row->video) .'" target="_blank">Download file</a>'; };
+            });
             $table->editColumn('extention', function ($row) {
                 return $row->extention ? $row->extention : '';
-            });
-            $table->editColumn('clip.title', function ($row) {
-                return $row->clip ? $row->clip->title : '';
             });
             $table->editColumn('ad_duration', function ($row) {
                 return $row->ad_duration ? $row->ad_duration : '';
@@ -116,16 +112,9 @@ class VideosController extends Controller
         if (! Gate::allows('video_create')) {
             return abort(401);
         }
-   
         $request = $this->saveFiles($request);
         $video = Video::create($request->all());
-        
-        foreach ($request->input('video_id', []) as $index => $id) {
-            $model = config('medialibrary.media_model');
-            $file = $model::find($id);
-            $file->model_id = $video->id;
-            $file->save();
-        }
+
 
 
         return redirect()->route('admin.videos.index');
@@ -166,17 +155,9 @@ class VideosController extends Controller
         $request = $this->saveFiles($request);
         $video = Video::findOrFail($id);
         $video->update($request->all());
-        if ($request->video === true) {
-            $media = [];
-            foreach ($request->input('video_id[]') as $index => $id) {
-                $model = config('laravel-medialibrary.media_model');
-                $file = $model::find($id);
-                $file->model_id = $video->id;
-                $file->save();
-                $media[] = $file->toArray();
-            }
-            $video->updateMedia($media, 'video');
-        }
+
+
+
         return redirect()->route('admin.videos.index');
     }
 

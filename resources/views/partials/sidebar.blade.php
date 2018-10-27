@@ -26,6 +26,14 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
+                    @can('gallery_access')
+                    <li>
+                        <a href="{{ route('admin.galleries.index') }}">
+                            <i class="fa fa-gears"></i>
+                            <span>@lang('global.gallery.title')</span>
+                        </a>
+                    </li>@endcan
+                    
                     @can('clip_access')
                     <li>
                         <a href="{{ route('admin.clips.index') }}">
@@ -40,8 +48,7 @@
                             <i class="fa fa-gears"></i>
                             <span>@lang('global.videos.title')</span>
                         </a>
-                    </li>
-                    @endcan
+                    </li>@endcan
                     
                     @can('image_access')
                     <li>
@@ -49,8 +56,7 @@
                             <i class="fa fa-gears"></i>
                             <span>@lang('global.images.title')</span>
                         </a>
-                    </li>
-                    @endcan
+                    </li>@endcan
                     
                     @can('brand_access')
                     <li>
@@ -58,8 +64,7 @@
                             <i class="fa fa-gears"></i>
                             <span>@lang('global.brands.title')</span>
                         </a>
-                    </li>
-                    @endcan
+                    </li>@endcan
                     
                     @can('industry_access')
                     <li>
@@ -67,8 +72,7 @@
                             <i class="fa fa-gears"></i>
                             <span>@lang('global.industry.title')</span>
                         </a>
-                    </li>
-                    @endcan
+                    </li>@endcan
                     
                     @can('detection_access')
                     <li class="treeview">
@@ -86,8 +90,7 @@
                                     <i class="fa fa-gears"></i>
                                     <span>@lang('global.single-channel.title')</span>
                                 </a>
-                            </li>
-                            @endcan
+                            </li>@endcan
                             
                             @can('multi_channel_access')
                             <li>
@@ -95,8 +98,7 @@
                                     <i class="fa fa-gears"></i>
                                     <span>@lang('global.multi-channel.title')</span>
                                 </a>
-                            </li>
-                            @endcan
+                            </li>@endcan
                             
                             @can('all_channel_access')
                             <li>
@@ -104,16 +106,13 @@
                                     <i class="fa fa-gears"></i>
                                     <span>@lang('global.all-channels.title')</span>
                                 </a>
-                            </li>
-                            @endcan
+                            </li>@endcan
                             
                         </ul>
-                    </li>
-                    @endcan
+                    </li>@endcan
                     
                 </ul>
-            </li>
-            @endcan
+            </li>@endcan
             
             @can('sources_mgmt_access')
             <li class="treeview">
@@ -131,12 +130,10 @@
                             <i class="fa fa-gears"></i>
                             <span>@lang('global.ftp.title')</span>
                         </a>
-                    </li>
-                    @endcan
+                    </li>@endcan
                     
                 </ul>
-            </li>
-            @endcan
+            </li>@endcan
             
             @can('task_management_access')
             <li class="treeview">
@@ -154,8 +151,7 @@
                             <i class="fa fa-briefcase"></i>
                             <span>@lang('global.tasks.title')</span>
                         </a>
-                    </li>
-                    @endcan
+                    </li>@endcan
                     
                     @can('task_status_access')
                     <li>
@@ -163,8 +159,7 @@
                             <i class="fa fa-server"></i>
                             <span>@lang('global.task-statuses.title')</span>
                         </a>
-                    </li>
-                    @endcan
+                    </li>@endcan
                     
                     @can('task_tag_access')
                     <li>
@@ -172,8 +167,7 @@
                             <i class="fa fa-server"></i>
                             <span>@lang('global.task-tags.title')</span>
                         </a>
-                    </li>
-                    @endcan
+                    </li>@endcan
                     
                     @can('task_calendar_access')
                     <li>
@@ -181,12 +175,10 @@
                             <i class="fa fa-calendar"></i>
                             <span>@lang('global.task-calendar.title')</span>
                         </a>
-                    </li>
-                    @endcan
+                    </li>@endcan
                     
                 </ul>
-            </li>
-            @endcan
+            </li>@endcan
             
             @can('user_management_access')
             <li class="treeview">
@@ -204,8 +196,7 @@
                             <i class="fa fa-briefcase"></i>
                             <span>@lang('global.permissions.title')</span>
                         </a>
-                    </li>
-                    @endcan
+                    </li>@endcan
                     
                     @can('role_access')
                     <li>
@@ -213,8 +204,7 @@
                             <i class="fa fa-briefcase"></i>
                             <span>@lang('global.roles.title')</span>
                         </a>
-                    </li>
-                    @endcan
+                    </li>@endcan
                     
                     @can('user_access')
                     <li>
@@ -222,17 +212,31 @@
                             <i class="fa fa-user"></i>
                             <span>@lang('global.users.title')</span>
                         </a>
-                    </li>
-                    @endcan
+                    </li>@endcan
                     
                 </ul>
+            </li>@endcan
+            
+
+            
+
+            
+            @php ($unread = App\MessengerTopic::countUnread())
+            <li class="{{ $request->segment(2) == 'messenger' ? 'active' : '' }} {{ ($unread > 0 ? 'unread' : '') }}">
+                <a href="{{ route('admin.messenger.index') }}">
+                    <i class="fa fa-envelope"></i>
+
+                    <span>Messages</span>
+                    @if($unread > 0)
+                        {{ ($unread > 0 ? '('.$unread.')' : '') }}
+                    @endif
+                </a>
             </li>
-            @endcan
-            
-
-            
-
-            
+            <style>
+                .page-sidebar-menu .unread * {
+                    font-weight:bold !important;
+                }
+            </style>
 
 
 
@@ -250,7 +254,7 @@
                 </a>
             </li>
         </ul>
-        <img src="{{ asset('images/sling_n_dish.png') }}" />
     </section>
+    <img src="{{ asset('images/sling_n_dish.png') }}" />
 </aside>
 

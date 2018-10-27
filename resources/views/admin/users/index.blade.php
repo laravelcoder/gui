@@ -6,6 +6,8 @@
     @can('user_create')
     <p>
         <a href="{{ route('admin.users.create') }}" class="btn btn-success">@lang('global.app_add_new')</a>
+        <a href="#" class="btn btn-warning" style="margin-left:5px;" data-toggle="modal" data-target="#myModal">@lang('global.app_csvImport')</a>
+        @include('csvImport.modal', ['model' => 'User'])
         
     </p>
     @endcan
@@ -28,6 +30,7 @@
                         <th>@lang('global.users.fields.name')</th>
                         <th>@lang('global.users.fields.email')</th>
                         <th>@lang('global.users.fields.role')</th>
+                        <th>@lang('global.users.fields.approved')</th>
                                                 <th>&nbsp;</th>
 
                     </tr>
@@ -48,6 +51,7 @@
                                         <span class="label label-info label-many">{{ $singleRole->title }}</span>
                                     @endforeach
                                 </td>
+                                <td field-key='approved'>{{ Form::checkbox("approved", 1, $user->approved == 1 ? true : false, ["disabled"]) }}</td>
                                                                 <td>
                                     @can('user_view')
                                     <a href="{{ route('admin.users.show',[$user->id]) }}" class="btn btn-xs btn-primary">@lang('global.app_view')</a>
@@ -70,7 +74,7 @@
                         @endforeach
                     @else
                         <tr>
-                            <td colspan="10">@lang('global.app_no_entries_in_table')</td>
+                            <td colspan="11">@lang('global.app_no_entries_in_table')</td>
                         </tr>
                     @endif
                 </tbody>

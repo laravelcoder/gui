@@ -7,7 +7,8 @@
     window.printButtonTrans = '{{ trans("global.app_print") }}';
     window.colvisButtonTrans = '{{ trans("global.app_colvis") }}';
 </script>
-<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<script src="//code.jquery.com/jquery-2.2.4.min.js"></script>
 <script src="//cdn.datatables.net/1.10.9/js/jquery.dataTables.min.js"></script>
 <script src="//cdn.datatables.net/buttons/1.2.4/js/dataTables.buttons.min.js"></script>
 <script src="//cdn.datatables.net/buttons/1.2.4/js/buttons.flash.min.js"></script>
@@ -42,12 +43,12 @@
         moment.updateLocale('{{ App::getLocale() }}', {
             week: { dow: 1 } // Monday is the first day of the week
         });
-        
+
         $('.date').datetimepicker({
             format: "{{ config('app.date_format_moment') }}",
             locale: "{{ App::getLocale() }}",
         });
-        
+
     });
 
  $(document).ready(function() {
@@ -100,7 +101,7 @@
             window.location = url;
         });
     });
-     
+
 
 </script>
 
@@ -125,7 +126,7 @@
     });
 </script>
 
- 
+
 
 
 

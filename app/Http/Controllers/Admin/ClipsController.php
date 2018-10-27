@@ -3,24 +3,15 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Clip;
-use App\Video;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\StoreClipsRequest;
 use App\Http\Requests\Admin\UpdateClipsRequest;
 use Yajra\DataTables\DataTables;
-use Illuminate\Support\Facades\Input;
-use App\Http\Controllers\Traits\FileUploadTrait;
-use Illuminate\Support\Facades\Storage;
-use Spatie\MediaLibrary\Media;
-use Illuminate\Support\Facades\Log;
-use App\Helpers\Normalize;
-use App\Helpers\FFMPEG_helpers;
 
 class ClipsController extends Controller
 {
-    use FileUploadTrait;
     /**
      * Display a listing of Clip.
      *
@@ -32,16 +23,18 @@ class ClipsController extends Controller
             return abort(401);
         }
 
+
+        
         if (request()->ajax()) {
             $query = Clip::query();
             $query->with("brand");
             $query->with("industry");
             $template = 'actionsTemplate';
             if(request('show_deleted') == 1) {
-
-                if (! Gate::allows('clip_delete')) {
-                    return abort(401);
-                }
+                
+        if (! Gate::allows('clip_delete')) {
+            return abort(401);
+        }
                 $query->onlyTrashed();
                 $template = 'restoreTemplate';
             }
@@ -196,7 +189,7 @@ class ClipsController extends Controller
         if (! Gate::allows('clip_create')) {
             return abort(401);
         }
-
+        
         $brands = \App\Brand::get()->pluck('name', 'id')->prepend(trans('global.app_please_select'), '');
         $industries = \App\Industry::get()->pluck('name', 'id')->prepend(trans('global.app_please_select'), '');
 
@@ -214,66 +207,15 @@ class ClipsController extends Controller
         if (! Gate::allows('clip_create')) {
             return abort(401);
         }
- 
         $clip = Clip::create($request->all());
-   
-        $request = $this->saveFiles($request);
-        
-        // dd($count);
+
         foreach ($request->input('videos', []) as $data) {
-            // \Log::info(app('request')->file('video'));
-            // \Log::info(app('request')->get('video'));
-            // \Log::info(app('request')->file('videos.*.video'));
-            // \Log::info(app('request')->get('videos.*.video'));
-            // \Log::info(app('request')->file($data['video']));
-            // \Log::info(app('request')->get($data['video']));
-            //dd($data['video']);
-            // $files = Input::file('request')[files];
-
-            // foreach($files as $file) 
-            // {
-            //     print_r($file);
-            // }
-          
-            // dd("ITS A FILE");
- // laravel nested array contains a video file but cant recognize the file
-            // $attachments = Input::file('video');
-            // dd($attachments);
-            // $file = $request->file('videos')[0]['video'];
-            // dd($file);
-            
-            $video = $request->input('videos.*.video');
-            // dd($video);
-            $name = $request->input('videos.*.name');
-            $extention = $request->input('videos.*.extention');
-            $ad_duration = $request->input('videos.*.ad_duration');
-
-            // $filename = $request->file($video)->getClientOriginalName();
-            // $ext = $request->file($video)->getClientOriginalExtension();
-            //$path = $request->video->path();
-
-// $extension = $request->video->extension();
-            // dd($file);
-// $file = Request::file('request')[0]['files'] 
-// <input class="js-file-input" name="request[0]files[]" type="file" />
-
-
-
             $clip->videos()->create($data);
-         
         }
-        // $clip->videos()->create($data);
-
-      
-            
-            
-            
-            
-         
- 
         foreach ($request->input('brands', []) as $data) {
             $clip->brands()->create($data);
         }
+
 
         return redirect()->route('admin.clips.index');
     }
@@ -290,7 +232,7 @@ class ClipsController extends Controller
         if (! Gate::allows('clip_edit')) {
             return abort(401);
         }
-
+        
         $brands = \App\Brand::get()->pluck('name', 'id')->prepend(trans('global.app_please_select'), '');
         $industries = \App\Industry::get()->pluck('name', 'id')->prepend(trans('global.app_please_select'), '');
 
@@ -331,7 +273,6 @@ class ClipsController extends Controller
                 $item->delete();
             }
         }
-
         $brands           = $clip->brands;
         $currentBrandData = [];
         foreach ($request->input('brands', []) as $index => $data) {
@@ -366,7 +307,7 @@ class ClipsController extends Controller
         if (! Gate::allows('clip_view')) {
             return abort(401);
         }
-
+        
         $brands = \App\Brand::get()->pluck('name', 'id')->prepend(trans('global.app_please_select'), '');
         $industries = \App\Industry::get()->pluck('name', 'id')->prepend(trans('global.app_please_select'), '');$videos = \App\Video::where('clip_id', $id)->get();$brands = \App\Brand::where('clip_id', $id)->get();
 

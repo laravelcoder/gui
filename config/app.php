@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => 'Gui',
+    'name' => 'ClipDB',
 
     /*
     |--------------------------------------------------------------------------
@@ -167,7 +167,8 @@ return [
          * Package Service Providers...
          */
         Yajra\DataTables\DataTablesServiceProvider::class,
-        Unisharp\LaravelFilemanager\LaravelFilemanagerServiceProvider::class,
+        Laravel\Socialite\SocialiteServiceProvider::class,
+        UniSharp\LaravelFilemanager\LaravelFilemanagerServiceProvider::class,
         
 
         /*
@@ -227,16 +228,12 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
         
     ],
 
     'languages' => [
-        'en' => 'English',
-        'es' => 'Spanish',
-        'pt' => 'Brazilian Portuguese',
-        'de' => 'German',
-        'fr' => 'French',
-        'ru' => 'Russian',
+        'clipdb' => 'ClipDB',
     ],
 
 ];

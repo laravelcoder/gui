@@ -4,14 +4,14 @@ return [
 		'user-management' => [		'title' => 'User management',		'fields' => [		],	],
 		'permissions' => [		'title' => 'Permissions',		'fields' => [			'title' => 'Title',		],	],
 		'roles' => [		'title' => 'Roles',		'fields' => [			'title' => 'Title',			'permission' => 'Permissions',		],	],
-		'users' => [		'title' => 'Users',		'fields' => [			'name' => 'Name',			'email' => 'Email',			'password' => 'Password',			'role' => 'Role',			'remember-token' => 'Remember token',		],	],
+		'users' => [		'title' => 'Users',		'fields' => [			'name' => 'Name',			'email' => 'Email',			'password' => 'Password',			'role' => 'Role',			'remember-token' => 'Remember token',			'approved' => 'Approved',		],	],
 		'task-management' => [		'title' => 'Task management',		'fields' => [		],	],
 		'task-statuses' => [		'title' => 'Statuses',		'fields' => [			'name' => 'Name',		],	],
 		'task-tags' => [		'title' => 'Tags',		'fields' => [			'name' => 'Name',		],	],
 		'tasks' => [		'title' => 'Tasks',		'fields' => [			'name' => 'Name',			'description' => 'Description',			'status' => 'Status',			'tag' => 'Tags',			'attachment' => 'Attachment',			'due-date' => 'Due date',			'user' => 'Assigned to',		],	],
 		'task-calendar' => [		'title' => 'Calendar',		'fields' => [		],	],
 		'clip-mgmt' => [		'title' => 'CLIP MGMT',		'fields' => [		],	],
-		'clips' => [		'title' => 'Clips',		'fields' => [			'ad-enabled' => 'Ad enabled',			'total-impressions' => 'Total Impressions',			'recommended-frequency' => 'Recommended Frequency',			'ad-airing-date-first' => 'Ad First Airing Date ',			'ad-airing-date-last' => 'Ad Last Airing Date',			'brand' => 'Brand',			'industry' => 'Industry',			'advertiser' => 'Advertiser',			'product' => 'Product',			'title' => 'Title',			'description' => 'Description',			'notes' => 'Notes',			'agency' => 'Agency',			'sourceurl' => 'Sourceurl',			'imagespath' => 'Imagespath',			'cai-path' => 'Cai path',			'caipyurl' => 'Caipyurl',			'isci-ad-id' => 'ISCI_Ad_ID',			'copylength' => 'Copylength',			'media-content' => 'Media content',			'media-filename' => 'Media filename',			'scheduledate' => 'Scheduledate',			'expirationdate' => 'Expirationdate',			'family' => 'Family',			'subfamily' => 'Subfamily',			'group' => 'Group',			'caipy-clipids' => 'Caipy clipids',			'reviewstate' => 'Reviewstate',			'ignoreimport' => 'Ignoreimport',			'duration' => 'Duration',		],	],
+		'clips' => [		'title' => 'Clips',		'fields' => [			'ad-enabled' => 'Ad enabled',			'total-impressions' => 'Total Impressions',			'recommended-frequency' => 'Recommended Frequency',			'ad-airing-date-first' => 'Ad First Airing Date ',			'ad-airing-date-last' => 'Ad Last Airing Date',			'brand' => 'Brand',			'industry' => 'Industry',			'advertiser' => 'Advertiser',			'product' => 'Product',			'title' => 'Title',			'description' => 'Description',			'notes' => 'Notes',			'agency' => 'Agency',			'sourceurl' => 'Sourceurl',			'imagespath' => 'Imagespath',			'cai-path' => 'Cai path',			'caipyurl' => 'Caipyurl',			'isci-ad-id' => 'ISCI_Ad_ID',			'copylength' => 'Copylength',			'media-content' => 'Media content',			'media-filename' => 'Media filename',			'scheduledate' => 'Scheduledate',			'expirationdate' => 'Expirationdate',			'family' => 'Family',			'subfamily' => 'Subfamily',			'group' => 'Group',			'caipy-clipids' => 'Caipy clipids',			'reviewstate' => 'Reviewstate',			'ignoreimport' => 'Ignoreimport',		],	],
 		'industry' => [		'title' => 'Industry',		'fields' => [			'name' => 'Name',			'slug' => 'Slug',		],	],
 		'images' => [		'title' => 'Images',		'fields' => [			'image' => 'Image',		],	],
 		'detections' => [		'title' => 'Detections',		'fields' => [		],	],
@@ -25,8 +25,9 @@ return [
 		'image-magic' => [		'title' => 'Image Magic',		'fields' => [		],	],
 		'sources-mgmt' => [		'title' => 'Sources Mgmt',		'fields' => [		],	],
 		'ftp' => [		'title' => 'Ftp',		'fields' => [			'ftp-server' => 'FTP Server',			'ftp-directory' => 'Ftp Directory',			'ftp-username' => 'FTP Username',			'ftp-password' => 'FTP password',			'notes' => 'Notes',		],	],
-		'videos' => [		'title' => 'Videos',		'fields' => [			'video' => 'Video',			'name' => 'Name',			'extention' => 'Extention',			'clip' => 'Clip',			'ad-duration' => 'Ad duration',		],	],
+		'videos' => [		'title' => 'Videos',		'fields' => [			'clip' => 'Clip',			'name' => 'Name',			'video' => 'Video',			'extention' => 'Extention',			'ad-duration' => 'Ad duration',		],	],
 		'brands' => [		'title' => 'Brands',		'fields' => [			'name' => 'Name',			'image' => 'Image',			'brand-url' => 'Brand URL',			'clip' => 'Clip',			'industry' => 'Industry',		],	],
+		'gallery' => [		'title' => 'Gallery',		'fields' => [		],	],
 	'app_create' => 'Create',
 	'app_save' => 'Save',
 	'app_edit' => 'Edit',
@@ -271,5 +272,5 @@ return [
 	'app_deselect_all' => 'Deselect all',
 	'app_team-management' => 'Teams',
 	'app_team-management-singular' => 'Team',
-	'global_title' => 'gui',
+	'global_title' => 'ClipDB',
 ];

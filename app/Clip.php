@@ -2,11 +2,8 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
-use Spatie\MediaLibrary\HasMedia\HasMedia;
-use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
 use Carbon\Carbon;
- 
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class Clip
@@ -42,14 +39,12 @@ use Carbon\Carbon;
  * @property string $reviewstate
  * @property tinyInteger $ignoreimport
 */
-class Clip extends Model implements HasMedia
+class Clip extends Model
 {
-    use SoftDeletes, HasMediaTrait;
+    use SoftDeletes;
 
     protected $fillable = ['ad_enabled', 'total_impressions', 'recommended_frequency', 'ad_airing_date_first', 'ad_airing_date_last', 'advertiser', 'product', 'title', 'description', 'notes', 'agency', 'sourceurl', 'imagespath', 'cai_path', 'caipyurl', 'isci_ad_id', 'copylength', 'media_content', 'media_filename', 'scheduledate', 'expirationdate', 'family', 'subfamily', 'group', 'caipy_clipids', 'reviewstate', 'ignoreimport', 'brand_id', 'industry_id'];
-
     protected $hidden = [];
-    
     public static $searchable = [
         'isci_ad_id',
         'scheduledate',
@@ -72,7 +67,7 @@ class Clip extends Model implements HasMedia
     public function setAdAiringDateFirstAttribute($input)
     {
         if ($input != null && $input != '') {
-            $this->attributes['ad_airing_date_first'] = Carbon::createFromFormat(config('app.date_format'), $input)->format('d-m-Y');
+            $this->attributes['ad_airing_date_first'] = Carbon::createFromFormat(config('app.date_format'), $input)->format('Y-m-d');
         } else {
             $this->attributes['ad_airing_date_first'] = null;
         }
@@ -102,7 +97,7 @@ class Clip extends Model implements HasMedia
     public function setAdAiringDateLastAttribute($input)
     {
         if ($input != null && $input != '') {
-            $this->attributes['ad_airing_date_last'] = Carbon::createFromFormat(config('app.date_format'), $input)->format('d-m-Y');
+            $this->attributes['ad_airing_date_last'] = Carbon::createFromFormat(config('app.date_format'), $input)->format('Y-m-d');
         } else {
             $this->attributes['ad_airing_date_last'] = null;
         }

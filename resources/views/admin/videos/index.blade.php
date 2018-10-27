@@ -6,6 +6,8 @@
     @can('video_create')
     <p>
         <a href="{{ route('admin.videos.create') }}" class="btn btn-success">@lang('global.app_add_new')</a>
+        <a href="#" class="btn btn-warning" style="margin-left:5px;" data-toggle="modal" data-target="#myModal">@lang('global.app_csvImport')</a>
+        @include('csvImport.modal', ['model' => 'Video'])
         
     </p>
     @endcan
@@ -31,8 +33,9 @@
                             @if ( request('show_deleted') != 1 )<th style="text-align:center;"><input type="checkbox" id="select-all" /></th>@endif
                         @endcan
 
-                        <th>@lang('global.videos.fields.video')</th>
                         <th>@lang('global.videos.fields.clip')</th>
+                        <th>@lang('global.videos.fields.name')</th>
+                        <th>@lang('global.videos.fields.video')</th>
                         @if( request('show_deleted') == 1 )
                         <th>&nbsp;</th>
                         @else
@@ -56,8 +59,9 @@
                 @if ( request('show_deleted') != 1 )
                     {data: 'massDelete', name: 'id', searchable: false, sortable: false},
                 @endif
-                @endcan{data: 'video', name: 'video'},
-                {data: 'clip.title', name: 'clip.title'},
+                @endcan{data: 'clip.title', name: 'clip.title'},
+                {data: 'name', name: 'name'},
+                {data: 'video', name: 'video'},
                 
                 {data: 'actions', name: 'actions', searchable: false, sortable: false}
             ];

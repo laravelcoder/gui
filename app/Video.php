@@ -3,27 +3,30 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
+ 
 use Spatie\MediaLibrary\HasMedia\HasMedia;
+use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
+
 
 /**
  * Class Video
  *
  * @package App
- * @property string $video
- * @property string $name
- * @property string $extention
  * @property string $clip
+ * @property string $name
+ * @property string $video
+ * @property string $extention
  * @property string $ad_duration
 */
 class Video extends Model implements HasMedia
 {
-    use SoftDeletes, HasMediaTrait;
- 
+    use HasMediaTrait;
+    use SoftDeletes;
 
-    protected $fillable = ['video', 'name', 'extention', 'ad_duration', 'clip_id'];
+    protected $fillable = ['name', 'video', 'extention', 'ad_duration', 'clip_id'];
     protected $hidden = [];
-    public static $searchable = [];
+    public static $searchable = [
+    ];
     
 
     /**
@@ -37,7 +40,7 @@ class Video extends Model implements HasMedia
     
     public function clip()
     {
-        return $this->belongsTo(\App\Clip::class, 'clip_id')->withTrashed();
+        return $this->belongsTo(Clip::class, 'clip_id')->withTrashed();
     }
     
 }

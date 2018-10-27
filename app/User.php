@@ -14,11 +14,12 @@ use Hash;
  * @property string $email
  * @property string $password
  * @property string $remember_token
+ * @property tinyInteger $approved
 */
 class User extends Authenticatable
 {
     use Notifiable;
-    protected $fillable = ['name', 'email', 'password', 'remember_token'];
+    protected $fillable = ['name', 'email', 'password', 'remember_token', 'approved'];
     protected $hidden = ['password', 'remember_token'];
     public static $searchable = [
     ];
@@ -40,7 +41,19 @@ class User extends Authenticatable
         return $this->belongsToMany(Role::class, 'role_user');
     }
     
-    
+    public function topics() {
+        return $this->hasMany(MessengerTopic::class, 'receiver_id')->orWhere('sender_id', $this->id);
+    }
+
+    public function inbox()
+    {
+        return $this->hasMany(MessengerTopic::class, 'receiver_id');
+    }
+
+    public function outbox()
+    {
+        return $this->hasMany(MessengerTopic::class, 'sender_id');
+    }
     
 
     public function sendPasswordResetNotification($token)

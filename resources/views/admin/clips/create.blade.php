@@ -8,36 +8,9 @@
         <div class="panel-heading">
             @lang('global.app_create')
         </div>
-
+        
         <div class="panel-body">
-                <div class="panel panel-default">
-        <div class="panel-heading">
-            Videos
-        </div>
-        <div class="panel-body">
-            <table class="table table-bordered table-striped">
-                <thead>
-                <tr>
-                    <th>Video Clip</th>
-                    <th>@lang('global.videos.fields.name')</th>
-                        <th>@lang('global.videos.fields.extention')</th>
-                        <th>@lang('global.videos.fields.ad-duration')</th>
-
-                    <th>Actions</th>
-                </tr>
-                </thead>
-                <tbody id="videos">
-                    @foreach(old('videos', []) as $index => $data)
-                        @include('admin.clips.videos_row', [
-                            'index' => $index
-                        ])
-                    @endforeach
-                </tbody>
-            </table>
-            <a href="#" class="btn btn-success pull-right add-new">@lang('global.app_add_new')</a>
-        </div>
-    </div>
-      {{--       <div class="row">
+            <div class="row">
                 <div class="col-xs-12 form-group">
                     {!! Form::label('ad_enabled', trans('global.clips.fields.ad-enabled').'', ['class' => 'control-label']) !!}
                     {!! Form::hidden('ad_enabled', 0) !!}
@@ -97,8 +70,8 @@
                         </p>
                     @endif
                 </div>
-            </div> --}}
-         {{--    <div class="row">
+            </div>
+            <div class="row">
                 <div class="col-xs-12 form-group">
                     {!! Form::label('brand_id', trans('global.clips.fields.brand').'', ['class' => 'control-label']) !!}
                     {!! Form::select('brand_id', $brands, old('brand_id'), ['class' => 'form-control select2']) !!}
@@ -133,8 +106,8 @@
                         </p>
                     @endif
                 </div>
-            </div> --}}
-{{--             <div class="row">
+            </div>
+            <div class="row">
                 <div class="col-xs-12 form-group">
                     {!! Form::label('product', trans('global.clips.fields.product').'', ['class' => 'control-label']) !!}
                     {!! Form::text('product', old('product'), ['class' => 'form-control', 'placeholder' => '']) !!}
@@ -145,7 +118,7 @@
                         </p>
                     @endif
                 </div>
-            </div> --}}
+            </div>
             <div class="row">
                 <div class="col-xs-12 form-group">
                     {!! Form::label('title', trans('global.clips.fields.title').'', ['class' => 'control-label']) !!}
@@ -158,7 +131,7 @@
                     @endif
                 </div>
             </div>
-   {{--          <div class="row">
+            <div class="row">
                 <div class="col-xs-12 form-group">
                     {!! Form::label('description', trans('global.clips.fields.description').'', ['class' => 'control-label']) !!}
                     {!! Form::textarea('description', old('description'), ['class' => 'form-control editor', 'placeholder' => '']) !!}
@@ -386,11 +359,11 @@
                         </p>
                     @endif
                 </div>
-            </div> --}}
-
+            </div>
+            
         </div>
     </div>
-{{--     <div class="panel panel-default">
+    <div class="panel panel-default">
         <div class="panel-heading">
             Videos
         </div>
@@ -398,11 +371,10 @@
             <table class="table table-bordered table-striped">
                 <thead>
                 <tr>
-                    <th>Video Clip</th>
                     <th>@lang('global.videos.fields.name')</th>
                         <th>@lang('global.videos.fields.extention')</th>
                         <th>@lang('global.videos.fields.ad-duration')</th>
-
+                        
                     <th>Actions</th>
                 </tr>
                 </thead>
@@ -416,8 +388,8 @@
             </table>
             <a href="#" class="btn btn-success pull-right add-new">@lang('global.app_add_new')</a>
         </div>
-    </div> --}}
-{{--     <div class="panel panel-default">
+    </div>
+    <div class="panel panel-default">
         <div class="panel-heading">
             Brands
         </div>
@@ -427,7 +399,7 @@
                 <tr>
                     <th>@lang('global.brands.fields.name')</th>
                         <th>@lang('global.brands.fields.brand-url')</th>
-
+                        
                     <th>Actions</th>
                 </tr>
                 </thead>
@@ -441,7 +413,7 @@
             </table>
             <a href="#" class="btn btn-success pull-right add-new">@lang('global.app_add_new')</a>
         </div>
-    </div> --}}
+    </div>
 
     {!! Form::submit(trans('global.app_save'), ['class' => 'btn btn-danger']) !!}
     {!! Form::close() !!}
@@ -455,14 +427,14 @@
                 [
                     'index' => '_INDEX_',
                 ])
-               </script >
+               </script > 
 
     <script type="text/html" id="brands-template">
         @include('admin.clips.brands_row',
                 [
                     'index' => '_INDEX_',
                 ])
-               </script >
+               </script > 
     <script src="//cdn.ckeditor.com/4.5.4/full/ckeditor.js"></script>
     <script>
         $('.editor').each(function () {
@@ -482,15 +454,15 @@
             moment.updateLocale('{{ App::getLocale() }}', {
                 week: { dow: 1 } // Monday is the first day of the week
             });
-
+            
             $('.date').datetimepicker({
                 format: "{{ config('app.date_format_moment') }}",
                 locale: "{{ App::getLocale() }}",
             });
-
+            
         });
     </script>
-
+            
             <script>
         $('.add-new').click(function () {
             var tableBody = $(this).parent().find('tbody');

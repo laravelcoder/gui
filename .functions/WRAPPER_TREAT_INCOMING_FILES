@@ -1,5 +1,0 @@
-#!/bin/bash
-
-# DO RUN AS ROOT !
-
-su -c /home/ubuntu/bin/TREAT_INCOMING_FILES ubuntu ;
