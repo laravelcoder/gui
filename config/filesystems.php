@@ -41,13 +41,18 @@ return [
     |
     */
 
-    'disks' => [
+   'disks' => [
+
+        'media' => [
+            'driver' => 'local',
+            'root'   => public_path().'/media',
+        ],
 
         'local' => [
             'driver' => 'local',
             'root'   => storage_path('app'),
         ],
-        
+
         'public' => [
             'driver'     => 'local',
             'root'       => storage_path('app/public'),
@@ -66,6 +71,34 @@ return [
         'uploads' => [
             'driver' => 'local',
             'root' => public_path('uploads'),
+        ],
+
+        'images' => [
+            'driver' => 'local',
+            'root'   => public_path().'/uploads/images',
+            'url' => env('APP_URL') . '/uploads/images',
+            'visibility' => 'public',
+        ],
+
+        'cai' => [
+            'driver' => 'local',
+            'root'   => public_path().'/uploads/cai',
+            'url' => env('APP_URL') . '/uploads/cai',
+            'visibility' => 'public',
+        ],
+
+        'thumbs' => [
+            'driver' => 'local',
+            'root'   => public_path().'uploads/thumbs',
+            'url' => env('APP_URL') . 'uploads/thumbs',
+            'visibility' => 'public',
+        ],
+
+        'clips' => [
+            'driver' => 'local',
+            'root'   => public_path().'/uploads/clips',
+            'url' => env('APP_URL') . '/uploads/clips',
+            'visibility' => 'public',
         ],
 
         'uploads_test' => [

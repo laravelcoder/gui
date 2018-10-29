@@ -9,9 +9,68 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\StoreClipsRequest;
 use App\Http\Requests\Admin\UpdateClipsRequest;
 use Yajra\DataTables\DataTables;
+use Illuminate\Support\Facades\Log;
+use App\Helpers\Normalize;
+use App\Helpers\FFMPEG_helpers;
+
+use Intervention\Image\Facades\Image;
+use App\Video;
+use Illuminate\Http\UploadedFile;
+use Illuminate\Http\File;
+use Illuminate\Http\Input;
+
 
 class ClipsController extends Controller
 {
+
+        /**
+     * Store a newly created Clip in storage.
+     *
+     * @param  \App\Http\Requests\StoreClipsRequest  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(StoreClipsRequest $request)
+    {
+        if (! Gate::allows('clip_create')) {
+            return abort(401);
+        }
+
+        $clip = Clip::create($request->all());
+ 
+        $input= $request->all();
+  
+        foreach ($request->input('videos', []) as $data) {
+            // $video = $request->file('videos.*.video');
+            $file = $input['videos'][1]['video'];
+            $filename = $file->getClientOriginalName();
+            $extension = $file->getClientOriginalExtension();
+            $basename = substr($filename, 0, strrpos($filename, "."));
+            $basename = Normalize::titleCase($basename);
+            $ad_duration = FFMPEG_helpers::getDuration($file);
+            $video = str_slug($basename) . '.' . $extension;
+
+            $data_object = new \stdClass();
+            $data_object->video = $video;
+            $data_object->name = $filename;
+            $data_object->extension = $extension;
+            $data_object->ad_duration = $ad_duration;
+            $data_object->fileID = $clip->id;
+            $data[] = $data_object;
+            //dd($data_object);
+            $clip->videos()->create($data);
+            $request = $this->saveFiles($request);
+
+        }
+
+        foreach ($request->input('brands', []) as $data) {
+            $clip->brands()->create($data);
+        }
+
+
+        return redirect()->route('admin.clips.index');
+    }
+
+
     /**
      * Display a listing of Clip.
      *
@@ -23,15 +82,13 @@ class ClipsController extends Controller
             return abort(401);
         }
 
-
-        
         if (request()->ajax()) {
             $query = Clip::query();
             $query->with("brand");
             $query->with("industry");
             $template = 'actionsTemplate';
             if(request('show_deleted') == 1) {
-                
+
         if (! Gate::allows('clip_delete')) {
             return abort(401);
         }
@@ -189,36 +246,14 @@ class ClipsController extends Controller
         if (! Gate::allows('clip_create')) {
             return abort(401);
         }
-        
+
         $brands = \App\Brand::get()->pluck('name', 'id')->prepend(trans('global.app_please_select'), '');
         $industries = \App\Industry::get()->pluck('name', 'id')->prepend(trans('global.app_please_select'), '');
 
         return view('admin.clips.create', compact('brands', 'industries'));
     }
 
-    /**
-     * Store a newly created Clip in storage.
-     *
-     * @param  \App\Http\Requests\StoreClipsRequest  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(StoreClipsRequest $request)
-    {
-        if (! Gate::allows('clip_create')) {
-            return abort(401);
-        }
-        $clip = Clip::create($request->all());
 
-        foreach ($request->input('videos', []) as $data) {
-            $clip->videos()->create($data);
-        }
-        foreach ($request->input('brands', []) as $data) {
-            $clip->brands()->create($data);
-        }
-
-
-        return redirect()->route('admin.clips.index');
-    }
 
 
     /**
@@ -232,7 +267,7 @@ class ClipsController extends Controller
         if (! Gate::allows('clip_edit')) {
             return abort(401);
         }
-        
+
         $brands = \App\Brand::get()->pluck('name', 'id')->prepend(trans('global.app_please_select'), '');
         $industries = \App\Industry::get()->pluck('name', 'id')->prepend(trans('global.app_please_select'), '');
 
@@ -307,7 +342,7 @@ class ClipsController extends Controller
         if (! Gate::allows('clip_view')) {
             return abort(401);
         }
-        
+
         $brands = \App\Brand::get()->pluck('name', 'id')->prepend(trans('global.app_please_select'), '');
         $industries = \App\Industry::get()->pluck('name', 'id')->prepend(trans('global.app_please_select'), '');$videos = \App\Video::where('clip_id', $id)->get();$brands = \App\Brand::where('clip_id', $id)->get();
 

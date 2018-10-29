@@ -10,6 +10,13 @@ use App\Http\Requests\Admin\StoreVideosRequest;
 use App\Http\Requests\Admin\UpdateVideosRequest;
 use App\Http\Controllers\Traits\FileUploadTrait;
 use Yajra\DataTables\DataTables;
+use Illuminate\Support\Facades\Log;
+use App\Helpers\Normalize;
+use App\Helpers\FFMPEG_helpers;
+use App\Clip;
+use App\Video;
+use Illuminate\Http\UploadedFile;
+
 
 class VideosController extends Controller
 {
@@ -26,14 +33,12 @@ class VideosController extends Controller
             return abort(401);
         }
 
-
-        
         if (request()->ajax()) {
             $query = Video::query();
             $query->with("clip");
             $template = 'actionsTemplate';
             if(request('show_deleted') == 1) {
-                
+
         if (! Gate::allows('video_delete')) {
             return abort(401);
         }
@@ -68,7 +73,7 @@ class VideosController extends Controller
                 return $row->name ? $row->name : '';
             });
             $table->editColumn('video', function ($row) {
-                if($row->video) { return '<a href="'.asset(env('UPLOAD_PATH').'/'.$row->video) .'" target="_blank">Download file</a>'; };
+                if($row->video) { return '<a href="'.asset(env('CLIP_PATH').'/'.$row->video) .'" target="_blank">Download file</a>'; };
             });
             $table->editColumn('extention', function ($row) {
                 return $row->extention ? $row->extention : '';
@@ -95,7 +100,7 @@ class VideosController extends Controller
         if (! Gate::allows('video_create')) {
             return abort(401);
         }
-        
+
         $clips = \App\Clip::get()->pluck('title', 'id')->prepend(trans('global.app_please_select'), '');
 
         return view('admin.videos.create', compact('clips'));
@@ -112,7 +117,10 @@ class VideosController extends Controller
         if (! Gate::allows('video_create')) {
             return abort(401);
         }
+
         $request = $this->saveFiles($request);
+
+
         $video = Video::create($request->all());
 
 
@@ -132,7 +140,7 @@ class VideosController extends Controller
         if (! Gate::allows('video_edit')) {
             return abort(401);
         }
-        
+
         $clips = \App\Clip::get()->pluck('title', 'id')->prepend(trans('global.app_please_select'), '');
 
         $video = Video::findOrFail($id);

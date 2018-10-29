@@ -1,5 +1,5 @@
 <?php
-//namespace Development;
+// namespace Development;
 //use Illuminate\Support\Facades\Route;
 
 // Route::group(['middleware' => ['auth']], function () {
