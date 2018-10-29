@@ -14,9 +14,10 @@ use Illuminate\Support\Facades\Log;
 use App\Helpers\Normalize;
 use App\Helpers\FFMPEG_helpers;
 use App\Clip;
-use App\Video;
-use Illuminate\Http\UploadedFile;
 
+use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Facades\Storage;
+use Spatie\MediaLibrary\Media;
 
 class VideosController extends Controller
 {
@@ -123,6 +124,13 @@ class VideosController extends Controller
 
         $video = Video::create($request->all());
 
+        foreach ($request->input('video_id', []) as $index => $id) {
+            $model = config('medialibrary.media_model');
+            $file = $model::find($id);
+            $file->model_id = $video->id;
+            $file->save();
+        }
+
 
 
         return redirect()->route('admin.videos.index');
@@ -163,7 +171,17 @@ class VideosController extends Controller
         $request = $this->saveFiles($request);
         $video = Video::findOrFail($id);
         $video->update($request->all());
-
+        if ($request->video === true) {
+            $media = [];
+            foreach ($request->input('video_id[]') as $index => $id) {
+                $model = config('laravel-medialibrary.media_model');
+                $file = $model::find($id);
+                $file->model_id = $video->id;
+                $file->save();
+                $media[] = $file->toArray();
+            }
+            $video->updateMedia($media, 'video');
+        }
 
 
         return redirect()->route('admin.videos.index');
@@ -200,6 +218,10 @@ class VideosController extends Controller
         }
         $video = Video::findOrFail($id);
         $video->delete();
+
+        if (Storage::disk('clips')->exists($video->file_name)) {
+            $video->delete();
+        }
 
         return redirect()->route('admin.videos.index');
     }

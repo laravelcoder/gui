@@ -13,15 +13,18 @@ use Illuminate\Support\Facades\Log;
 use App\Helpers\Normalize;
 use App\Helpers\FFMPEG_helpers;
 
+use App\Http\Controllers\Traits\FileUploadTrait;
 use Intervention\Image\Facades\Image;
 use App\Video;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Http\File;
 use Illuminate\Http\Input;
-
+use Illuminate\Support\Facades\Storage;
+use Spatie\MediaLibrary\Media;
 
 class ClipsController extends Controller
 {
+    use FileUploadTrait;
 
         /**
      * Store a newly created Clip in storage.
@@ -36,21 +39,48 @@ class ClipsController extends Controller
         }
 
         $clip = Clip::create($request->all());
- 
+
+        $clip->videos->each(function($video) use ($request) {
+            $video->addMedia($request->input('videos.*.video'))->toMediaCollection('videos', 'local');
+        });
+
         $input= $request->all();
-  
+
+        // dd ( $request->file('videos') );
+
+
+
+        if (! file_exists(public_path().'/uploads')) { File::makeDirectory(public_path().'/uploads',0777, true);}
+        if (! file_exists(public_path().'/uploads/cai')) { File::makeDirectory(public_path().'/uploads/cai',0777, true); }
+        if (! file_exists(public_path().'/uploads/clips')) { File::makeDirectory(public_path().'/uploads/clips',0777, true); }
+        if (! file_exists(public_path().'/uploads/images')) { File::makeDirectory(public_path().'/uploads/images',0777, true); }
+        if (! file_exists(public_path().'/uploads/thumbs')) { File::makeDirectory(public_path().'/uploads/thumbs',0777, true); }
+
+        // $clipPath = config('gui.upload_path');
+        $uploadPath = env('UPLOAD_PATH', 'uploads');
+        $clipPath = env('CLIP_PATH', 'uploads/clips');
+        $imagePath = env('IMAGE_PATH','uploads/images');
+        $thumbPath = env('THUMB_PATH','uploads/thumbs');
+        $caiPath = env('CAI_PATH','uploads/cai');
+
+        $getcai = env('CAI_SERVER');
+        $transcoder = "/TOCAI.php?";
+        Log::info("UPLOAD FUNCTION STARTED SUCCESSFULLY");
+
         foreach ($request->input('videos', []) as $data) {
             // $video = $request->file('videos.*.video');
             $file = $input['videos'][1]['video'];
+
             $filename = $file->getClientOriginalName();
             $extension = $file->getClientOriginalExtension();
             $basename = substr($filename, 0, strrpos($filename, "."));
             $basename = Normalize::titleCase($basename);
             $ad_duration = FFMPEG_helpers::getDuration($file);
             $video = str_slug($basename) . '.' . $extension;
+            $filename = str_slug($basename) . '.' . $extension;
 
             $data_object = new \stdClass();
-            $data_object->video = $video;
+            // $data_object->video = $video;
             $data_object->name = $filename;
             $data_object->extension = $extension;
             $data_object->ad_duration = $ad_duration;
@@ -58,9 +88,43 @@ class ClipsController extends Controller
             $data[] = $data_object;
             //dd($data_object);
             $clip->videos()->create($data);
-            $request = $this->saveFiles($request);
 
+            $file_w_path = $clipPath . "/" . $filename;
+
+            $caifile = str_slug($basename) . '.cai';
+
+            dd(file_exists($caiPath. "/" .$caifile));
+
+            dd($caifile);
+
+            if ($file->isValid()) {
+                $file->move($clipPath, $filename);
+                //dd($file->move($clipPath, $filename));
+            }
+
+            if (!file_exists($caiPath. "/" .$caifile)){
+                try {
+                    Log::info("INIT CURL TOCAI");
+                    $ch = curl_init();
+                    // curl_setopt($ch,CURLOPT_URL,"". $getcai . $transcoder .  $file_w_path ."");
+                    curl_setopt($ch,CURLOPT_URL,"http://d-gp2-tocai-1.imovetv.com/TOCAI.php?http://d-gp2-caipyascs0-1.imovetv.com/ftp/downloads/coca-cola.mp4");
+                    curl_setopt($ch, CURLOPT_HEADER, 0);
+                    curl_setopt($ch, CURLOPT_POST, 1);
+                    curl_setopt($ch, CURLOPT_TIMEOUT, 300);
+                    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+
+                    $output = curl_exec($ch);
+                    file_put_contents($caiPath . "/" . str_slug($basename) . '.cai', $output);
+                    Log::info("SAVED CAI FILE");
+                    curl_close($ch);
+                }
+                catch (Exception $e) {
+                    //exception handling code goes here
+                }
+            }
         }
+
+
 
         foreach ($request->input('brands', []) as $data) {
             $clip->brands()->create($data);

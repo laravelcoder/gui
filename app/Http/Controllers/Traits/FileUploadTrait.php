@@ -22,7 +22,7 @@ trait FileUploadTrait
      * File upload trait used in controllers to upload files
      * FileUploadTrait::processClip();
      */
-    public function saveFiles(Request $request, $clipid = '')
+    public function saveFiles(Request $request)
     {
 
         if (! file_exists(public_path().'/uploads')) { File::makeDirectory(public_path().'/uploads',0777, true);}

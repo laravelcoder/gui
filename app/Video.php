@@ -42,5 +42,5 @@ class Video extends Model implements HasMedia
     {
         return $this->belongsTo(Clip::class, 'clip_id')->withTrashed();
     }
-    
+ 
 }
