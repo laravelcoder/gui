@@ -21,10 +21,10 @@ class AvatarController extends Controller
     public function index()
     {
 
- 
+
        $avatars = auth()->user()->getMedia();
- 
-       return view('admin.profile');
+
+       return view('admin.profile', compact('avatars'));
     }
 
     /**
