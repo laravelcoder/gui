@@ -1,7 +1,7 @@
 <?php
-Route::get('/', function () { return redirect('/admin/home'); });
+Route::get('/', function () { return redirect('/home'); });
 
-// Authentication Routes...
+// Aication Routes...
 $this->get('login', 'Auth\LoginController@showLoginForm')->name('login');
 $this->post('login', 'Auth\LoginController@login')->name('auth.login');
 $this->post('logout', 'Auth\LoginController@logout')->name('auth.logout');
@@ -26,6 +26,12 @@ Route::get('{driver}/callback', 'Auth\LoginController@handleSocialCallback')->na
 
 Route::group(['middleware' => ['auth', 'approved'], 'prefix' => 'admin', 'as' => 'admin.'], function () {
     Route::get('/home', 'HomeController@index');
+
+    Route::get('profile', function () {
+        return view('admin/profile', ['uses' => 'Admin\AvatarController@index', 'as' => 'admin.profile']);
+    });
+
+    Route::resource('avatar', 'Admin\AvatarController');
     
     Route::resource('galleries', 'Admin\GalleriesController');
     Route::resource('clips', 'Admin\ClipsController');

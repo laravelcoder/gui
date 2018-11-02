@@ -27,6 +27,7 @@ class IndustriesController extends Controller
         
         if (request()->ajax()) {
             $query = Industry::query();
+            $query->with("clip");
             $template = 'actionsTemplate';
             if(request('show_deleted') == 1) {
                 
@@ -40,6 +41,7 @@ class IndustriesController extends Controller
                 'industries.id',
                 'industries.name',
                 'industries.slug',
+                'industries.clip_id',
             ]);
             $table = Datatables::of($query);
 
@@ -60,6 +62,9 @@ class IndustriesController extends Controller
             $table->editColumn('slug', function ($row) {
                 return $row->slug ? $row->slug : '';
             });
+            $table->editColumn('clip.title', function ($row) {
+                return $row->clip ? $row->clip->title : '';
+            });
 
             $table->rawColumns(['actions','massDelete']);
 
@@ -79,7 +84,10 @@ class IndustriesController extends Controller
         if (! Gate::allows('industry_create')) {
             return abort(401);
         }
-        return view('admin.industries.create');
+        
+        $clips = \App\Clip::get()->pluck('title', 'id')->prepend(trans('global.app_please_select'), '');
+
+        return view('admin.industries.create', compact('clips'));
     }
 
     /**
@@ -95,9 +103,6 @@ class IndustriesController extends Controller
         }
         $industry = Industry::create($request->all());
 
-        foreach ($request->input('brands', []) as $data) {
-            $industry->brands()->create($data);
-        }
 
 
         return redirect()->route('admin.industries.index');
@@ -115,9 +120,12 @@ class IndustriesController extends Controller
         if (! Gate::allows('industry_edit')) {
             return abort(401);
         }
+        
+        $clips = \App\Clip::get()->pluck('title', 'id')->prepend(trans('global.app_please_select'), '');
+
         $industry = Industry::findOrFail($id);
 
-        return view('admin.industries.edit', compact('industry'));
+        return view('admin.industries.edit', compact('industry', 'clips'));
     }
 
     /**
@@ -135,23 +143,6 @@ class IndustriesController extends Controller
         $industry = Industry::findOrFail($id);
         $industry->update($request->all());
 
-        $brands           = $industry->brands;
-        $currentBrandData = [];
-        foreach ($request->input('brands', []) as $index => $data) {
-            if (is_integer($index)) {
-                $industry->brands()->create($data);
-            } else {
-                $id                          = explode('-', $index)[1];
-                $currentBrandData[$id] = $data;
-            }
-        }
-        foreach ($brands as $item) {
-            if (isset($currentBrandData[$item->id])) {
-                $item->update($currentBrandData[$item->id]);
-            } else {
-                $item->delete();
-            }
-        }
 
 
         return redirect()->route('admin.industries.index');
@@ -169,11 +160,12 @@ class IndustriesController extends Controller
         if (! Gate::allows('industry_view')) {
             return abort(401);
         }
-        $brands = \App\Brand::where('industry_id', $id)->get();$clips = \App\Clip::where('industry_id', $id)->get();
+        
+        $clips = \App\Clip::get()->pluck('title', 'id')->prepend(trans('global.app_please_select'), '');$clips = \App\Clip::where('industry_id', $id)->get();
 
         $industry = Industry::findOrFail($id);
 
-        return view('admin.industries.show', compact('industry', 'brands', 'clips'));
+        return view('admin.industries.show', compact('industry', 'clips'));
     }
 
 

@@ -61,18 +61,6 @@
                     @endif
                 </div>
             </div>
-            <div class="row">
-                <div class="col-xs-12 form-group">
-                    {!! Form::label('industry_id', trans('global.brands.fields.industry').'', ['class' => 'control-label']) !!}
-                    {!! Form::select('industry_id', $industries, old('industry_id'), ['class' => 'form-control select2']) !!}
-                    <p class="help-block"></p>
-                    @if($errors->has('industry_id'))
-                        <p class="help-block">
-                            {{ $errors->first('industry_id') }}
-                        </p>
-                    @endif
-                </div>
-            </div>
             
         </div>
     </div>

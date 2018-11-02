@@ -91,8 +91,8 @@ return [
 
         'thumbs' => [
             'driver' => 'local',
-            'root'   => public_path().'uploads/thumbs',
-            'url' => env('APP_URL') . 'uploads/thumbs',
+            'root'   => public_path().'/uploads/thumbs',
+            'url' => env('APP_URL') . '/uploads/thumbs',
             'visibility' => 'public',
         ],
 
@@ -103,9 +103,16 @@ return [
             'visibility' => 'public',
         ],
 
+        'videos' => [
+            'driver' => 'local',
+            'root'   => public_path().'/uploads/clips',
+            'url' => env('APP_URL') . '/uploads/clips',
+            'visibility' => 'public',
+        ],
+
         'uploads_test' => [
             'driver' => 'local',
-            'root' => public_path('uploads/test')
+            'root' => public_path('/uploads/test')
         ],
 
     ],

@@ -23,7 +23,7 @@
 <script src="//cdn.ckeditor.com/4.5.4/full/ckeditor.js"></script>
 <script src="{{ url('adminlte/js/bootstrap.min.js') }}"></script>
 <script src="{{ url('adminlte/js/select2.full.min.js') }}"></script>
-<script src="{{ url('adminlte/js/main.js') }}"></script>
+{{-- <script src="{{ url('adminlte/js/main.js') }}"></script> --}}
 <script src="{{ url('adminlte/plugins/datetimepicker/moment-with-locales.min.js') }}"></script>
 <script src="{{ url('adminlte/plugins/datetimepicker/bootstrap-datetimepicker.min.js') }}"></script>
 <script src="{{ url('adminlte/plugins/slimScroll/jquery.slimscroll.min.js') }}"></script>

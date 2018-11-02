@@ -31,7 +31,6 @@ class BrandsController extends Controller
         if (request()->ajax()) {
             $query = Brand::query();
             $query->with("clip");
-            $query->with("industry");
             $template = 'actionsTemplate';
             if(request('show_deleted') == 1) {
                 
@@ -47,7 +46,6 @@ class BrandsController extends Controller
                 'brands.image',
                 'brands.brand_url',
                 'brands.clip_id',
-                'brands.industry_id',
             ]);
             $table = Datatables::of($query);
 
@@ -74,9 +72,6 @@ class BrandsController extends Controller
             $table->editColumn('clip.title', function ($row) {
                 return $row->clip ? $row->clip->title : '';
             });
-            $table->editColumn('industry.name', function ($row) {
-                return $row->industry ? $row->industry->name : '';
-            });
 
             $table->rawColumns(['actions','massDelete','image']);
 
@@ -98,9 +93,8 @@ class BrandsController extends Controller
         }
         
         $clips = \App\Clip::get()->pluck('title', 'id')->prepend(trans('global.app_please_select'), '');
-        $industries = \App\Industry::get()->pluck('name', 'id')->prepend(trans('global.app_please_select'), '');
 
-        return view('admin.brands.create', compact('clips', 'industries'));
+        return view('admin.brands.create', compact('clips'));
     }
 
     /**
@@ -136,11 +130,10 @@ class BrandsController extends Controller
         }
         
         $clips = \App\Clip::get()->pluck('title', 'id')->prepend(trans('global.app_please_select'), '');
-        $industries = \App\Industry::get()->pluck('name', 'id')->prepend(trans('global.app_please_select'), '');
 
         $brand = Brand::findOrFail($id);
 
-        return view('admin.brands.edit', compact('brand', 'clips', 'industries'));
+        return view('admin.brands.edit', compact('brand', 'clips'));
     }
 
     /**
@@ -177,8 +170,7 @@ class BrandsController extends Controller
             return abort(401);
         }
         
-        $clips = \App\Clip::get()->pluck('title', 'id')->prepend(trans('global.app_please_select'), '');
-        $industries = \App\Industry::get()->pluck('name', 'id')->prepend(trans('global.app_please_select'), '');$clips = \App\Clip::where('brand_id', $id)->get();
+        $clips = \App\Clip::get()->pluck('title', 'id')->prepend(trans('global.app_please_select'), '');$clips = \App\Clip::where('brand_id', $id)->get();
 
         $brand = Brand::findOrFail($id);
 

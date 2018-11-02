@@ -11,9 +11,9 @@ return [
 		'tasks' => [		'title' => 'Tasks',		'fields' => [			'name' => 'Name',			'description' => 'Description',			'status' => 'Status',			'tag' => 'Tags',			'attachment' => 'Attachment',			'due-date' => 'Due date',			'user' => 'Assigned to',		],	],
 		'task-calendar' => [		'title' => 'Calendar',		'fields' => [		],	],
 		'clip-mgmt' => [		'title' => 'CLIP MGMT',		'fields' => [		],	],
-		'clips' => [		'title' => 'Clips',		'fields' => [			'ad-enabled' => 'Ad enabled',			'total-impressions' => 'Total Impressions',			'recommended-frequency' => 'Recommended Frequency',			'ad-airing-date-first' => 'Ad First Airing Date ',			'ad-airing-date-last' => 'Ad Last Airing Date',			'brand' => 'Brand',			'industry' => 'Industry',			'advertiser' => 'Advertiser',			'product' => 'Product',			'title' => 'Title',			'description' => 'Description',			'notes' => 'Notes',			'agency' => 'Agency',			'sourceurl' => 'Sourceurl',			'imagespath' => 'Imagespath',			'cai-path' => 'Cai path',			'caipyurl' => 'Caipyurl',			'isci-ad-id' => 'ISCI_Ad_ID',			'copylength' => 'Copylength',			'media-content' => 'Media content',			'media-filename' => 'Media filename',			'scheduledate' => 'Scheduledate',			'expirationdate' => 'Expirationdate',			'family' => 'Family',			'subfamily' => 'Subfamily',			'group' => 'Group',			'caipy-clipids' => 'Caipy clipids',			'reviewstate' => 'Reviewstate',			'ignoreimport' => 'Ignoreimport',		],	],
-		'industry' => [		'title' => 'Industry',		'fields' => [			'name' => 'Name',			'slug' => 'Slug',		],	],
-		'images' => [		'title' => 'Images',		'fields' => [			'image' => 'Image',		],	],
+		'clips' => [		'title' => 'Clips',		'fields' => [			'title' => 'Title',			'ad-enabled' => 'Ad enabled',			'total-impressions' => 'Total Impressions',			'recommended-frequency' => 'Recommended Frequency',			'ad-airing-date-first' => 'Ad First Airing Date ',			'ad-airing-date-last' => 'Ad Last Airing Date',			'brand' => 'Brand',			'industry' => 'Industry',			'advertiser' => 'Advertiser',			'product' => 'Product',			'description' => 'Description',			'notes' => 'Notes',			'agency' => 'Agency',			'sourceurl' => 'Sourceurl',			'imagespath' => 'Imagespath',			'cai-path' => 'Cai path',			'caipyurl' => 'Caipyurl',			'isci-ad-id' => 'ISCI_Ad_ID',			'copylength' => 'Copylength',			'media-content' => 'Media content',			'media-filename' => 'Media filename',			'scheduledate' => 'Scheduledate',			'expirationdate' => 'Expirationdate',			'family' => 'Family',			'subfamily' => 'Subfamily',			'group' => 'Group',			'caipy-clipids' => 'Caipy clipids',			'reviewstate' => 'Reviewstate',			'ignoreimport' => 'Ignoreimport',		],	],
+		'industry' => [		'title' => 'Industry',		'fields' => [			'name' => 'Name',			'slug' => 'Slug',			'clip' => 'Clip',		],	],
+		'images' => [		'title' => 'Images',		'fields' => [			'image' => 'Image',			'clip' => 'Clip',		],	],
 		'detections' => [		'title' => 'Detections',		'fields' => [		],	],
 		'single-channel' => [		'title' => 'Single channel',		'fields' => [		],	],
 		'multi-channel' => [		'title' => 'Multi Channel',		'fields' => [		],	],
@@ -26,7 +26,7 @@ return [
 		'sources-mgmt' => [		'title' => 'Sources Mgmt',		'fields' => [		],	],
 		'ftp' => [		'title' => 'Ftp',		'fields' => [			'ftp-server' => 'FTP Server',			'ftp-directory' => 'Ftp Directory',			'ftp-username' => 'FTP Username',			'ftp-password' => 'FTP password',			'notes' => 'Notes',		],	],
 		'videos' => [		'title' => 'Videos',		'fields' => [			'clip' => 'Clip',			'name' => 'Name',			'video' => 'Video',			'extention' => 'Extention',			'ad-duration' => 'Ad duration',		],	],
-		'brands' => [		'title' => 'Brands',		'fields' => [			'name' => 'Name',			'image' => 'Image',			'brand-url' => 'Brand URL',			'clip' => 'Clip',			'industry' => 'Industry',		],	],
+		'brands' => [		'title' => 'Brands',		'fields' => [			'name' => 'Name',			'image' => 'Image',			'brand-url' => 'Brand URL',			'clip' => 'Clip',		],	],
 		'gallery' => [		'title' => 'Gallery',		'fields' => [		],	],
 	'app_create' => 'Create',
 	'app_save' => 'Save',

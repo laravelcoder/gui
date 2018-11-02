@@ -2,7 +2,9 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\SoftDeletes; 
+use Spatie\MediaLibrary\HasMedia\HasMedia;
+use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
 
 /**
  * Class Brand
@@ -12,13 +14,13 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property string $image
  * @property string $brand_url
  * @property string $clip
- * @property string $industry
 */
-class Brand extends Model
+class Brand extends Modelimplements HasMedia
 {
+    use HasMediaTrait;
     use SoftDeletes;
 
-    protected $fillable = ['name', 'image', 'brand_url', 'clip_id', 'industry_id'];
+    protected $fillable = ['name', 'image', 'brand_url', 'clip_id'];
     protected $hidden = [];
     public static $searchable = [
     ];
@@ -32,24 +34,10 @@ class Brand extends Model
     {
         $this->attributes['clip_id'] = $input ? $input : null;
     }
-
-    /**
-     * Set to null if empty
-     * @param $input
-     */
-    public function setIndustryIdAttribute($input)
-    {
-        $this->attributes['industry_id'] = $input ? $input : null;
-    }
     
     public function clip()
     {
         return $this->belongsTo(Clip::class, 'clip_id')->withTrashed();
-    }
-    
-    public function industry()
-    {
-        return $this->belongsTo(Industry::class, 'industry_id')->withTrashed();
     }
     
 }

@@ -5,6 +5,9 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Auth\Notifications\ResetPassword;
 use Hash;
+use Illuminate\Database\Eloquent\Model;
+use Spatie\MediaLibrary\HasMedia\HasMedia;
+use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
 
 /**
  * Class User
@@ -16,9 +19,11 @@ use Hash;
  * @property string $remember_token
  * @property tinyInteger $approved
 */
-class User extends Authenticatable
+class User extends Authenticatable implements HasMedia
 {
+    use HasMediaTrait;
     use Notifiable;
+    
     protected $fillable = ['name', 'email', 'password', 'remember_token', 'approved'];
     protected $hidden = ['password', 'remember_token'];
     public static $searchable = [

@@ -18,18 +18,20 @@ use Intervention\Image\Facades\Image;
 use App\Video;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Http\File;
-use Illuminate\Http\Input;
+use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Storage;
-use Spatie\MediaLibrary\Media;
+
+use Spatie\MediaLibrary\Models\Media;
+use Spatie\MediaLibrary\HasMedia\HasMedia;
 
 class ClipsController extends Controller
 {
     use FileUploadTrait;
 
-        /**
+    /**
      * Store a newly created Clip in storage.
      *
-     * @param  \App\Http\Requests\StoreClipsRequest  $request
+     * @param \App\Http\Requests\Admin\StoreClipsRequest $request
      * @return \Illuminate\Http\Response
      */
     public function store(StoreClipsRequest $request)
@@ -40,9 +42,6 @@ class ClipsController extends Controller
 
         $clip = Clip::create($request->all());
 
-        $clip->videos->each(function($video) use ($request) {
-            $video->addMedia($request->input('videos.*.video'))->toMediaCollection('videos', 'local');
-        });
 
         $input= $request->all();
 
@@ -68,9 +67,14 @@ class ClipsController extends Controller
         Log::info("UPLOAD FUNCTION STARTED SUCCESSFULLY");
 
         foreach ($request->input('videos', []) as $data) {
-            // $video = $request->file('videos.*.video');
-            $file = $input['videos'][1]['video'];
 
+
+            // $video = $request->file('videos.*.video');
+            // $file = $input['videos'][1]['video'];
+ 
+            $file = $request['videos'][1]['video'];
+            // dd($file);
+            // dd($request->file('videos.1'));
             $filename = $file->getClientOriginalName();
             $extension = $file->getClientOriginalExtension();
             $basename = substr($filename, 0, strrpos($filename, "."));
@@ -86,21 +90,34 @@ class ClipsController extends Controller
             $data_object->ad_duration = $ad_duration;
             $data_object->fileID = $clip->id;
             $data[] = $data_object;
-            //dd($data_object);
+            // dd($data_object);
+
+
             $clip->videos()->create($data);
+
+            $clip->videos->each(function ($data) use ($request) {
+                // $video->addMedia($data)->toMediaCollection('videos', 'local');
+                $data
+                       ->addMedia($request['videos'][1]['video'])
+                       ->preservingOriginal()
+                       ->toMediaCollection();
+                Log::info("SAVED TO MEDIA");
+            });
 
             $file_w_path = $clipPath . "/" . $filename;
 
             $caifile = str_slug($basename) . '.cai';
 
-            dd(file_exists($caiPath. "/" .$caifile));
 
-            dd($caifile);
+            // dd($caifile);
 
             if ($file->isValid()) {
                 $file->move($clipPath, $filename);
                 //dd($file->move($clipPath, $filename));
             }
+
+
+            // dd(file_exists($caiPath. "/" .$caifile));
 
             if (!file_exists($caiPath. "/" .$caifile)){
                 try {
@@ -122,14 +139,26 @@ class ClipsController extends Controller
                     //exception handling code goes here
                 }
             }
+
+
+            // $clip->videos->each(function ($data) use ($request) {
+            //     $clip->videos()->addMedia($request->file('videos.*.video'))->toMediaCollection('media');
+            //     Log::info("SAVED TO MEDIA");
+            // });
+
+
         }
-
-
-
+ 
+        foreach ($request->input('images', []) as $data) {
+            $clip->images()->create($data);
+        }
+        foreach ($request->input('industries', []) as $data) {
+            $clip->industries()->create($data);
+        }
         foreach ($request->input('brands', []) as $data) {
             $clip->brands()->create($data);
         }
-
+ 
 
         return redirect()->route('admin.clips.index');
     }
@@ -146,13 +175,15 @@ class ClipsController extends Controller
             return abort(401);
         }
 
+
+        
         if (request()->ajax()) {
             $query = Clip::query();
             $query->with("brand");
             $query->with("industry");
             $template = 'actionsTemplate';
             if(request('show_deleted') == 1) {
-
+                
         if (! Gate::allows('clip_delete')) {
             return abort(401);
         }
@@ -161,6 +192,7 @@ class ClipsController extends Controller
             }
             $query->select([
                 'clips.id',
+                'clips.title',
                 'clips.ad_enabled',
                 'clips.total_impressions',
                 'clips.recommended_frequency',
@@ -170,7 +202,6 @@ class ClipsController extends Controller
                 'clips.industry_id',
                 'clips.advertiser',
                 'clips.product',
-                'clips.title',
                 'clips.description',
                 'clips.notes',
                 'clips.agency',
@@ -204,6 +235,9 @@ class ClipsController extends Controller
 
                 return view($template, compact('row', 'gateKey', 'routeKey'));
             });
+            $table->editColumn('title', function ($row) {
+                return $row->title ? $row->title : '';
+            });
             $table->editColumn('ad_enabled', function ($row) {
                 return \Form::checkbox("ad_enabled", 1, $row->ad_enabled == 1, ["disabled"]);
             });
@@ -230,9 +264,6 @@ class ClipsController extends Controller
             });
             $table->editColumn('product', function ($row) {
                 return $row->product ? $row->product : '';
-            });
-            $table->editColumn('title', function ($row) {
-                return $row->title ? $row->title : '';
             });
             $table->editColumn('description', function ($row) {
                 return $row->description ? $row->description : '';
@@ -353,7 +384,8 @@ class ClipsController extends Controller
             return abort(401);
         }
         $clip = Clip::findOrFail($id);
-        $clip->update($request->all());
+
+ $clip->update($request->all());
 
         $videos           = $clip->videos;
         $currentVideoData = [];
@@ -368,6 +400,40 @@ class ClipsController extends Controller
         foreach ($videos as $item) {
             if (isset($currentVideoData[$item->id])) {
                 $item->update($currentVideoData[$item->id]);
+            } else {
+                $item->delete();
+            }
+        }
+        $images           = $clip->images;
+        $currentImageData = [];
+        foreach ($request->input('images', []) as $index => $data) {
+            if (is_integer($index)) {
+                $clip->images()->create($data);
+            } else {
+                $id                          = explode('-', $index)[1];
+                $currentImageData[$id] = $data;
+            }
+        }
+        foreach ($images as $item) {
+            if (isset($currentImageData[$item->id])) {
+                $item->update($currentImageData[$item->id]);
+            } else {
+                $item->delete();
+            }
+        }
+        $industries           = $clip->industries;
+        $currentIndustryData = [];
+        foreach ($request->input('industries', []) as $index => $data) {
+            if (is_integer($index)) {
+                $clip->industries()->create($data);
+            } else {
+                $id                          = explode('-', $index)[1];
+                $currentIndustryData[$id] = $data;
+            }
+        }
+        foreach ($industries as $item) {
+            if (isset($currentIndustryData[$item->id])) {
+                $item->update($currentIndustryData[$item->id]);
             } else {
                 $item->delete();
             }
@@ -389,7 +455,6 @@ class ClipsController extends Controller
                 $item->delete();
             }
         }
-
 
         return redirect()->route('admin.clips.index');
     }

@@ -13,6 +13,10 @@
                 <div class="col-md-6">
                     <table class="table table-bordered table-striped">
                         <tr>
+                            <th>@lang('global.clips.fields.title')</th>
+                            <td field-key='title'>{{ $clip->title }}</td>
+                        </tr>
+                        <tr>
                             <th>@lang('global.clips.fields.ad-enabled')</th>
                             <td field-key='ad_enabled'>{{ Form::checkbox("ad_enabled", 1, $clip->ad_enabled == 1 ? true : false, ["disabled"]) }}</td>
                         </tr>
@@ -47,10 +51,6 @@
                         <tr>
                             <th>@lang('global.clips.fields.product')</th>
                             <td field-key='product'>{{ $clip->product }}</td>
-                        </tr>
-                        <tr>
-                            <th>@lang('global.clips.fields.title')</th>
-                            <td field-key='title'>{{ $clip->title }}</td>
                         </tr>
                         <tr>
                             <th>@lang('global.clips.fields.description')</th>
@@ -134,6 +134,8 @@
 <ul class="nav nav-tabs" role="tablist">
     
 <li role="presentation" class="active"><a href="#videos" aria-controls="videos" role="tab" data-toggle="tab">Videos</a></li>
+<li role="presentation" class=""><a href="#images" aria-controls="images" role="tab" data-toggle="tab">Images</a></li>
+<li role="presentation" class=""><a href="#industry" aria-controls="industry" role="tab" data-toggle="tab">Industry</a></li>
 <li role="presentation" class=""><a href="#brands" aria-controls="brands" role="tab" data-toggle="tab">Brands</a></li>
 </ul>
 
@@ -144,7 +146,8 @@
 <table class="table table-bordered table-striped {{ count($videos) > 0 ? 'datatable' : '' }}">
     <thead>
         <tr>
-            <th>@lang('global.videos.fields.video')</th>
+            <th>@lang('global.videos.fields.name')</th>
+                        <th>@lang('global.videos.fields.video')</th>
                         @if( request('show_deleted') == 1 )
                         <th>&nbsp;</th>
                         @else
@@ -157,7 +160,8 @@
         @if (count($videos) > 0)
             @foreach ($videos as $video)
                 <tr data-entry-id="{{ $video->id }}">
-                    <td field-key='video'>@if($video->video)<a href="{{ asset(env('UPLOAD_PATH').'/' . $video->video) }}" target="_blank">Download file</a>@endif</td>
+                    <td field-key='name'>{{ $video->name }}</td>
+                                <td field-key='video'>@if($video->video)<a href="{{ asset(env('UPLOAD_PATH').'/' . $video->video) }}" target="_blank">Download file</a>@endif</td>
                                 @if( request('show_deleted') == 1 )
                                 <td>
                                     {!! Form::open(array(
@@ -199,6 +203,115 @@
         @else
             <tr>
                 <td colspan="10">@lang('global.app_no_entries_in_table')</td>
+            </tr>
+        @endif
+    </tbody>
+</table>
+</div>
+<div role="tabpanel" class="tab-pane " id="images">
+<table class="table table-bordered table-striped {{ count($images) > 0 ? 'datatable' : '' }}">
+    <thead>
+        <tr>
+            <th>@lang('global.images.fields.image')</th>
+                                                <th>&nbsp;</th>
+
+        </tr>
+    </thead>
+
+    <tbody>
+        @if (count($images) > 0)
+            @foreach ($images as $image)
+                <tr data-entry-id="{{ $image->id }}">
+                    <td field-key='image'>@if($image->image)<a href="{{ asset(env('UPLOAD_PATH').'/' . $image->image) }}" target="_blank"><img src="{{ asset(env('UPLOAD_PATH').'/thumb/' . $image->image) }}"/></a>@endif</td>
+                                                                <td>
+                                    @can('image_view')
+                                    <a href="{{ route('admin.images.show',[$image->id]) }}" class="btn btn-xs btn-primary">@lang('global.app_view')</a>
+                                    @endcan
+                                    @can('image_edit')
+                                    <a href="{{ route('admin.images.edit',[$image->id]) }}" class="btn btn-xs btn-info">@lang('global.app_edit')</a>
+                                    @endcan
+                                    @can('image_delete')
+{!! Form::open(array(
+                                        'style' => 'display: inline-block;',
+                                        'method' => 'DELETE',
+                                        'onsubmit' => "return confirm('".trans("global.app_are_you_sure")."');",
+                                        'route' => ['admin.images.destroy', $image->id])) !!}
+                                    {!! Form::submit(trans('global.app_delete'), array('class' => 'btn btn-xs btn-danger')) !!}
+                                    {!! Form::close() !!}
+                                    @endcan
+                                </td>
+
+                </tr>
+            @endforeach
+        @else
+            <tr>
+                <td colspan="7">@lang('global.app_no_entries_in_table')</td>
+            </tr>
+        @endif
+    </tbody>
+</table>
+</div>
+<div role="tabpanel" class="tab-pane " id="industry">
+<table class="table table-bordered table-striped {{ count($industries) > 0 ? 'datatable' : '' }}">
+    <thead>
+        <tr>
+            <th>@lang('global.industry.fields.name')</th>
+                        <th>@lang('global.industry.fields.slug')</th>
+                        @if( request('show_deleted') == 1 )
+                        <th>&nbsp;</th>
+                        @else
+                        <th>&nbsp;</th>
+                        @endif
+        </tr>
+    </thead>
+
+    <tbody>
+        @if (count($industries) > 0)
+            @foreach ($industries as $industry)
+                <tr data-entry-id="{{ $industry->id }}">
+                    <td field-key='name'>{{ $industry->name }}</td>
+                                <td field-key='slug'>{{ $industry->slug }}</td>
+                                @if( request('show_deleted') == 1 )
+                                <td>
+                                    {!! Form::open(array(
+                                        'style' => 'display: inline-block;',
+                                        'method' => 'POST',
+                                        'onsubmit' => "return confirm('".trans("global.app_are_you_sure")."');",
+                                        'route' => ['admin.industries.restore', $industry->id])) !!}
+                                    {!! Form::submit(trans('global.app_restore'), array('class' => 'btn btn-xs btn-success')) !!}
+                                    {!! Form::close() !!}
+                                                                    {!! Form::open(array(
+                                        'style' => 'display: inline-block;',
+                                        'method' => 'DELETE',
+                                        'onsubmit' => "return confirm('".trans("global.app_are_you_sure")."');",
+                                        'route' => ['admin.industries.perma_del', $industry->id])) !!}
+                                    {!! Form::submit(trans('global.app_permadel'), array('class' => 'btn btn-xs btn-danger')) !!}
+                                    {!! Form::close() !!}
+                                                                </td>
+                                @else
+                                <td>
+                                    @can('industry_view')
+                                    <a href="{{ route('admin.industries.show',[$industry->id]) }}" class="btn btn-xs btn-primary">@lang('global.app_view')</a>
+                                    @endcan
+                                    @can('industry_edit')
+                                    <a href="{{ route('admin.industries.edit',[$industry->id]) }}" class="btn btn-xs btn-info">@lang('global.app_edit')</a>
+                                    @endcan
+                                    @can('industry_delete')
+{!! Form::open(array(
+                                        'style' => 'display: inline-block;',
+                                        'method' => 'DELETE',
+                                        'onsubmit' => "return confirm('".trans("global.app_are_you_sure")."');",
+                                        'route' => ['admin.industries.destroy', $industry->id])) !!}
+                                    {!! Form::submit(trans('global.app_delete'), array('class' => 'btn btn-xs btn-danger')) !!}
+                                    {!! Form::close() !!}
+                                    @endcan
+                                </td>
+                                @endif
+                </tr>
+            @endforeach
+        @else
+            <tr>
+                <td colspan="8">@lang('global.app_no_entries_in_table')</td>
             </tr>
         @endif
     </tbody>
@@ -264,7 +377,7 @@
             @endforeach
         @else
             <tr>
-                <td colspan="10">@lang('global.app_no_entries_in_table')</td>
+                <td colspan="9">@lang('global.app_no_entries_in_table')</td>
             </tr>
         @endif
     </tbody>

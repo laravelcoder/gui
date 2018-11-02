@@ -39,10 +39,7 @@
 <table class="table table-bordered table-striped {{ count($clips) > 0 ? 'datatable' : '' }}">
     <thead>
         <tr>
-            <th>@lang('global.clips.fields.industry')</th>
-                        <th>@lang('global.clips.fields.advertiser')</th>
-                        <th>@lang('global.clips.fields.product')</th>
-                        <th>@lang('global.clips.fields.title')</th>
+            <th>@lang('global.clips.fields.title')</th>
                         @if( request('show_deleted') == 1 )
                         <th>&nbsp;</th>
                         @else
@@ -55,10 +52,7 @@
         @if (count($clips) > 0)
             @foreach ($clips as $clip)
                 <tr data-entry-id="{{ $clip->id }}">
-                    <td field-key='industry'>{{ $clip->industry->name ?? '' }}</td>
-                                <td field-key='advertiser'>{{ $clip->advertiser }}</td>
-                                <td field-key='product'>{{ $clip->product }}</td>
-                                <td field-key='title'>{{ $clip->title }}</td>
+                    <td field-key='title'>{{ $clip->title }}</td>
                                 @if( request('show_deleted') == 1 )
                                 <td>
                                     {!! Form::open(array(

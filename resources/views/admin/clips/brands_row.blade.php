@@ -3,6 +3,6 @@
 <td>{!! Form::text('brands['.$index.'][brand_url]', old('brands['.$index.'][brand_url]', isset($field) ? $field->brand_url: ''), ['class' => 'form-control']) !!}</td>
 
     <td>
-        <a href="#" class="remove btn btn-xs btn-danger">@lang('quickadmin.qa_delete')</a>
+        <a href="#" class="remove btn btn-xs btn-danger">@lang('global.app_delete')</a>
     </td>
 </tr>

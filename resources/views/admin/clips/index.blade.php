@@ -6,6 +6,8 @@
     @can('clip_create')
     <p>
         <a href="{{ route('admin.clips.create') }}" class="btn btn-success">@lang('global.app_add_new')</a>
+        <a href="#" class="btn btn-warning" style="margin-left:5px;" data-toggle="modal" data-target="#myModal">@lang('global.app_csvImport')</a>
+        @include('csvImport.modal', ['model' => 'Clip'])
         
     </p>
     @endcan
@@ -30,11 +32,8 @@
                         @can('clip_delete')
                             @if ( request('show_deleted') != 1 )<th style="text-align:center;"><input type="checkbox" id="select-all" /></th>@endif
                         @endcan
+
                         <th>@lang('global.clips.fields.title')</th>
-                        {{-- <th>@lang('global.clips.fields.industry')</th> --}}
-                        {{-- <th>@lang('global.clips.fields.advertiser')</th> --}}
-                        {{-- <th>@lang('global.clips.fields.product')</th> --}}
-                        
                         @if( request('show_deleted') == 1 )
                         <th>&nbsp;</th>
                         @else
@@ -54,18 +53,11 @@
         @endcan
         $(document).ready(function () {
             window.dtDefaultOptions.ajax = '{!! route('admin.clips.index') !!}?show_deleted={{ request('show_deleted') }}';
-            window.dtDefaultOptions.columns = [
-                @can('clip_delete')
+            window.dtDefaultOptions.columns = [@can('clip_delete')
                 @if ( request('show_deleted') != 1 )
                     {data: 'massDelete', name: 'id', searchable: false, sortable: false},
                 @endif
-                
-                @endcan
-                {data: 'title', name: 'title'},
-                // {data: 'industry.name', name: 'industry.name'},
-                // {data: 'advertiser', name: 'advertiser'},
-                // {data: 'product', name: 'product'},
-                
+                @endcan{data: 'title', name: 'title'},
                 
                 {data: 'actions', name: 'actions', searchable: false, sortable: false}
             ];

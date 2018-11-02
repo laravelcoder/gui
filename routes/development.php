@@ -1,8 +1,4 @@
 <?php
-// namespace Development;
-//use Illuminate\Support\Facades\Route;
-
-// Route::group(['middleware' => ['auth']], function () {
 
 Route::get('/r', function () {
     function philsroutes()
@@ -34,7 +30,7 @@ Route::get('/r', function () {
 
     return philsroutes();
 })->name('assigned-routes');
-// });
+ 
 
 
 Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');

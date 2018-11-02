@@ -5,6 +5,5 @@ $factory->define(App\Brand::class, function (Faker\Generator $faker) {
         "name" => $faker->name,
         "brand_url" => $faker->name,
         "clip_id" => factory('App\Clip')->create(),
-        "industry_id" => factory('App\Industry')->create(),
     ];
 });

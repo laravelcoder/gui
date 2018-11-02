@@ -29,6 +29,18 @@
                     @endif
                 </div>
             </div>
+            <div class="row">
+                <div class="col-xs-12 form-group">
+                    {!! Form::label('clip_id', trans('global.images.fields.clip').'', ['class' => 'control-label']) !!}
+                    {!! Form::select('clip_id', $clips, old('clip_id'), ['class' => 'form-control select2']) !!}
+                    <p class="help-block"></p>
+                    @if($errors->has('clip_id'))
+                        <p class="help-block">
+                            {{ $errors->first('clip_id') }}
+                        </p>
+                    @endif
+                </div>
+            </div>
             
         </div>
     </div>

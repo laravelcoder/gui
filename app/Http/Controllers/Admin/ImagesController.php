@@ -30,11 +30,13 @@ class ImagesController extends Controller
         
         if (request()->ajax()) {
             $query = Image::query();
+            $query->with("clip");
             $template = 'actionsTemplate';
             
             $query->select([
                 'images.id',
                 'images.image',
+                'images.clip_id',
             ]);
             $table = Datatables::of($query);
 
@@ -51,6 +53,9 @@ class ImagesController extends Controller
             });
             $table->editColumn('image', function ($row) {
                 if($row->image) { return '<a href="'. asset(env('UPLOAD_PATH').'/' . $row->image) .'" target="_blank"><img src="'. asset(env('UPLOAD_PATH').'/thumb/' . $row->image) .'"/>'; };
+            });
+            $table->editColumn('clip.title', function ($row) {
+                return $row->clip ? $row->clip->title : '';
             });
 
             $table->rawColumns(['actions','massDelete','image']);
@@ -71,7 +76,10 @@ class ImagesController extends Controller
         if (! Gate::allows('image_create')) {
             return abort(401);
         }
-        return view('admin.images.create');
+        
+        $clips = \App\Clip::get()->pluck('title', 'id')->prepend(trans('global.app_please_select'), '');
+
+        return view('admin.images.create', compact('clips'));
     }
 
     /**
@@ -105,9 +113,12 @@ class ImagesController extends Controller
         if (! Gate::allows('image_edit')) {
             return abort(401);
         }
+        
+        $clips = \App\Clip::get()->pluck('title', 'id')->prepend(trans('global.app_please_select'), '');
+
         $image = Image::findOrFail($id);
 
-        return view('admin.images.edit', compact('image'));
+        return view('admin.images.edit', compact('image', 'clips'));
     }
 
     /**

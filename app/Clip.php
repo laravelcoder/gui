@@ -6,7 +6,7 @@ use Carbon\Carbon;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Spatie\MediaLibrary\HasMedia\HasMedia;
 use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
-
+ 
 
 /**
  * Class Clip
@@ -53,7 +53,7 @@ class Clip extends Model implements HasMedia
         'isci_ad_id',
         'scheduledate',
     ];
-    
+
 
     /**
      * Set attribute to money format
@@ -141,17 +141,17 @@ class Clip extends Model implements HasMedia
     {
         $this->attributes['industry_id'] = $input ? $input : null;
     }
-    
+
     public function brand()
     {
         return $this->belongsTo(Brand::class, 'brand_id')->withTrashed();
     }
-    
+
     public function industry()
     {
         return $this->belongsTo(Industry::class, 'industry_id')->withTrashed();
     }
-    
+
     public function videos() {
         return $this->hasMany(Video::class, 'clip_id');
     }

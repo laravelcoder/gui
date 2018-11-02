@@ -2,6 +2,7 @@
 
 $factory->define(App\Clip::class, function (Faker\Generator $faker) {
     return [
+        "title" => $faker->name,
         "ad_enabled" => 1,
         "total_impressions" => $faker->randomNumber(2),
         "recommended_frequency" => $faker->name,
@@ -11,7 +12,6 @@ $factory->define(App\Clip::class, function (Faker\Generator $faker) {
         "industry_id" => factory('App\Industry')->create(),
         "advertiser" => $faker->name,
         "product" => $faker->name,
-        "title" => $faker->name,
         "description" => $faker->name,
         "notes" => $faker->name,
         "agency" => $faker->name,
