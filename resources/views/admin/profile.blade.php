@@ -27,6 +27,7 @@
           <div class="box box-primary">
             <div class="box-body box-profile">
             	@foreach($avatars as $avatar)
+            	image here
               <img class="profile-user-img img-responsive img-circle" src="{{ $avatar->getUrl() }}" alt="User profile picture">
 				@endforeach
               <h3 class="profile-username text-center">Nina Mcintire</h3>
