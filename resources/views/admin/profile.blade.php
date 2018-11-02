@@ -26,11 +26,15 @@
           <!-- Profile Image -->
           <div class="box box-primary">
             <div class="box-body box-profile">
+            https://docs.spatie.be/laravel-medialibrary/v7/basic-usage/retrieving-media
+            https://www.youtube.com/watch?v=G71igfoSrWM&index=4&list=PLe30vg_FG4ORLxQcrsJdGAuo_AVnLSKvG
+
             	@foreach($avatars as $avatar)
-            	image here
-              <img class="profile-user-img img-responsive img-circle" src="{{ $avatar->getUrl() }}" alt="User profile picture">
+            	    	{{ $avatar->getFirstMedia() }}
+            	{{ $avatar[0]->getUrl() }}
+              <img class="profile-user-img img-responsive img-circle" src="{{ $avatar->getMedia() }}" alt="User profile picture">
 				@endforeach
-              <h3 class="profile-username text-center">Nina Mcintire</h3>
+              <h3 class="profile-username text-center">min Nina Mcintire</h3>
 
               <p class="text-muted text-center">Software Engineer</p>
 
