@@ -25,7 +25,7 @@ class Video extends Model implements HasMedia
     protected $hidden = [];
     public static $searchable = [
     ];
-    
+
 
     /**
      * Set to null if empty
@@ -35,10 +35,36 @@ class Video extends Model implements HasMedia
     {
         $this->attributes['clip_id'] = $input ? $input : null;
     }
-    
+
     public function clip()
     {
         return $this->belongsTo(Clip::class, 'clip_id')->withTrashed();
     }
- 
+
+    public function registerMediaCollections()
+    {
+        $this->addMediaCollection('clips')->singleFile()
+            ->registerMediaConversions(function(Media $media){
+                $this->addMediaConversion('clips')
+                    ->width(560)
+                    ->height(315)
+                    ->extractVideoFrameAtSecond(2)
+                    ->extractVideoFrameAtSecond(20)
+                    ->extractVideoFrameAtSecond(30)
+                    ->performOnCollections('clips');
+            });
+
+        $this->addMediaCollection('images');
+
+        $this->addMediaCollection('videos')->singleFile()
+            ->registerMediaConversions(function(Media $media){
+                $this->addMediaConversion('videos')
+                    ->width(560)
+                    ->height(315)
+                    ->extractVideoFrameAtSecond(2)
+                    ->extractVideoFrameAtSecond(20)
+                    ->extractVideoFrameAtSecond(30)
+                    ->performOnCollections('videos');
+            });
+    }
 }

@@ -6,37 +6,36 @@
 
 @section('content')
 
- <section class="content-header">
-      <h1>
-        User Profile
-      </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Examples</a></li>
-        <li class="active">User profile</li>
-      </ol>
-    </section>
+<section class="content-header">
+	<h1>
+		User Profile
+	</h1>
+	<ol class="breadcrumb">
+		<li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+		<li><a href="#">Examples</a></li>
+		<li class="active">User profile</li>
+	</ol>
+</section>
 
-    <!-- Main content -->
-    <section class="content">
+<!-- Main content -->
+<section class="content">
 
-      <div class="row">
-        <div class="col-md-3">
+	<div class="row">
+		<div class="col-md-3">
 
-          <!-- Profile Image -->
-          <div class="box box-primary">
-            <div class="box-body box-profile">
-            https://docs.spatie.be/laravel-medialibrary/v7/basic-usage/retrieving-media
-            https://www.youtube.com/watch?v=G71igfoSrWM&index=4&list=PLe30vg_FG4ORLxQcrsJdGAuo_AVnLSKvG
+			<!-- Profile Image -->
+			<div class="box box-primary">
+				<div class="box-body box-profile">
+					{{-- https://docs.spatie.be/laravel-medialibrary/v7/basic-usage/retrieving-media --}}
+					{{-- https://www.youtube.com/watch?v=G71igfoSrWM&index=4&list=PLe30vg_FG4ORLxQcrsJdGAuo_AVnLSKvG --}}
 
-            	@foreach($avatars as $avatar)
-            	    	{{ $avatar->getFirstMedia() }}
-            	{{ $avatar[0]->getUrl() }}
-              <img class="profile-user-img img-responsive img-circle" src="{{ $avatar->getMedia() }}" alt="User profile picture">
-				@endforeach
-              <h3 class="profile-username text-center">min Nina Mcintire</h3>
+					@foreach($avatars as $avatar)
+ 					<img class="profile-user-img img-responsive" src="{{ $avatar->getUrl() }}" alt="User profile picture">
+ 					@endforeach
 
-              <p class="text-muted text-center">Software Engineer</p>
+					<h3 class="profile-username text-center">{{ @$user->name }}</h3>
+
+{{--               <p class="text-muted text-center">Software Engineer</p>
 
               <ul class="list-group list-group-unbordered">
                 <li class="list-group-item">
@@ -48,68 +47,101 @@
                 <li class="list-group-item">
                   <b>Friends</b> <a class="pull-right">13,287</a>
                 </li>
-              </ul>
+            </ul> --}}
 
-              <a href="#" class="btn btn-primary btn-block"><b>Follow</b></a>
-            </div>
-            <!-- /.box-body -->
-          </div>
-          <!-- /.box -->
-
-          <!-- About Me Box -->
-          <div class="box box-primary">
-            <div class="box-header with-border">
-              <h3 class="box-title">About Me</h3>
-            </div>
-            <!-- /.box-header -->
-            <div class="box-body">
-              <strong><i class="fa fa-book margin-r-5"></i> Education</strong>
-
-              <p class="text-muted">
-                B.S. in Computer Science from the University of Tennessee at Knoxville
-              </p>
-
-              <hr>
-
-              <strong><i class="fa fa-map-marker margin-r-5"></i> Location</strong>
-
-              <p class="text-muted">Malibu, California</p>
-
-              <hr>
-
-              <strong><i class="fa fa-pencil margin-r-5"></i> Skills</strong>
-
-              <p>
-                <span class="label label-danger">UI Design</span>
-                <span class="label label-success">Coding</span>
-                <span class="label label-info">Javascript</span>
-                <span class="label label-warning">PHP</span>
-                <span class="label label-primary">Node.js</span>
-              </p>
-
-              <hr>
-
-              <strong><i class="fa fa-file-text-o margin-r-5"></i> Notes</strong>
-
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum enim neque.</p>
-            </div>
-            <!-- /.box-body -->
-          </div>
-          <!-- /.box -->
+            {{-- <a href="#" class="btn btn-primary btn-block"><b>Follow</b></a> --}}
         </div>
-        <!-- /.col -->
-        <div class="col-md-9">
-          <div class="nav-tabs-custom">
-            <ul class="nav nav-tabs">
-              <li class="active"><a href="#activity" data-toggle="tab">Activity</a></li>
-              <li><a href="#timeline" data-toggle="tab">Timeline</a></li>
-              <li><a href="#settings" data-toggle="tab">Settings</a></li>
-            </ul>
-            <div class="tab-content">
-              <div class="active tab-pane" id="activity">
-                <!-- Post -->
-                <div class="post">
-                  <div class="user-block">
+        <!-- /.box-body -->
+    </div>
+    <!-- /.box -->
+
+    <!-- About Me Box -->
+{{--     <div class="box box-primary">
+    	<div class="box-header with-border">
+    		<h3 class="box-title">About Me</h3>
+    	</div>
+    	<!-- /.box-header -->
+    	<div class="box-body">
+    		<strong><i class="fa fa-book margin-r-5"></i> Education</strong>
+
+    		<p class="text-muted">
+    			B.S. in Computer Science from the University of Tennessee at Knoxville
+    		</p>
+
+    		<hr>
+
+    		<strong><i class="fa fa-map-marker margin-r-5"></i> Location</strong>
+
+    		<p class="text-muted">Malibu, California</p>
+
+    		<hr>
+
+    		<strong><i class="fa fa-pencil margin-r-5"></i> Skills</strong>
+
+    		<p>
+    			<span class="label label-danger">UI Design</span>
+    			<span class="label label-success">Coding</span>
+    			<span class="label label-info">Javascript</span>
+    			<span class="label label-warning">PHP</span>
+    			<span class="label label-primary">Node.js</span>
+    		</p>
+
+    		<hr>
+
+    		<strong><i class="fa fa-file-text-o margin-r-5"></i> Notes</strong>
+
+    		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum enim neque.</p>
+    	</div>
+    	<!-- /.box-body -->
+    </div> --}}
+    <!-- /.box -->
+
+{{-- <article class="media">
+  <figure class="media-left">
+    <p class="image is-64x64">
+      <img src="https://bulma.io/images/placeholders/128x128.png">
+    </p>
+  </figure>
+  <div class="media-content">
+    <div class="content">
+      <p>
+        <strong>John Smith</strong> <small>@johnsmith</small> <small>31m</small>
+        <br>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.
+      </p>
+    </div>
+    <nav class="level is-mobile">
+      <div class="level-left">
+        <a class="level-item">
+          <span class="icon is-small"><i class="fas fa-reply"></i></span>
+        </a>
+        <a class="level-item">
+          <span class="icon is-small"><i class="fas fa-retweet"></i></span>
+        </a>
+        <a class="level-item">
+          <span class="icon is-small"><i class="fas fa-heart"></i></span>
+        </a>
+      </div>
+    </nav>
+  </div>
+  <div class="media-right">
+    <button class="delete"></button>
+  </div>
+</article> --}}
+</div>
+<!-- /.col -->
+<div class="col-md-9">
+	<div class="nav-tabs-custom">
+		<ul class="nav nav-tabs">
+			<li class="active"><a href="#activity" data-toggle="tab">Activity</a></li>
+			<li><a href="#timeline" data-toggle="tab">Timeline</a></li>
+			<li><a href="#settings" data-toggle="tab">Settings</a></li>
+		</ul>
+		<div class="tab-content">
+			<div class="active tab-pane" id="activity">
+				<!-- Post -->
+				<div class="post">
+        {{--           <div class="user-block">
                     <img class="img-circle img-bordered-sm" src="../../dist/img/user1-128x128.jpg" alt="user image">
                         <span class="username">
                           <a href="#">Jonathan Burke Jr.</a>
@@ -117,7 +149,7 @@
                         </span>
                     <span class="description">Shared publicly - 7:30 PM today</span>
                   </div>
-                  <!-- /.user-block -->
+
                   <p>
                     Lorem ipsum represents a long-held tradition for designers,
                     typographers and the like. Some people hate it and argue for
@@ -134,239 +166,66 @@
                         (5)</a></li>
                   </ul>
 
-                  <input class="form-control input-sm" type="text" placeholder="Type a comment">
-                </div>
-                <!-- /.post -->
-
-                <!-- Post -->
-                <div class="post clearfix">
-                  <div class="user-block">
-                    <img class="img-circle img-bordered-sm" src="../../dist/img/user7-128x128.jpg" alt="User Image">
-                        <span class="username">
-                          <a href="#">Sarah Ross</a>
-                          <a href="#" class="pull-right btn-box-tool"><i class="fa fa-times"></i></a>
-                        </span>
-                    <span class="description">Sent you a message - 3 days ago</span>
-                  </div>
-                  <!-- /.user-block -->
-                  <p>
-                    Lorem ipsum represents a long-held tradition for designers,
-                    typographers and the like. Some people hate it and argue for
-                    its demise, but others ignore the hate as they create awesome
-                    tools to help create filler text for everyone from bacon lovers
-                    to Charlie Sheen fans.
-                  </p>
-
-                  <form class="form-horizontal">
-                    <div class="form-group margin-bottom-none">
-                      <div class="col-sm-9">
-                        <input class="form-control input-sm" placeholder="Response">
-                      </div>
-                      <div class="col-sm-3">
-                        <button type="submit" class="btn btn-danger pull-right btn-block btn-sm">Send</button>
-                      </div>
-                    </div>
-                  </form>
-                </div>
-                <!-- /.post -->
-
-                <!-- Post -->
-                <div class="post">
-                  <div class="user-block">
-                    <img class="img-circle img-bordered-sm" src="../../dist/img/user6-128x128.jpg" alt="User Image">
-                        <span class="username">
-                          <a href="#">Adam Jones</a>
-                          <a href="#" class="pull-right btn-box-tool"><i class="fa fa-times"></i></a>
-                        </span>
-                    <span class="description">Posted 5 photos - 5 days ago</span>
-                  </div>
-                  <!-- /.user-block -->
-                  <div class="row margin-bottom">
-                    <div class="col-sm-6">
-                      <img class="img-responsive" src="../../dist/img/photo1.png" alt="Photo">
-                    </div>
-                    <!-- /.col -->
-                    <div class="col-sm-6">
-                      <div class="row">
-                        <div class="col-sm-6">
-                          <img class="img-responsive" src="../../dist/img/photo2.png" alt="Photo">
-                          <br>
-                          <img class="img-responsive" src="../../dist/img/photo3.jpg" alt="Photo">
-                        </div>
-                        <!-- /.col -->
-                        <div class="col-sm-6">
-                          <img class="img-responsive" src="../../dist/img/photo4.jpg" alt="Photo">
-                          <br>
-                          <img class="img-responsive" src="../../dist/img/photo1.png" alt="Photo">
-                        </div>
-                        <!-- /.col -->
-                      </div>
-                      <!-- /.row -->
-                    </div>
-                    <!-- /.col -->
-                  </div>
-                  <!-- /.row -->
-
-                  <ul class="list-inline">
-                    <li><a href="#" class="link-black text-sm"><i class="fa fa-share margin-r-5"></i> Share</a></li>
-                    <li><a href="#" class="link-black text-sm"><i class="fa fa-thumbs-o-up margin-r-5"></i> Like</a>
-                    </li>
-                    <li class="pull-right">
-                      <a href="#" class="link-black text-sm"><i class="fa fa-comments-o margin-r-5"></i> Comments
-                        (5)</a></li>
-                  </ul>
-
-                  <input class="form-control input-sm" type="text" placeholder="Type a comment">
-                </div>
-                <!-- /.post -->
+                  <input class="form-control input-sm" type="text" placeholder="Type a comment"> --}}
               </div>
-              <!-- /.tab-pane -->
-              <div class="tab-pane" id="timeline">
-                <!-- The timeline -->
-                <ul class="timeline timeline-inverse">
-                  <!-- timeline time label -->
-                  <li class="time-label">
-                        <span class="bg-red">
-                          10 Feb. 2014
-                        </span>
-                  </li>
-                  <!-- /.timeline-label -->
-                  <!-- timeline item -->
-                  <li>
-                    <i class="fa fa-envelope bg-blue"></i>
+              <!-- /.post -->
 
-                    <div class="timeline-item">
-                      <span class="time"><i class="fa fa-clock-o"></i> 12:05</span>
-
-                      <h3 class="timeline-header"><a href="#">Support Team</a> sent you an email</h3>
-
-                      <div class="timeline-body">
-                        Etsy doostang zoodles disqus groupon greplin oooj voxy zoodles,
-                        weebly ning heekya handango imeem plugg dopplr jibjab, movity
-                        jajah plickers sifteo edmodo ifttt zimbra. Babblely odeo kaboodle
-                        quora plaxo ideeli hulu weebly balihoo...
-                      </div>
-                      <div class="timeline-footer">
-                        <a class="btn btn-primary btn-xs">Read more</a>
-                        <a class="btn btn-danger btn-xs">Delete</a>
-                      </div>
-                    </div>
-                  </li>
-                  <!-- END timeline item -->
-                  <!-- timeline item -->
-                  <li>
-                    <i class="fa fa-user bg-aqua"></i>
-
-                    <div class="timeline-item">
-                      <span class="time"><i class="fa fa-clock-o"></i> 5 mins ago</span>
-
-                      <h3 class="timeline-header no-border"><a href="#">Sarah Young</a> accepted your friend request
-                      </h3>
-                    </div>
-                  </li>
-                  <!-- END timeline item -->
-                  <!-- timeline item -->
-                  <li>
-                    <i class="fa fa-comments bg-yellow"></i>
-
-                    <div class="timeline-item">
-                      <span class="time"><i class="fa fa-clock-o"></i> 27 mins ago</span>
-
-                      <h3 class="timeline-header"><a href="#">Jay White</a> commented on your post</h3>
-
-                      <div class="timeline-body">
-                        Take me to your leader!
-                        Switzerland is small and neutral!
-                        We are more like Germany, ambitious and misunderstood!
-                      </div>
-                      <div class="timeline-footer">
-                        <a class="btn btn-warning btn-flat btn-xs">View comment</a>
-                      </div>
-                    </div>
-                  </li>
-                  <!-- END timeline item -->
-                  <!-- timeline time label -->
-                  <li class="time-label">
-                        <span class="bg-green">
-                          3 Jan. 2014
-                        </span>
-                  </li>
-                  <!-- /.timeline-label -->
-                  <!-- timeline item -->
-                  <li>
-                    <i class="fa fa-camera bg-purple"></i>
-
-                    <div class="timeline-item">
-                      <span class="time"><i class="fa fa-clock-o"></i> 2 days ago</span>
-
-                      <h3 class="timeline-header"><a href="#">Mina Lee</a> uploaded new photos</h3>
-
-                      <div class="timeline-body">
-                        <img src="http://placehold.it/150x100" alt="..." class="margin">
-                        <img src="http://placehold.it/150x100" alt="..." class="margin">
-                        <img src="http://placehold.it/150x100" alt="..." class="margin">
-                        <img src="http://placehold.it/150x100" alt="..." class="margin">
-                      </div>
-                    </div>
-                  </li>
-                  <!-- END timeline item -->
-                  <li>
-                    <i class="fa fa-clock-o bg-gray"></i>
-                  </li>
-                </ul>
-              </div>
-              <!-- /.tab-pane -->
-
-              <div class="tab-pane" id="settings">
-                {{-- <form class="form-horizontal"> --}}
-	{!! Form::open(['method' => 'POST', 'route' => ['admin.avatar.store'], 'files' => true, 'enctype' => 'multipart/form-data', 'class'=> 'form-horizontal']) !!} 
-            	@csrf
-				<div class="form-group ">
-					<label for="exampleInputFile" class="col-sm-2 control-label">File input</label>
-					<div class="col-sm-10">
-						<input type="file" name="avatar" id="exampleInputFile">
-					</div>
-
-                  <p class="help-block">Example block-level help text here.</p>
-                </div>
+              <!-- /.post -->
 
 
-                  <div class="form-group">
-                    <label for="inputName" class="col-sm-2 control-label">Name</label>
+          </div>
+          <!-- /.tab-pane -->
+          <div class="tab-pane" id="timeline">
+          	<!-- The timeline -->
 
-                    <div class="col-sm-10">
-                      <input type="email" class="form-control" id="inputName" placeholder="Name">
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label for="inputEmail" class="col-sm-2 control-label">Email</label>
+          </div>
+          <!-- /.tab-pane -->
 
-                    <div class="col-sm-10">
-                      <input type="email" class="form-control" id="inputEmail" placeholder="Email">
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label for="inputName" class="col-sm-2 control-label">Name</label>
+          <div class="tab-pane" id="settings">
+          	{{-- <form class="form-horizontal"> --}}
+          		{!! Form::open(['method' => 'POST', 'route' => ['admin.avatar.store'], 'files' => true, 'enctype' => 'multipart/form-data', 'class'=> 'form-horizontal']) !!}
+          		@csrf
+          		<div class="form-group ">
+          			<label for="exampleInputFile" class="col-sm-2 control-label">File input</label>
+          			<div class="col-sm-10">
+          				<input type="file" name="avatar" id="exampleInputFile">
+          			</div>
 
-                    <div class="col-sm-10">
-                      <input type="text" class="form-control" id="inputName" placeholder="Name">
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label for="inputExperience" class="col-sm-2 control-label">Experience</label>
+          			<p class="help-block"></p>
+          		</div>
 
-                    <div class="col-sm-10">
-                      <textarea class="form-control" id="inputExperience" placeholder="Experience"></textarea>
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label for="inputSkills" class="col-sm-2 control-label">Skills</label>
+{{-- 
+          		<div class="form-group">
 
-                    <div class="col-sm-10">
-                      <input type="text" class="form-control" id="inputSkills" placeholder="Skills">
-                    </div>
-                  </div>
-                  <div class="form-group">
+          			{!! Form::label('name', trans('global.users.fields.name').'*', ['class' => 'col-sm-2 control-label']) !!}
+
+          			<div class="col-sm-10">
+
+          				{!! Form::text('name', old('name'), ['id'=>'inputName','class' => 'form-control', 'placeholder' => '', 'required' => '']) !!}
+          			</div>
+          			<p class="help-block"></p>
+          			@if($errors->has('name'))
+          			<p class="help-block">
+          				{{ $errors->first('name') }}
+          			</p>
+          			@endif
+          		</div> --}}
+        {{--   		<div class="form-group">
+          			{!! Form::label('email', trans('global.users.fields.email').'*', ['class' => 'col-sm-2 control-label']) !!}
+          			<div class="col-sm-10">
+          				{!! Form::email('email', old('email'), ['id'=>'inputEmail','class' => 'form-control', 'placeholder' => 'Email', 'required' => '']) !!}
+          			</div>
+          			<p class="help-block"></p>
+          			@if($errors->has('email'))
+          			<p class="help-block">
+          				{{ $errors->first('email') }}
+          			</p>
+          			@endif
+          		</div> --}}
+
+
+
+               {{--    <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
                       <div class="checkbox">
                         <label>
@@ -374,102 +233,34 @@
                         </label>
                       </div>
                     </div>
-                  </div>
-                  <div class="form-group">
-                    <div class="col-sm-offset-2 col-sm-10">
-                    	 {!! Form::submit(trans('global.app_save'), ['class' => 'btn btn-danger']) !!}
-                      {{-- <button type="submit" class="btn btn-danger">Submit</button> --}}
-                    </div>
-                  </div>
-                  {!! Form::close() !!}
-                {{-- </form> --}}
-              </div>
-              <!-- /.tab-pane -->
-            </div>
-            <!-- /.tab-content -->
-          </div>
-          <!-- /.nav-tabs-custom -->
-        </div>
-        <!-- /.col -->
-      </div>
-      <!-- /.row -->
-
-    </section>
-    <!-- /.content -->
-  </div>
-
-
-
-
-
-      <div class="row">
-        <!-- left column -->
-        <div class="col-md-6">
- 
-         <!-- general form elements -->
-          <div class="box box-primary">
-            <div class="box-header with-border">
-              <h3 class="box-title">Profile</h3>
-            </div>
-            <!-- /.box-header -->
-            <!-- form start -->
-       
-            
-              <div class="box-body">
-               {{--  <div class="form-group">
-                  <label for="exampleInputEmail1">Email address</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-                </div> --}}
-{{--                 <div class="form-group">
-                  <label for="exampleInputPassword1">Password</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
                 </div> --}}
                 <div class="form-group">
-                  <label for="exampleInputFile">File input</label>
-                  <input type="file" name="avatar" id="exampleInputFile">
-
-                  <p class="help-block">Example block-level help text here.</p>
+                	<div class="col-sm-offset-2 col-sm-10">
+                		{!! Form::submit(trans('global.app_save'), ['class' => 'btn btn-danger']) !!}
+                		{{-- <button type="submit" class="btn btn-danger">Submit</button> --}}
+                	</div>
                 </div>
-          
-              </div>
-              <!-- /.box-body -->
+                {!! Form::close() !!}
+            {{-- </form> --}}
+        </div>
+        <!-- /.tab-pane -->
+    </div>
+    <!-- /.tab-content -->
+</div>
+<!-- /.nav-tabs-custom -->
+</div>
+<!-- /.col -->
+</div>
+<!-- /.row -->
 
-              <div class="box-footer">
-                {{-- <button type="submit" value="Upload" class="btn btn-primary">Submit</button> --}}
-                {!! Form::submit(trans('global.app_save'), ['class' => 'btn btn-danger']) !!}
-              </div>
-               
-    		
-          </div>
-          <!-- /.box -->
-
-<!-- 16:9 aspect ratio -->
-<div class="embed-responsive embed-responsive-16by9">
-  {{-- <iframe class="embed-responsive-item" src=""></iframe> --}}
+</section>
+<!-- /.content -->
 </div>
 
-<img src="..." alt="..." class="img-rounded">
-<img src="..." alt="..." class="img-circle">
-<img src="..." alt="..." class="img-thumbnail">
 
 
-          <div class="col-md-6">
-          	<!-- general form elements -->
-          	<div class="box box-primary">
-          		<div class="box-header with-border">
-          			<h3 class="box-title">Avatar</h3>
-          		</div>
-          		<div class="box-body">
-          			{{-- @each('admin.profile', $avatars, 'avatar') --}}
-          			{{-- @foreach($avatars as $avatar) --}}
-          	{{-- {{  $avatar  }} --}}
-          			{{-- @endforeach --}}
-          		</div>
-          		<!-- /.box -->
-          	</div>
-          </div>
 @stop
 
-@section('javascript') 
+@section('javascript')
 
 @endsection

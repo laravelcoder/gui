@@ -9,9 +9,12 @@ use Illuminate\Http\Response;
 use Spatie\MediaLibrary\HasMedia\HasMedia;
 use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\Admin\StoreUsersRequest;
+use App\Http\Requests\Admin\UpdateUsersRequest;
+
 
 class AvatarController extends Controller
-{
+{ 
     /**
      * Display a listing of the resource.
      *
@@ -21,10 +24,14 @@ class AvatarController extends Controller
     public function index()
     {
 
+        $user = auth()->user();
+        // $avatar = $user->getFirstMediaUrl('avatar');
+        $avatars = $user->getMedia('avatar');
 
-       $avatars = auth()->user()->getMedia();
+//        dd($avatars);
 
-       return view('admin.profile', compact('avatars'));
+
+        return view('admin.profile', compact('avatars', 'user'));
     }
 
     /**
@@ -34,7 +41,7 @@ class AvatarController extends Controller
      */
     public function create()
     {
-        //
+        auth()->user()->clearMediaCollection();
     }
 
     /**
@@ -46,6 +53,8 @@ class AvatarController extends Controller
     public function store(Request $request)
     {
         // return $request->all();
+        $user = User::create($request->all());
+
         $user = auth()->user();
         $user->addMedia($request->avatar)->toMediaCollection('avatar');
         return redirect()->back();
@@ -70,7 +79,7 @@ class AvatarController extends Controller
      */
     public function edit($id)
     {
-        //
+        
     }
 
     /**
@@ -82,7 +91,10 @@ class AvatarController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = User::findOrFail($id);
+
+        $user->addMedia($request->avatar)->toMediaCollection('avatar');
+        $user->update($request->all());
     }
 
     /**
@@ -93,6 +105,6 @@ class AvatarController extends Controller
      */
     public function destroy($id)
     {
-        //
+
     }
 }

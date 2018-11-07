@@ -1,8 +1,15 @@
 @inject('request', 'Illuminate\Http\Request')
+
+{{-- https://www.5balloons.info/upload-profile-picture-avatar-laravel-5-authentication/ --}}
 <!-- Left side column. contains the sidebar -->
 <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
+
+
+
+<user-block></user-block>
+
         <ul class="sidebar-menu">
 
             <li>
@@ -10,7 +17,7 @@
             </li>
 
             <li class="{{ $request->segment(1) == 'home' ? 'active' : '' }}">
-                <a href="{{ url('/') }}">
+                <a href="{{ url('admin/home') }}">
                     <i class="fa fa-wrench"></i>
                     <span class="title">@lang('global.app_dashboard')</span>
                 </a>
@@ -33,7 +40,7 @@
                             <span>@lang('global.gallery.title')</span>
                         </a>
                     </li>@endcan
-                    
+
                     @can('clip_access')
                     <li>
                         <a href="{{ route('admin.clips.index') }}">
@@ -41,7 +48,7 @@
                             <span>@lang('global.clips.title')</span>
                         </a>
                     </li>@endcan
-                    
+
                     @can('video_access')
                     <li>
                         <a href="{{ route('admin.videos.index') }}">
@@ -49,7 +56,7 @@
                             <span>@lang('global.videos.title')</span>
                         </a>
                     </li>@endcan
-                    
+
                     @can('image_access')
                     <li>
                         <a href="{{ route('admin.images.index') }}">
@@ -57,7 +64,7 @@
                             <span>@lang('global.images.title')</span>
                         </a>
                     </li>@endcan
-                    
+
                     @can('brand_access')
                     <li>
                         <a href="{{ route('admin.brands.index') }}">
@@ -65,7 +72,7 @@
                             <span>@lang('global.brands.title')</span>
                         </a>
                     </li>@endcan
-                    
+
                     @can('industry_access')
                     <li>
                         <a href="{{ route('admin.industries.index') }}">
@@ -73,7 +80,7 @@
                             <span>@lang('global.industry.title')</span>
                         </a>
                     </li>@endcan
-                    
+
                     @can('detection_access')
                     <li class="treeview">
                         <a href="#">
@@ -91,7 +98,7 @@
                                     <span>@lang('global.single-channel.title')</span>
                                 </a>
                             </li>@endcan
-                            
+
                             @can('multi_channel_access')
                             <li>
                                 <a href="{{ route('admin.multi_channels.index') }}">
@@ -99,7 +106,7 @@
                                     <span>@lang('global.multi-channel.title')</span>
                                 </a>
                             </li>@endcan
-                            
+
                             @can('all_channel_access')
                             <li>
                                 <a href="{{ route('admin.all_channels.index') }}">
@@ -107,13 +114,13 @@
                                     <span>@lang('global.all-channels.title')</span>
                                 </a>
                             </li>@endcan
-                            
+
                         </ul>
                     </li>@endcan
-                    
+
                 </ul>
             </li>@endcan
-            
+
             @can('sources_mgmt_access')
             <li class="treeview">
                 <a href="#">
@@ -131,10 +138,10 @@
                             <span>@lang('global.ftp.title')</span>
                         </a>
                     </li>@endcan
-                    
+
                 </ul>
             </li>@endcan
-            
+
             @can('task_management_access')
             <li class="treeview">
                 <a href="#">
@@ -152,7 +159,7 @@
                             <span>@lang('global.tasks.title')</span>
                         </a>
                     </li>@endcan
-                    
+
                     @can('task_status_access')
                     <li>
                         <a href="{{ route('admin.task_statuses.index') }}">
@@ -160,7 +167,7 @@
                             <span>@lang('global.task-statuses.title')</span>
                         </a>
                     </li>@endcan
-                    
+
                     @can('task_tag_access')
                     <li>
                         <a href="{{ route('admin.task_tags.index') }}">
@@ -168,7 +175,7 @@
                             <span>@lang('global.task-tags.title')</span>
                         </a>
                     </li>@endcan
-                    
+
                     @can('task_calendar_access')
                     <li>
                         <a href="{{ route('admin.task_calendars.index') }}">
@@ -176,10 +183,10 @@
                             <span>@lang('global.task-calendar.title')</span>
                         </a>
                     </li>@endcan
-                    
+
                 </ul>
             </li>@endcan
-            
+
             @can('user_management_access')
             <li class="treeview">
                 <a href="#">
@@ -197,7 +204,7 @@
                             <span>@lang('global.permissions.title')</span>
                         </a>
                     </li>@endcan
-                    
+
                     @can('role_access')
                     <li>
                         <a href="{{ route('admin.roles.index') }}">
@@ -205,7 +212,7 @@
                             <span>@lang('global.roles.title')</span>
                         </a>
                     </li>@endcan
-                    
+
                     @can('user_access')
                     <li>
                         <a href="{{ route('admin.users.index') }}">
@@ -213,14 +220,14 @@
                             <span>@lang('global.users.title')</span>
                         </a>
                     </li>@endcan
-                    
+
                 </ul>
             </li>@endcan
-            
 
-            
 
-            
+
+
+
             @php ($unread = App\MessengerTopic::countUnread())
             <li class="{{ $request->segment(2) == 'messenger' ? 'active' : '' }} {{ ($unread > 0 ? 'unread' : '') }}">
                 <a href="{{ route('admin.messenger.index') }}">
@@ -238,7 +245,12 @@
                 }
             </style>
 
-
+            <li>
+                <a href="{{ route('admin.profile') }}">
+                    <i class="fa fa-key"></i>
+                    <span class="title">Profile</span>
+                </a>
+            </li>
 
             <li class="{{ $request->segment(1) == 'change_password' ? 'active' : '' }}">
                 <a href="{{ route('auth.change_password') }}">

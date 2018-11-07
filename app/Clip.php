@@ -6,7 +6,8 @@ use Carbon\Carbon;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Spatie\MediaLibrary\HasMedia\HasMedia;
 use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
- 
+use Spatie\MediaLibrary\File;
+use Spatie\MediaLibrary\Models\Media;
 
 /**
  * Class Clip
@@ -158,4 +159,33 @@ class Clip extends Model implements HasMedia
     public function brands() {
         return $this->hasMany(Brand::class, 'clip_id');
     }
+
+
+    public function registerMediaCollections()
+    {
+        $this->addMediaCollection('clips')->singleFile()
+        ->registerMediaConversions(function(Media $media){
+            $this->addMediaConversion('clips')
+                ->width(560)
+                ->height(315)
+                ->extractVideoFrameAtSecond(2)
+                ->extractVideoFrameAtSecond(20)
+                ->extractVideoFrameAtSecond(30)
+                ->performOnCollections('clips');
+        });
+
+        $this->addMediaCollection('images');
+
+        $this->addMediaCollection('videos')->singleFile()
+            ->registerMediaConversions(function(Media $media){
+                $this->addMediaConversion('videos')
+                    ->width(560)
+                    ->height(315)
+                    ->extractVideoFrameAtSecond(2)
+                    ->extractVideoFrameAtSecond(20)
+                    ->extractVideoFrameAtSecond(30)
+                    ->performOnCollections('videos');
+            });
+    }
+
 }

@@ -45,8 +45,8 @@ return [
 
         'media' => [
             'driver' => 'local',
-            'root'   => public_path().'/media',
-            'url' => env('APP_URL') . '/media',
+            'root'   => public_path().'media',
+            'url' => env('APP_URL') . 'media',
             'visibility' => 'public',
         ],
 
@@ -77,42 +77,42 @@ return [
 
         'images' => [
             'driver' => 'local',
-            'root'   => public_path().'/uploads/images',
-            'url' => env('APP_URL') . '/uploads/images',
+            'root'   => public_path().'uploads/images',
+            'url' => env('APP_URL') . 'uploads/images',
             'visibility' => 'public',
         ],
 
         'cai' => [
             'driver' => 'local',
-            'root'   => public_path().'/uploads/cai',
-            'url' => env('APP_URL') . '/uploads/cai',
+            'root'   => public_path().'uploads/cai',
+            'url' => env('APP_URL') . 'uploads/cai',
             'visibility' => 'public',
         ],
 
         'thumbs' => [
             'driver' => 'local',
-            'root'   => public_path().'/uploads/thumbs',
-            'url' => env('APP_URL') . '/uploads/thumbs',
+            'root'   => public_path().'uploads/thumbs',
+            'url' => env('APP_URL') . 'uploads/thumbs',
             'visibility' => 'public',
         ],
 
         'clips' => [
             'driver' => 'local',
-            'root'   => public_path().'/uploads/clips',
-            'url' => env('APP_URL') . '/uploads/clips',
+            'root'   => public_path().'uploads/clips',
+            'url' => env('APP_URL') . 'uploads/clips',
             'visibility' => 'public',
         ],
 
         'videos' => [
             'driver' => 'local',
-            'root'   => public_path().'/uploads/clips',
-            'url' => env('APP_URL') . '/uploads/clips',
+            'root'   => public_path().'uploads/clips',
+            'url' => env('APP_URL') . 'uploads/clips',
             'visibility' => 'public',
         ],
 
         'uploads_test' => [
             'driver' => 'local',
-            'root' => public_path('/uploads/test')
+            'root' => public_path('uploads/test')
         ],
 
     ],

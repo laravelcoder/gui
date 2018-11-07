@@ -26,144 +26,6 @@ use Spatie\MediaLibrary\HasMedia\HasMedia;
 
 class ClipsController extends Controller
 {
-    use FileUploadTrait;
-
-    /**
-     * Store a newly created Clip in storage.
-     *
-     * @param \App\Http\Requests\Admin\StoreClipsRequest $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(StoreClipsRequest $request)
-    {
-        if (! Gate::allows('clip_create')) {
-            return abort(401);
-        }
-
-        $clip = Clip::create($request->all());
-
-
-        $input= $request->all();
-
-        // dd ( $request->file('videos') );
-
-
-
-        if (! file_exists(public_path().'/uploads')) { File::makeDirectory(public_path().'/uploads',0777, true);}
-        if (! file_exists(public_path().'/uploads/cai')) { File::makeDirectory(public_path().'/uploads/cai',0777, true); }
-        if (! file_exists(public_path().'/uploads/clips')) { File::makeDirectory(public_path().'/uploads/clips',0777, true); }
-        if (! file_exists(public_path().'/uploads/images')) { File::makeDirectory(public_path().'/uploads/images',0777, true); }
-        if (! file_exists(public_path().'/uploads/thumbs')) { File::makeDirectory(public_path().'/uploads/thumbs',0777, true); }
-
-        // $clipPath = config('gui.upload_path');
-        $uploadPath = env('UPLOAD_PATH', 'uploads');
-        $clipPath = env('CLIP_PATH', 'uploads/clips');
-        $imagePath = env('IMAGE_PATH','uploads/images');
-        $thumbPath = env('THUMB_PATH','uploads/thumbs');
-        $caiPath = env('CAI_PATH','uploads/cai');
-
-        $getcai = env('CAI_SERVER');
-        $transcoder = "/TOCAI.php?";
-        Log::info("UPLOAD FUNCTION STARTED SUCCESSFULLY");
-
-        foreach ($request->input('videos', []) as $data) {
-
-
-            // $video = $request->file('videos.*.video');
-            // $file = $input['videos'][1]['video'];
- 
-            $file = $request['videos'][1]['video'];
-            // dd($file);
-            // dd($request->file('videos.1'));
-            $filename = $file->getClientOriginalName();
-            $extension = $file->getClientOriginalExtension();
-            $basename = substr($filename, 0, strrpos($filename, "."));
-            $basename = Normalize::titleCase($basename);
-            $ad_duration = FFMPEG_helpers::getDuration($file);
-            $video = str_slug($basename) . '.' . $extension;
-            $filename = str_slug($basename) . '.' . $extension;
-
-            $data_object = new \stdClass();
-            // $data_object->video = $video;
-            $data_object->name = $filename;
-            $data_object->extension = $extension;
-            $data_object->ad_duration = $ad_duration;
-            $data_object->fileID = $clip->id;
-            $data[] = $data_object;
-            // dd($data_object);
-
-
-            $clip->videos()->create($data);
-
-            $clip->videos->each(function ($data) use ($request) {
-                // $video->addMedia($data)->toMediaCollection('videos', 'local');
-                $data
-                       ->addMedia($request['videos'][1]['video'])
-                       ->preservingOriginal()
-                       ->toMediaCollection();
-                Log::info("SAVED TO MEDIA");
-            });
-
-            $file_w_path = $clipPath . "/" . $filename;
-
-            $caifile = str_slug($basename) . '.cai';
-
-
-            // dd($caifile);
-
-            if ($file->isValid()) {
-                $file->move($clipPath, $filename);
-                //dd($file->move($clipPath, $filename));
-            }
-
-
-            // dd(file_exists($caiPath. "/" .$caifile));
-
-            if (!file_exists($caiPath. "/" .$caifile)){
-                try {
-                    Log::info("INIT CURL TOCAI");
-                    $ch = curl_init();
-                    // curl_setopt($ch,CURLOPT_URL,"". $getcai . $transcoder .  $file_w_path ."");
-                    curl_setopt($ch,CURLOPT_URL,"http://d-gp2-tocai-1.imovetv.com/TOCAI.php?http://d-gp2-caipyascs0-1.imovetv.com/ftp/downloads/coca-cola.mp4");
-                    curl_setopt($ch, CURLOPT_HEADER, 0);
-                    curl_setopt($ch, CURLOPT_POST, 1);
-                    curl_setopt($ch, CURLOPT_TIMEOUT, 300);
-                    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-
-                    $output = curl_exec($ch);
-                    file_put_contents($caiPath . "/" . str_slug($basename) . '.cai', $output);
-                    Log::info("SAVED CAI FILE");
-                    curl_close($ch);
-                }
-                catch (Exception $e) {
-                    //exception handling code goes here
-                }
-            }
-
-
-            // $clip->videos->each(function ($data) use ($request) {
-            //     $clip->videos()->addMedia($request->file('videos.*.video'))->toMediaCollection('media');
-            //     Log::info("SAVED TO MEDIA");
-            // });
-
-
-        }
- 
-        foreach ($request->input('images', []) as $data) {
-            $clip->images()->create($data);
-        }
-        foreach ($request->input('industries', []) as $data) {
-            $clip->industries()->create($data);
-        }
-        foreach ($request->input('brands', []) as $data) {
-            $clip->brands()->create($data);
-        }
- 
-
-        return redirect()->route('admin.clips.index');
-    }
-
-
     /**
      * Display a listing of Clip.
      *
@@ -341,14 +203,42 @@ class ClipsController extends Controller
         if (! Gate::allows('clip_create')) {
             return abort(401);
         }
-
+        
         $brands = \App\Brand::get()->pluck('name', 'id')->prepend(trans('global.app_please_select'), '');
         $industries = \App\Industry::get()->pluck('name', 'id')->prepend(trans('global.app_please_select'), '');
 
         return view('admin.clips.create', compact('brands', 'industries'));
     }
 
+    /**
+     * Store a newly created Clip in storage.
+     *
+     * @param  \App\Http\Requests\StoreClipsRequest  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(StoreClipsRequest $request)
+    {
+        if (! Gate::allows('clip_create')) {
+            return abort(401);
+        }
+        $clip = Clip::create($request->all());
 
+        foreach ($request->input('videos', []) as $data) {
+            $clip->videos()->create($data);
+        }
+        foreach ($request->input('images', []) as $data) {
+            $clip->images()->create($data);
+        }
+        foreach ($request->input('industries', []) as $data) {
+            $clip->industries()->create($data);
+        }
+        foreach ($request->input('brands', []) as $data) {
+            $clip->brands()->create($data);
+        }
+
+
+        return redirect()->route('admin.clips.index');
+    }
 
 
     /**
@@ -362,7 +252,7 @@ class ClipsController extends Controller
         if (! Gate::allows('clip_edit')) {
             return abort(401);
         }
-
+        
         $brands = \App\Brand::get()->pluck('name', 'id')->prepend(trans('global.app_please_select'), '');
         $industries = \App\Industry::get()->pluck('name', 'id')->prepend(trans('global.app_please_select'), '');
 
@@ -384,8 +274,7 @@ class ClipsController extends Controller
             return abort(401);
         }
         $clip = Clip::findOrFail($id);
-
- $clip->update($request->all());
+        $clip->update($request->all());
 
         $videos           = $clip->videos;
         $currentVideoData = [];
@@ -456,6 +345,7 @@ class ClipsController extends Controller
             }
         }
 
+
         return redirect()->route('admin.clips.index');
     }
 
@@ -471,13 +361,13 @@ class ClipsController extends Controller
         if (! Gate::allows('clip_view')) {
             return abort(401);
         }
-
+        
         $brands = \App\Brand::get()->pluck('name', 'id')->prepend(trans('global.app_please_select'), '');
-        $industries = \App\Industry::get()->pluck('name', 'id')->prepend(trans('global.app_please_select'), '');$videos = \App\Video::where('clip_id', $id)->get();$brands = \App\Brand::where('clip_id', $id)->get();
+        $industries = \App\Industry::get()->pluck('name', 'id')->prepend(trans('global.app_please_select'), '');$videos = \App\Video::where('clip_id', $id)->get();$images = \App\Image::where('clip_id', $id)->get();$industries = \App\Industry::where('clip_id', $id)->get();$brands = \App\Brand::where('clip_id', $id)->get();
 
         $clip = Clip::findOrFail($id);
 
-        return view('admin.clips.show', compact('clip', 'videos', 'brands'));
+        return view('admin.clips.show', compact('clip', 'videos', 'images', 'industries', 'brands'));
     }
 
 

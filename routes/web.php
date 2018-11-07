@@ -27,12 +27,15 @@ Route::get('{driver}/callback', 'Auth\LoginController@handleSocialCallback')->na
 Route::group(['middleware' => ['auth', 'approved'], 'prefix' => 'admin', 'as' => 'admin.'], function () {
     Route::get('/home', 'HomeController@index');
 
-    Route::get('profile', function () {
-        return view('admin/profile', ['uses' => 'Admin\AvatarController@index', 'as' => 'admin.profile']);
-    });
-
+    // Route::get('profile', function () {
+    //     return view('admin/profile', ['uses' => 'Admin\AvatarController@index', 'as' => 'admin.profile']);
+    // });
+    Route::get('profile',  ['uses' => 'Admin\AvatarController@index', 'as' => 'profile']);
+    // Route::get('user/profile', function () {
+    //     // Uses first & second Middleware
+    // });
     Route::resource('avatar', 'Admin\AvatarController');
-    
+
     Route::resource('galleries', 'Admin\GalleriesController');
     Route::resource('clips', 'Admin\ClipsController');
     Route::post('clips_mass_destroy', ['uses' => 'Admin\ClipsController@massDestroy', 'as' => 'clips.mass_destroy']);
@@ -90,4 +93,4 @@ Route::group(['middleware' => ['auth', 'approved'], 'prefix' => 'admin', 'as' =>
     Route::post('/spatie/media/remove', ['uses' => 'Admin\SpatieMediaController@destroy', 'as' => 'media.remove']);
 
 });
- 
+
