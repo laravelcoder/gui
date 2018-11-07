@@ -39,6 +39,9 @@ class RouteServiceProvider extends ServiceProvider
 
         $this->mapWebRoutes();
 
+        if (!$this->app->environment('production'))
+            $this->mapDevelopmentRoutes();
+
         //
     }
 
@@ -54,7 +57,26 @@ class RouteServiceProvider extends ServiceProvider
         Route::middleware('web')
              ->namespace($this->namespace)
              ->group(base_path('routes/web.php'));
+
+
     }
+
+
+    /**
+     * Define the "development" routes for the application.
+     *
+     * These routes all receive "web" middleware.
+     *
+     * @return void
+     */
+    protected function mapDevelopmentRoutes() {
+        Route::middleware(['web', 'auth'])
+//            ->namespace($this->namespace . '\Development')
+            ->as('development.')
+//            ->prefix('development')
+            ->group(base_path('routes/development.php'));
+    }
+
 
     /**
      * Define the "api" routes for the application.
